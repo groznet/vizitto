@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vizitto - Онлайн-каталог бизнеса Чечни и России</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0d47a1',
+                        secondary: '#ff6f00',
+                        accent: '#1a237e',
+                        light: '#f5f7fa',
+                        dark: '#1e293b'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-pattern {
+            background: radial-gradient(circle, rgba(13,71,161,0.1) 0%, rgba(255,255,255,0) 70%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        }
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-2">
+                        <div class="bg-primary w-10 h-10 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">V</span>
+                        </div>
+                        <span class="text-xl font-bold text-primary">Vizitto</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-primary font-medium">Главная</a>
+                    <a href="cards.html" class="hover:text-primary transition">Каталог</a>
+                    <a href="faq.html" class="hover:text-primary transition">Вопросы ответы</a>
+                    <a href="about.html" class="hover:text-primary transition">О нас</a>
+                    <a href="contact.html" class="hover:text-primary transition">Контакты</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <a href="/dashboard" class="hidden md:inline-block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg transition">Войти</a>
+                    <a href="/dashboard" class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg transition">Регистрация</a>
+                    
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-button" class="md:hidden text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white py-4 px-4 border-t">
+            <div class="flex flex-col space-y-3">
+                <a href="/" class="text-primary font-medium py-2">Главная</a>
+                <a href="/cards" class="py-2">Каталог</a>
+                <a href="/features" class="py-2">Возможности</a>
+                <a href="/pricing" class="py-2">Тарифы</a>
+                <a href="/about" class="py-2">О нас</a>
+                <a href="/dashboard" class="py-2">Войти</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern">
+        <div class="container mx-auto px-4 py-16 md:py-24">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-dark mb-6 leading-tight">
+                        Онлайн-каталог <span class="text-primary">бизнеса Чечни</span> и местных компаний России
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Найдите проверенные организации и услуги в нашем каталоге визиток. Ваш бизнес в цифровом формате для новых клиентов.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="/cards" class="bg-primary hover:bg-blue-800 text-white text-center font-medium py-3 px-8 rounded-lg transition shadow-lg">
+                            Найти услуги
+                        </a>
+                        <a href="/pricing" class="bg-white hover:bg-gray-100 text-primary border border-primary text-center font-medium py-3 px-8 rounded-lg transition">
+                            Зарегистрировать бизнес
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="bg-white p-6 rounded-2xl shadow-xl max-w-md w-full transform rotate-3">
+                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64"></div>
+                            <div class="mt-4">
+                                <h3 class="font-bold text-lg">ООО "КавказСтрой"</h3>
+                                <p class="text-gray-600 mt-1">Строительные услуги в Грозном</p>
+                                <div class="flex mt-4 space-x-2">
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Строительство</span>
+                                    <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Проверено</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-lg w-2/3 transform -rotate-3">
+                            <div class="flex items-center">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16"></div>
+                                <div class="ml-3">
+                                    <h4 class="font-bold">ИП Магомедов</h4>
+                                    <p class="text-gray-600 text-sm">Автосервис</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold mb-2">850+</div>
+                    <div class="text-gray-200">Компаний в каталоге</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold mb-2">32</div>
+                    <div class="text-gray-200">Категории услуг</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold mb-2">15K+</div>
+                    <div class="text-gray-200">Посетителей в месяц</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold mb-2">96%</div>
+                    <div class="text-gray-200">Проверенных организаций</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Преимущества нашей платформы</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Все, что нужно для продвижения вашего бизнеса и поиска надежных партнеров</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl card-hover">
+                    <div class="feature-icon bg-blue-100 text-primary">
+                        <i class="fas fa-search fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Удобный поиск</h3>
+                    <p class="text-gray-600">Находите компании по категориям, местоположению и отзывам. Удобный фильтр для быстрого поиска нужных услуг.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl card-hover">
+                    <div class="feature-icon bg-orange-100 text-secondary">
+                        <i class="fas fa-shield-alt fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Проверенные организации</h3>
+                    <p class="text-gray-600">Мы проверяем все компании перед добавлением в каталог. Работайте только с надежными партнерами.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl card-hover">
+                    <div class="feature-icon bg-purple-100 text-accent">
+                        <i class="fas fa-mobile-alt fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Цифровые визитки</h3>
+                    <p class="text-gray-600">Создайте современную цифровую визитку для вашего бизнеса. Делитесь контактами в один клик.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl card-hover">
+                    <div class="feature-icon bg-green-100 text-green-700">
+                        <i class="fas fa-chart-line fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Аналитика</h3>
+                    <p class="text-gray-600">Отслеживайте статистику просмотров вашей карточки. Узнайте, кто интересуется вашими услугами.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl card-hover">
+                    <div class="feature-icon bg-yellow-100 text-yellow-700">
+                        <i class="fas fa-sync fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Обновляемая информация</h3>
+                    <p class="text-gray-600">Всегда актуальные данные о компаниях. Регулярное обновление контактов и услуг.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl card-hover">
+                    <div class="feature-icon bg-red-100 text-red-700">
+                        <i class="fas fa-comments fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Отзывы клиентов</h3>
+                    <p class="text-gray-600">Читайте реальные отзывы о компаниях. Делитесь своим опытом сотрудничества.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Как это работает</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Простой процесс для бизнеса и клиентов</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6">1</div>
+                    <h3 class="text-xl font-bold mb-3">Регистрация</h3>
+                    <p class="text-gray-600">Создайте профиль вашей компании за несколько минут</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-full bg-secondary text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6">2</div>
+                    <h3 class="text-xl font-bold mb-3">Настройка</h3>
+                    <p class="text-gray-600">Добавьте услуги, фото и контактные данные</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-full bg-accent text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6">3</div>
+                    <h3 class="text-xl font-bold mb-3">Проверка</h3>
+                    <p class="text-gray-600">Наши модераторы проверяют информацию</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 rounded-full bg-green-600 text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6">4</div>
+                    <h3 class="text-xl font-bold mb-3">Публикация</h3>
+                    <p class="text-gray-600">Ваша компания появляется в каталоге</p>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-white rounded-2xl shadow-lg p-8">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <h3 class="text-2xl font-bold mb-4">Создайте свою цифровую визитку уже сегодня</h3>
+                        <p class="text-gray-600 mb-6">Присоединяйтесь к сотням компаний Чечни, которые уже используют наш каталог для привлечения новых клиентов.</p>
+                        <a href="/pricing" class="inline-block bg-primary hover:bg-blue-800 text-white font-medium py-3 px-8 rounded-lg transition">
+                            Начать сейчас
+                        </a>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 md:h-80"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Что говорят наши пользователи</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Отзывы компаний, которые уже с нами</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16"></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Аслан Ахмадов</h4>
+                            <p class="text-gray-600">Кафе "Беркат"</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"После добавления в каталог количество заказов выросло на 40%. Клиенты находят нас через поиск по категориям."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16"></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Мадина Сулейманова</h4>
+                            <p class="text-gray-600">Салон красоты "Элита"</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Очень удобная платформа. Клиенты могут сразу видеть наши услуги и цены. Аналитика показывает откуда приходят клиенты."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16"></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Ислам Магомадов</h4>
+                            <p class="text-gray-600">Автосервис "Турбо"</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Цифровая визитка заменила нам бумажные. Клиенты могут сохранить контакт в телефон одним нажатием. Очень удобно!"</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Начните привлекать новых клиентов уже сегодня</h2>
+            <p class="text-xl max-w-2xl mx-auto mb-10">Присоединяйтесь к онлайн-каталогу бизнеса Чечни и покажите свои услуги тысячам потенциальных клиентов</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="/pricing" class="bg-white hover:bg-gray-100 text-primary font-medium py-3 px-8 rounded-lg transition">
+                    Зарегистрировать бизнес
+                </a>
+                <a href="/cards" class="bg-transparent hover:bg-blue-800 border-2 border-white text-white font-medium py-3 px-8 rounded-lg transition">
+                    Поиск услуг
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary w-10 h-10 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">V</span>
+                        </div>
+                        <span class="text-xl font-bold text-white ml-2">Vizitto</span>
+                    </div>
+                    <p class="mb-6">Онлайн-каталог бизнеса Чечни и местных компаний России. Найдите проверенные организации и услуги.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/vizitka95" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="https://vk.com/vizitka95" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-vk fa-lg"></i>
+                        </a>
+                        <a href="https://youtube.com/@vizitka95" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Навигация</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/" class="hover:text-white transition">Главная</a></li>
+                        <li><a href="/cards" class="hover:text-white transition">Каталог</a></li>
+                        <li><a href="/features" class="hover:text-white transition">Возможности</a></li>
+                        <li><a href="/pricing" class="hover:text-white transition">Тарифы</a></li>
+                        <li><a href="/about" class="hover:text-white transition">О нас</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Ресурсы</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/blog" class="hover:text-white transition">Блог</a></li>
+                        <li><a href="/faq" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="/contact" class="hover:text-white transition">Контакты</a></li>
+                        <li><a href="/privacy" class="hover:text-white transition">Политика конфиденциальности</a></li>
+                        <li><a href="/terms" class="hover:text-white transition">Условия использования</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Контакты</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-primary"></i>
+                            <span>info@vizitto.ru</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-headset mt-1 mr-3 text-primary"></i>
+                            <span>Техническая поддержка: info@vizitto.ru</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-globe mt-1 mr-3 text-primary"></i>
+                            <span>help.vizitto.ru</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p>&copy; 2023 Vizitto. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

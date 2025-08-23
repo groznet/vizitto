@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Онлайн-каталог бизнеса Чечни и России | Vizitto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0d47a1',
+                        secondary: '#ff6f00',
+                        accent: '#1a237e',
+                        light: '#f5f7fa',
+                        dark: '#1e293b'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .contact-hero {
+            background: linear-gradient(rgba(13, 71, 161, 0.85), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'));
+            background-size: cover;
+            background-position: center;
+        }
+        .contact-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        }
+        .form-input:focus {
+            border-color: #0d47a1;
+            box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.1);
+        }
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            min-height: 300px;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-2">
+                        <div class="bg-primary w-10 h-10 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">V</span>
+                        </div>
+                        <span class="text-xl font-bold text-primary">Vizitto</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-primary font-medium">Главная</a>
+                    <a href="cards.html" class="hover:text-primary transition">Каталог</a>
+                    <a href="faq.html" class="hover:text-primary transition">Вопросы ответы</a>
+                    <a href="about.html" class="hover:text-primary transition">О нас</a>
+                    <a href="contact.html" class="hover:text-primary transition">Контакты</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <a href="/dashboard" class="hidden md:inline-block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg transition">Войти</a>
+                    <a href="/dashboard" class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg transition">Регистрация</a>
+                    
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-button" class="md:hidden text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white py-4 px-4 border-t">
+            <div class="flex flex-col space-y-3">
+                <a href="/" class="py-2">Главная</a>
+                <a href="/cards" class="py-2">Каталог</a>
+                <a href="/features" class="py-2">Возможности</a>
+                <a href="/pricing" class="py-2">Тарифы</a>
+                <a href="/about" class="py-2">О нас</a>
+                <a href="/contact" class="text-primary font-medium py-2">Контакты</a>
+                <a href="/dashboard" class="py-2">Войти</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero py-24 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Свяжитесь с нами</h1>
+            <p class="text-xl max-w-2xl mx-auto">Мы всегда рады ответить на ваши вопросы и помочь с использованием платформы</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Contact Form -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <h2 class="text-2xl md:text-3xl font-bold text-dark mb-6">Отправить сообщение</h2>
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 mb-2">Ваше имя</label>
+                                    <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none" placeholder="Иван Иванов">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none" placeholder="example@mail.ru">
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="phone" class="block text-gray-700 mb-2">Телефон</label>
+                                    <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none" placeholder="+7 (900) 123-45-67">
+                                </div>
+                                <div>
+                                    <label for="subject" class="block text-gray-700 mb-2">Тема</label>
+                                    <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none">
+                                        <option value="" disabled selected>Выберите тему</option>
+                                        <option value="support">Техническая поддержка</option>
+                                        <option value="business">Добавление бизнеса</option>
+                                        <option value="partnership">Партнерство</option>
+                                        <option value="other">Другое</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 mb-2">Сообщение</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg form-input focus:outline-none" placeholder="Напишите ваше сообщение..."></textarea>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex items-start">
+                                    <input type="checkbox" id="consent" class="mt-1 mr-3">
+                                    <label for="consent" class="text-gray-700">Я согласен с политикой конфиденциальности и даю разрешение на обработку моих персональных данных</label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-3 px-8 rounded-lg transition">
+                                Отправить сообщение
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="lg:w-1/2">
+                    <div class="grid grid-cols-1 gap-8">
+                        <div class="contact-card bg-gray-50 p-8 rounded-xl">
+                            <div class="flex items-start mb-6">
+                                <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div class="ml-5">
+                                    <h3 class="text-xl font-bold mb-3">Наш офис</h3>
+                                    <p class="text-gray-600">Грозный, ул. Маяковского, д. 14, офис 305</p>
+                                    <p class="text-gray-600 mt-2">364000, Чеченская Республика, Россия</p>
+                                </div>
+                            </div>
+                            <div class="map-container">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2903.456557306069!2d45.68204231548851!3d43.31424967913214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4051d47e8d4b3803%3A0x1f48b9b0b1a0d3a3!2z0YPQuy4g0JzQsNGI0LrQvtCy0L7Qu9C-0LLRgdC60L7Qs9C-LCAxNCwg0JPQvtGA0L7QtNGB0LrQvtC5LCDQp9C10LvRj9Cx0LjQvdGB0LosIDM2NDAwMA!5e0!3m2!1sru!2sru!4v1653312345678!5m2!1sru!2sru" 
+                                    width="100%" 
+                                    height="250" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="contact-card bg-gray-50 p-8 rounded-xl">
+                                <div class="flex items-start">
+                                    <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-envelope text-xl"></i>
+                                    </div>
+                                    <div class="ml-5">
+                                        <h3 class="text-xl font-bold mb-3">Электронная почта</h3>
+                                        <p class="text-gray-600 mb-1">Общие вопросы:</p>
+                                        <a href="mailto:info@vizitto.ru" class="text-primary hover:underline">info@vizitto.ru</a>
+                                        <p class="text-gray-600 mt-3 mb-1">Техническая поддержка:</p>
+                                        <a href="mailto:support@vizitto.ru" class="text-primary hover:underline">support@vizitto.ru</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-card bg-gray-50 p-8 rounded-xl">
+                                <div class="flex items-start">
+                                    <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-phone-alt text-xl"></i>
+                                    </div>
+                                    <div class="ml-5">
+                                        <h3 class="text-xl font-bold mb-3">Телефоны</h3>
+                                        <p class="text-gray-600 mb-1">Общие вопросы:</p>
+                                        <a href="tel:+78001234567" class="text-primary hover:underline">8 (800) 123-45-67</a>
+                                        <p class="text-gray-600 mt-3 mb-1">Техническая поддержка:</p>
+                                        <a href="tel:+78007654321" class="text-primary hover:underline">8 (800) 765-43-21</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card bg-gray-50 p-8 rounded-xl">
+                            <div class="flex items-start">
+                                <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock text-xl"></i>
+                                </div>
+                                <div class="ml-5">
+                                    <h3 class="text-xl font-bold mb-3">Часы работы</h3>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="font-medium text-gray-700">Офис:</p>
+                                            <p class="text-gray-600">Пн-Пт: 9:00 - 18:00</p>
+                                            <p class="text-gray-600">Сб-Вс: выходной</p>
+                                        </div>
+                                        <div>
+                                            <p class="font-medium text-gray-700">Техподдержка:</p>
+                                            <p class="text-gray-600">Пн-Вс: 8:00 - 22:00</p>
+                                            <p class="text-gray-600">Без перерыва</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Часто задаваемые вопросы</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Ответы на популярные вопросы о нашей платформе</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-xl shadow-md mb-6 overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 font-medium text-lg flex justify-between items-center">
+                        <span>Как добавить мою компанию в каталог?</span>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">Для добавления компании в каталог необходимо зарегистрироваться на нашей платформе, заполнить информацию о вашем бизнесе в личном кабинете и отправить заявку на модерацию. После проверки нашими специалистами ваша компания будет опубликована в каталоге.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md mb-6 overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 font-medium text-lg flex justify-between items-center">
+                        <span>Сколько стоит размещение в каталоге?</span>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">У нас есть как бесплатный тариф с базовыми возможностями, так и платные тарифы с расширенным функционалом. Подробную информацию о тарифах вы можете найти на странице <a href="/pricing" class="text-primary hover:underline">Тарифы</a>.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md mb-6 overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 font-medium text-lg flex justify-between items-center">
+                        <span>Как связаться с компанией из каталога?</span>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">На странице каждой компании в каталоге указаны контактные данные: телефон, email, адрес и ссылки на социальные сети. Вы также можете отправить сообщение напрямую через платформу, если компания подключила эту функцию.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md mb-6 overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 font-medium text-lg flex justify-between items-center">
+                        <span>Как обновить информацию о моей компании?</span>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">Войдите в личный кабинет, перейдите в раздел "Мои компании", выберите нужную компанию и нажмите "Редактировать". После внесения изменений информация будет отправлена на модерацию.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md mb-6 overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 font-medium text-lg flex justify-between items-center">
+                        <span>Сколько времени занимает модерация?</span>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 hidden">
+                        <p class="text-gray-600">Обычно модерация занимает 1-2 рабочих дня. В период высокой загрузки срок может увеличиться до 3 дней. Вы получите уведомление на email после завершения проверки.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="bg-primary rounded-2xl p-8 md:p-12 text-white">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-2/3 mb-8 md:mb-0">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-4">Нужна срочная помощь?</h2>
+                        <p class="text-lg mb-6">Наша служба поддержки готова помочь вам с любыми вопросами по работе платформы</p>
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                            <a href="tel:+78007654321" class="bg-white text-primary text-center font-medium py-3 px-8 rounded-lg transition">
+                                <i class="fas fa-phone-alt mr-2"></i> Позвонить в поддержку
+                            </a>
+                            <a href="mailto:support@vizitto.ru" class="bg-transparent border-2 border-white text-white text-center font-medium py-3 px-8 rounded-lg transition">
+                                <i class="fas fa-envelope mr-2"></i> Написать на email
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3 flex justify-center">
+                        <div class="bg-white bg-opacity-20 rounded-full w-48 h-48 flex items-center justify-center">
+                            <i class="fas fa-headset text-6xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Мы в социальных сетях</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Подписывайтесь, чтобы быть в курсе новостей и обновлений</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <a href="https://vk.com/vizitka95" target="_blank" class="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-lg transition">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fab fa-vk fa-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">ВКонтакте</h3>
+                    <p class="text-gray-600">Присоединяйтесь к нашему сообществу ВКонтакте</p>
+                </a>
+                
+                <a href="https://instagram.com/vizitka95" target="_blank" class="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-lg transition">
+                    <div class="text-pink-600 mb-4">
+                        <i class="fab fa-instagram fa-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Instagram</h3>
+                    <p class="text-gray-600">Следите за нами в Instagram</p>
+                </a>
+                
+                <a href="https://youtube.com/@vizitka95" target="_blank" class="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-lg transition">
+                    <div class="text-red-600 mb-4">
+                        <i class="fab fa-youtube fa-3x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">YouTube</h3>
+                    <p class="text-gray-600">Смотрите наши видео на YouTube</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary w-10 h-10 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">V</span>
+                        </div>
+                        <span class="text-xl font-bold text-white ml-2">Vizitto</span>
+                    </div>
+                    <p class="mb-6">Онлайн-каталог бизнеса Чечни и местных компаний России. Найдите проверенные организации и услуги.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/vizitka95" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="https://vk.com/vizitka95" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-vk fa-lg"></i>
+                        </a>
+                        <a href="https://youtube.com/@vizitka95" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Навигация</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/" class="hover:text-white transition">Главная</a></li>
+                        <li><a href="/cards" class="hover:text-white transition">Каталог</a></li>
+                        <li><a href="/features" class="hover:text-white transition">Возможности</a></li>
+                        <li><a href="/pricing" class="hover:text-white transition">Тарифы</a></li>
+                        <li><a href="/about" class="hover:text-white transition">О нас</a></li>
+                        <li><a href="/contact" class="text-primary">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Ресурсы</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/blog" class="hover:text-white transition">Блог</a></li>
+                        <li><a href="/faq" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="/privacy" class="hover:text-white transition">Политика конфиденциальности</a></li>
+                        <li><a href="/terms" class="hover:text-white transition">Условия использования</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Контакты</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-primary"></i>
+                            <span>info@vizitto.ru</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-headset mt-1 mr-3 text-primary"></i>
+                            <span>Техническая поддержка: 8 (800) 765-43-21</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                            <span>г. Грозный, ул. Маяковского, 14</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p>&copy; 2023 Vizitto. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Toggle answer visibility
+                answer.classList.toggle('hidden');
+                
+                // Rotate icon
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Basic validation
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                if (!name || !email || !message) {
+                    alert('Пожалуйста, заполните все обязательные поля');
+                    return;
+                }
+                
+                // Form submission logic would go here
+                // For demo purposes, we'll show a success message
+                alert('Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.');
+                contactForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>

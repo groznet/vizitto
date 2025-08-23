@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КавказСтрой - Строительные услуги | Визитка | Vizitto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0d47a1',
+                        secondary: '#ff6f00',
+                        accent: '#1a237e',
+                        light: '#f5f7fa',
+                        dark: '#1e293b'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .card-hero {
+            background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.9)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-sticky {
+            position: sticky;
+            top: 100px;
+        }
+        .service-item {
+            transition: all 0.3s ease;
+        }
+        .service-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        }
+        .gallery-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        .review-item {
+            transition: all 0.3s ease;
+        }
+        .review-item:hover {
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        }
+        .contact-btn {
+            transition: all 0.3s ease;
+        }
+        .contact-btn:hover {
+            transform: translateY(-3px);
+        }
+        .tab-button.active {
+            border-bottom: 3px solid #0d47a1;
+            color: #0d47a1;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-2">
+                        <div class="bg-primary w-10 h-10 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">V</span>
+                        </div>
+                        <span class="text-xl font-bold text-primary">Vizitto</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-primary font-medium">Главная</a>
+                    <a href="cards.html" class="hover:text-primary transition">Каталог</a>
+                    <a href="faq.html" class="hover:text-primary transition">Вопросы ответы</a>
+                    <a href="about.html" class="hover:text-primary transition">О нас</a>
+                    <a href="contact.html" class="hover:text-primary transition">Контакты</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <a href="/dashboard" class="hidden md:inline-block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg transition">Войти</a>
+                    <a href="/dashboard" class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg transition">Регистрация</a>
+                    
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-button" class="md:hidden text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white py-4 px-4 border-t">
+            <div class="flex flex-col space-y-3">
+                <a href="/" class="py-2">Главная</a>
+                <a href="/cards" class="py-2">Каталог</a>
+                <a href="/features" class="py-2">Возможности</a>
+                <a href="/pricing" class="py-2">Тарифы</a>
+                <a href="/blog" class="py-2">Блог</a>
+                <a href="/about" class="py-2">О нас</a>
+                <a href="/dashboard" class="py-2">Войти</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="card-hero py-24 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <div class="flex items-center mb-6">
+                            <span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full flex items-center mr-4">
+                                <i class="fas fa-check-circle mr-1"></i> Проверено
+                            </span>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="text-white ml-2">4.7 (24 отзыва)</span>
+                            </div>
+                        </div>
+                        <h1 class="text-3xl md:text-4xl font-bold mb-4">КавказСтрой</h1>
+                        <p class="text-xl mb-6">Строительные услуги, ремонт квартир и офисов, отделочные работы</p>
+                    </div>
+                    <div class="flex space-x-3">
+                        <button class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                            <i class="fas fa-share-alt"></i>
+                        </button>
+                        <button class="w-10 h-10 rounded-full bg-white bg-opacity-20 flex items-center justify-center hover:bg-opacity-30 transition">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-3 mt-8">
+                    <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">Строительство</span>
+                    <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">Ремонт квартир</span>
+                    <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">Отделочные работы</span>
+                    <span class="bg-white bg-opacity-20 px-4 py-2 rounded-full">Дизайн интерьеров</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Main Content -->
+                <div class="lg:w-2/3">
+                    <!-- Tabs Navigation -->
+                    <div class="border-b border-gray-200 mb-8">
+                        <div class="flex space-x-8">
+                            <button class="tab-button py-3 px-1 text-lg font-medium active">Общая информация</button>
+                            <button class="tab-button py-3 px-1 text-lg font-medium">Услуги и цены</button>
+                            <button class="tab-button py-3 px-1 text-lg font-medium">Фото и видео</button>
+                            <button class="tab-button py-3 px-1 text-lg font-medium">Отзывы</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab Content: Общая информация -->
+                    <div id="info-tab" class="tab-content">
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-bold mb-4">О компании</h2>
+                            <p class="text-gray-600 mb-6">Компания "КавказСтрой" предоставляет полный спектр строительных и отделочных работ в Чечне и соседних регионах. Мы работаем на рынке с 2015 года и за это время реализовали более 200 проектов различной сложности.</p>
+                            
+                            <p class="text-gray-600 mb-6">Наша команда состоит из высококвалифицированных специалистов с опытом работы от 5 лет. Мы используем только качественные материалы от проверенных поставщиков и гарантируем соблюдение сроков выполнения работ.</p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                <div class="flex">
+                                    <div class="text-primary text-2xl mr-4">
+                                        <i class="fas fa-medal"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-lg mb-1">Гарантия качества</h3>
+                                        <p class="text-gray-600">Предоставляем гарантию до 3 лет на все виды работ</p>
+                                    </div>
+                                </div>
+                                <div class="flex">
+                                    <div class="text-primary text-2xl mr-4">
+                                        <i class="fas fa-ruler-combined"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-lg mb-1">Бесплатный замер</h3>
+                                        <p class="text-gray-600">Выезд специалиста для замера и консультации</p>
+                                    </div>
+                                </div>
+                                <div class="flex">
+                                    <div class="text-primary text-2xl mr-4">
+                                        <i class="fas fa-file-contract"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-lg mb-1">Договор</h3>
+                                        <p class="text-gray-600">Официальный договор с фиксированной сметой</p>
+                                    </div>
+                                </div>
+                                <div class="flex">
+                                    <div class="text-primary text-2xl mr-4">
+                                        <i class="fas fa-hard-hat"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-lg mb-1">Опытные мастера</h3>
+                                        <p class="text-gray-600">Работают специалисты с опытом от 5 лет</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-bold mb-4">Наши преимущества</h2>
+                            <ul class="list-disc pl-5 space-y-3 text-gray-600 mb-6">
+                                <li>Бесплатный выезд замерщика в день обращения</li>
+                                <li>Фиксированная смета без скрытых платежей</li>
+                                <li>Использование экологичных материалов</li>
+                                <li>Соблюдение строительных норм и ГОСТов</li>
+                                <li>Четкое соблюдение оговоренных сроков</li>
+                                <li>Аккуратность на объекте и чистота после работ</li>
+                                <li>Гибкая система скидок для постоянных клиентов</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-bold mb-4">Контакты</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <h3 class="font-bold mb-2">Адрес</h3>
+                                    <p class="text-gray-600 mb-4 flex items-start">
+                                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                                        <span>Грозный, ул. Маяковского, 24, офис 305</span>
+                                    </p>
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64"></div>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold mb-2">Контактная информация</h3>
+                                    <p class="text-gray-600 mb-3 flex items-center">
+                                        <i class="fas fa-phone-alt mr-3 text-primary"></i>
+                                        <span>+7 (928) 123-45-67</span>
+                                    </p>
+                                    <p class="text-gray-600 mb-3 flex items-center">
+                                        <i class="fab fa-whatsapp mr-3 text-primary"></i>
+                                        <span>+7 (928) 123-45-67</span>
+                                    </p>
+                                    <p class="text-gray-600 mb-3 flex items-center">
+                                        <i class="fas fa-envelope mr-3 text-primary"></i>
+                                        <span>kavkazstroy@mail.ru</span>
+                                    </p>
+                                    <p class="text-gray-600 mb-3 flex items-center">
+                                        <i class="fas fa-globe mr-3 text-primary"></i>
+                                        <span>kavkazstroy.ru</span>
+                                    </p>
+                                    
+                                    <h3 class="font-bold mt-6 mb-2">Часы работы</h3>
+                                    <p class="text-gray-600 flex justify-between">
+                                        <span>Понедельник - Пятница</span>
+                                        <span>9:00 - 18:00</span>
+                                    </p>
+                                    <p class="text-gray-600 flex justify-between">
+                                        <span>Суббота</span>
+                                        <span>10:00 - 16:00</span>
+                                    </p>
+                                    <p class="text-gray-600 flex justify-between">
+                                        <span>Воскресенье</span>
+                                        <span>Выходной</span>
+                                    </p>
+                                    
+                                    <div class="mt-6">
+                                        <h3 class="font-bold mb-2">Социальные сети</h3>
+                                        <div class="flex space-x-3">
+                                            <a href="#" class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center">
+                                                <i class="fab fa-vk"></i>
+                                            </a>
+                                            <a href="#" class="w-10 h-10 rounded-full bg-pink-600 text-white flex items-center justify-center">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                            <a href="#" class="w-10 h-10 rounded-full bg-telegram text-white flex items-center justify-center">
+                                                <i class="fab fa-telegram"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Services Preview -->
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-bold mb-4">Основные услуги</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="service-item bg-gray-50 p-6 rounded-lg">
+                                    <h3 class="font-bold text-lg mb-2">Ремонт квартир под ключ</h3>
+                                    <p class="text-gray-600 mb-4">Полный цикл работ от черновой отделки до сдачи "под ключ"</p>
+                                    <div class="text-primary font-bold">От 3000 ₽/м²</div>
+                                </div>
+                                <div class="service-item bg-gray-50 p-6 rounded-lg">
+                                    <h3 class="font-bold text-lg mb-2">Дизайн интерьеров</h3>
+                                    <p class="text-gray-600 mb-4">Разработка дизайн-проектов жилых и коммерческих помещений</p>
+                                    <div class="text-primary font-bold">От 1500 ₽/м²</div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-6">
+                                <a href="#" class="text-primary font-medium hover:underline inline-flex items-center">
+                                    Все услуги и цены
+                                    <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Reviews Preview -->
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-bold mb-4">Последние отзывы</h2>
+                            <div class="space-y-6">
+                                <div class="review-item bg-gray-50 p-6 rounded-lg">
+                                    <div class="flex justify-between mb-3">
+                                        <h3 class="font-bold">Аслан Магомадов</h3>
+                                        <div class="flex text-yellow-400">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600 mb-4">"Заказывал ремонт трехкомнатной квартиры. Работа выполнена качественно и в срок. Особенно понравилось отношение прораба - постоянно был на связи, решал все возникающие вопросы. Рекомендую компанию!"</p>
+                                    <div class="text-gray-500 text-sm">12 мая 2023</div>
+                                </div>
+                                <div class="review-item bg-gray-50 p-6 rounded-lg">
+                                    <div class="flex justify-between mb-3">
+                                        <h3 class="font-bold">Мадина Ахмадова</h3>
+                                        <div class="flex text-yellow-400">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600 mb-4">"Делали дизайн-проект для кафе. Результатом довольна, но были небольшие задержки по срокам. В остальном все отлично - креативный подход, учет всех пожеланий, профессиональные советы."</p>
+                                    <div class="text-gray-500 text-sm">5 мая 2023</div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-6">
+                                <a href="#" class="text-primary font-medium hover:underline inline-flex items-center">
+                                    Все отзывы (24)
+                                    <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="lg:w-1/3">
+                    <div class="card-sticky">
+                        <!-- Contact Card -->
+                        <div class="bg-gray-50 rounded-xl p-6 mb-8 shadow-md">
+                            <h3 class="text-xl font-bold mb-4">Свяжитесь с компанией</h3>
+                            
+                            <div class="space-y-4">
+                                <a href="tel:+79281234567" class="contact-btn block bg-primary hover:bg-blue-800 text-white text-center font-medium py-3 rounded-lg transition flex items-center justify-center">
+                                    <i class="fas fa-phone-alt mr-2"></i> Позвонить
+                                </a>
+                                <a href="#" class="contact-btn block bg-white border border-primary text-primary text-center font-medium py-3 rounded-lg transition flex items-center justify-center">
+                                    <i class="fab fa-whatsapp mr-2"></i> Написать в WhatsApp
+                                </a>
+                                <a href="#" class="contact-btn block bg-white border border-primary text-primary text-center font-medium py-3 rounded-lg transition flex items-center justify-center">
+                                    <i class="fas fa-envelope mr-2"></i> Отправить email
+                                </a>
+                                <a href="#" class="contact-btn block bg-white border border-primary text-primary text-center font-medium py-3 rounded-lg transition flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt mr-2"></i> Построить маршрут
+                                </a>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <h4 class="font-bold mb-2">Быстрая связь</h4>
+                                <form>
+                                    <div class="mb-4">
+                                        <input type="text" placeholder="Ваше имя" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                    </div>
+                                    <div class="mb-4">
+                                        <input type="tel" placeholder="Телефон" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                    </div>
+                                    <div class="mb-4">
+                                        <textarea placeholder="Сообщение" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                                    </div>
+                                    <button type="submit" class="w-full bg-secondary hover:bg-orange-700 text-white font-medium py-3 px-8 rounded-lg transition">
+                                        Отправить сообщение
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <!-- Statistics -->
+                        <div class="bg-gray-50 rounded-xl p-6 mb-8 shadow-md">
+                            <h3 class="text-xl font-bold mb-4">Статистика карточки</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span>Просмотры за месяц</span>
+                                        <span class="font-bold">124</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span>Контакты за месяц</span>
+                                        <span class="font-bold">28</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-green-500 h-2 rounded-full" style="width: 40%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-1">
+                                        <span>Добавления в избранное</span>
+                                        <span class="font-bold">16</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2">
+                                        <div class="bg-yellow-500 h-2 rounded-full" style="width: 25%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 text-center">
+                                <div class="inline-flex items-center bg-blue-50 text-primary px-4 py-2 rounded-full">
+                                    <i class="fas fa-chart-line mr-2"></i>
+                                    <span>Популярность: высокая</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- QR Code -->
+                        <div class="bg-gray-50 rounded-xl p-6 shadow-md text-center">
+                            <h3 class="text-xl font-bold mb-4">QR-код визитки</h3>
+                            <p class="text-gray-600 mb-4">Отсканируйте код для быстрого доступа к визитке</p>
+                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-48 h-48 mx-auto mb-4"></div>
+                            <button class="text-primary font-medium hover:underline inline-flex items-center mx-auto">
+                                Скачать QR-код
+                                <i class="fas fa-download ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">Примеры наших работ</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Фотографии реализованных проектов</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="gallery-item">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80"></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80"></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80"></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80"></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80"></div>
+                </div>
+                <div class="gallery-item">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80"></div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block bg-white border border-primary text-primary font-medium py-3 px-8 rounded-lg transition hover:bg-primary hover:text-white">
+                    Смотреть все работы
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Similar Companies -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-dark mb-4">Похожие компании</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Другие компании в этой категории</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Company 1 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md">
+                    <div class="relative">
+                        <div class="bg-gray-200 border-2 border-dashed w-full h-48"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-primary text-white text-sm px-3 py-1 rounded-full">Строительство</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">СтройДом</h3>
+                        <p class="text-gray-600 mb-4">Строительство домов, коттеджей, бань под ключ</p>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2 text-primary"></i>
+                            <span>Грозный, ул. Орджоникидзе, 15</span>
+                        </div>
+                        <a href="#" class="block bg-primary hover:bg-blue-800 text-white text-center font-medium py-2 px-4 rounded-lg transition">
+                            Посмотреть визитку
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Company 2 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md">
+                    <div class="relative">
+                        <div class="bg-gray-200 border-2 border-dashed w-full h-48"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full">Проверено</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Евроремонт</h3>
+                        <p class="text-gray-600 mb-4">Качественный ремонт квартир и офисов по европейским стандартам</p>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2 text-primary"></i>
+                            <span>Гудермес, пр. Кадырова, 56</span>
+                        </div>
+                        <a href="#" class="block bg-primary hover:bg-blue-800 text-white text-center font-medium py-2 px-4 rounded-lg transition">
+                            Посмотреть визитку
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Company 3 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md">
+                    <div class="relative">
+                        <div class="bg-gray-200 border-2 border-dashed w-full h-48"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">ИнтерьерДизайн</h3>
+                        <p class="text-gray-600 mb-4">Дизайн интерьеров жилых и коммерческих помещений</p>
+                        <div class="flex items-center text-gray-600 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2 text-primary"></i>
+                            <span>Аргун, ул. Мира, 12</span>
+                        </div>
+                        <a href="#" class="block bg-primary hover:bg-blue-800 text-white text-center font-medium py-2 px-4 rounded-lg transition">
+                            Посмотреть визитку
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary w-10 h-10 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">V</span>
+                        </div>
+                        <span class="text-xl font-bold text-white ml-2">Vizitto</span>
+                    </div>
+                    <p class="mb-6">Онлайн-каталог бизнеса Чечни и местных компаний России. Найдите проверенные организации и услуги.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/vizitka95" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="https://vk.com/vizitka95" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-vk fa-lg"></i>
+                        </a>
+                        <a href="https://youtube.com/@vizitka95" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Навигация</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/" class="hover:text-white transition">Главная</a></li>
+                        <li><a href="/cards" class="hover:text-white transition">Каталог</a></li>
+                        <li><a href="/features" class="hover:text-white transition">Возможности</a></li>
+                        <li><a href="/pricing" class="hover:text-white transition">Тарифы</a></li>
+                        <li><a href="/blog" class="hover:text-white transition">Блог</a></li>
+                        <li><a href="/about" class="hover:text-white transition">О нас</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Ресурсы</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/faq" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="/contact" class="hover:text-white transition">Контакты</a></li>
+                        <li><a href="/privacy" class="hover:text-white transition">Политика конфиденциальности</a></li>
+                        <li><a href="/terms" class="hover:text-white transition">Условия использования</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Контакты</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-primary"></i>
+                            <span>info@vizitto.ru</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-headset mt-1 mr-3 text-primary"></i>
+                            <span>Техническая поддержка: 8 (800) 765-43-21</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                            <span>г. Грозный, ул. Маяковского, 14</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p>&copy; 2023 Vizitto. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Tab functionality
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.tab-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Here you would typically show the corresponding tab content
+                // For this demo, we'll just log the tab name
+                console.log('Switched to tab: ' + this.textContent);
+            });
+        });
+
+        // Gallery lightbox functionality
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // In a real implementation, this would open a lightbox with the image
+                alert('Галерея: Просмотр изображения в полном размере');
+            });
+        });
+    </script>
+</body>
+</html>

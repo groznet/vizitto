@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог - Советы по развитию бизнеса и цифровизации | Vizitto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0d47a1',
+                        secondary: '#ff6f00',
+                        accent: '#1a237e',
+                        light: '#f5f7fa',
+                        dark: '#1e293b'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .blog-hero {
+            background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.9)), url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .blog-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        }
+        .category-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            z-index: 10;
+        }
+        .tag {
+            transition: all 0.2s ease;
+        }
+        .tag:hover {
+            background-color: #0d47a1;
+            color: white;
+        }
+        .sidebar-card {
+            transition: all 0.3s ease;
+        }
+        .sidebar-card:hover {
+            transform: translateX(5px);
+        }
+        .pagination-link {
+            transition: all 0.2s ease;
+        }
+        .pagination-link:hover {
+            background-color: #0d47a1;
+            color: white;
+        }
+        .newsletter-input:focus {
+            border-color: #0d47a1;
+            box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-2">
+                        <div class="bg-primary w-10 h-10 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">V</span>
+                        </div>
+                        <span class="text-xl font-bold text-primary">Vizitto</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-primary font-medium">Главная</a>
+                    <a href="cards.html" class="hover:text-primary transition">Каталог</a>
+                    <a href="faq.html" class="hover:text-primary transition">Вопросы ответы</a>
+                    <a href="about.html" class="hover:text-primary transition">О нас</a>
+                    <a href="contact.html" class="hover:text-primary transition">Контакты</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <a href="/dashboard" class="hidden md:inline-block bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg transition">Войти</a>
+                    <a href="/dashboard" class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg transition">Регистрация</a>
+                    
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-button" class="md:hidden text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white py-4 px-4 border-t">
+            <div class="flex flex-col space-y-3">
+                <a href="/" class="py-2">Главная</a>
+                <a href="/cards" class="py-2">Каталог</a>
+                <a href="/features" class="py-2">Возможности</a>
+                <a href="/pricing" class="py-2">Тарифы</a>
+                <a href="/blog" class="text-primary font-medium py-2">Блог</a>
+                <a href="/about" class="py-2">О нас</a>
+                <a href="/dashboard" class="py-2">Войти</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="blog-hero py-24 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Блог Vizitto</h1>
+                <p class="text-xl mb-8">Советы по развитию бизнеса, цифровым технологиям и маркетингу для предпринимателей Чечни и России</p>
+                
+                <div class="relative">
+                    <input type="text" placeholder="Поиск по статьям..." class="w-full px-6 py-4 rounded-lg bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white">
+                    <button class="absolute right-3 top-3 bg-primary hover:bg-blue-800 text-white p-2 rounded-lg">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Main Content -->
+                <div class="lg:w-2/3">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                        <!-- Featured Article -->
+                        <div class="md:col-span-2">
+                            <div class="blog-card bg-gray-50 rounded-xl overflow-hidden">
+                                <div class="relative">
+                                    <div class="bg-gray-200 border-2 border-dashed w-full h-64 md:h-80"></div>
+                                    <div class="category-badge">
+                                        <span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">Маркетинг</span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex items-center text-gray-500 text-sm mb-3">
+                                        <span>15 мая 2023</span>
+                                        <span class="mx-2">•</span>
+                                        <span>8 мин чтения</span>
+                                    </div>
+                                    <h2 class="text-2xl font-bold mb-3">10 стратегий продвижения малого бизнеса в 2023 году</h2>
+                                    <p class="text-gray-600 mb-4">Узнайте, как эффективно продвигать свой бизнес с ограниченным бюджетом. Практические советы и кейсы местных компаний.</p>
+                                    <a href="/blog/10-strategies" class="text-primary font-medium hover:underline inline-flex items-center">
+                                        Читать статью
+                                        <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Article 1 -->
+                        <div class="blog-card bg-gray-50 rounded-xl overflow-hidden">
+                            <div class="relative">
+                                <div class="bg-gray-200 border-2 border-dashed w-full h-48"></div>
+                                <div class="category-badge">
+                                    <span class="bg-primary text-white text-sm px-3 py-1 rounded-full">Цифровизация</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center text-gray-500 text-sm mb-3">
+                                    <span>7 мая 2023</span>
+                                    <span class="mx-2">•</span>
+                                    <span>6 мин чтения</span>
+                                </div>
+                                <h2 class="text-xl font-bold mb-3">Как создать эффективную цифровую визитку для вашего бизнеса</h2>
+                                <p class="text-gray-600 mb-4">Пошаговое руководство по созданию современной цифровой визитки, которая привлечет клиентов.</p>
+                                <a href="/blog/digital-business-card" class="text-primary font-medium hover:underline inline-flex items-center">
+                                    Читать
+                                    <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Article 2 -->
+                        <div class="blog-card bg-gray-50 rounded-xl overflow-hidden">
+                            <div class="relative">
+                                <div class="bg-gray-200 border-2 border-dashed w-full h-48"></div>
+                                <div class="category-badge">
+                                    <span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full">Аналитика</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center text-gray-500 text-sm mb-3">
+                                    <span>28 апреля 2023</span>
+                                    <span class="mx-2">•</span>
+                                    <span>7 мин чтения</span>
+                                </div>
+                                <h2 class="text-xl font-bold mb-3">Использование аналитики для роста бизнеса: практические советы</h2>
+                                <p class="text-gray-600 mb-4">Как данные о ваших клиентах могут помочь увеличить продажи и улучшить сервис.</p>
+                                <a href="/blog/business-analytics" class="text-primary font-medium hover:underline inline-flex items-center">
+                                    Читать
+                                    <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Article 3 -->
+                        <div class="blog-card bg-gray-50 rounded-xl overflow-hidden">
+                            <div class="relative">
+                                <div class="bg-gray-200 border-2 border-dashed w-full h-48"></div>
+                                <div class="category-badge">
+                                    <span class="bg-purple-600 text-white text-sm px-3 py-1 rounded-full">Управление</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center text-gray-500 text-sm mb-3">
+                                    <span>20 апреля 2023</span>
+                                    <span class="mx-2">•</span>
+                                    <span>9 мин чтения</span>
+                                </div>
+                                <h2 class="text-xl font-bold mb-3">Эффективное управление клиентской базой: инструменты и стратегии</h2>
+                                <p class="text-gray-600 mb-4">Как организовать работу с клиентами и увеличить лояльность с помощью современных CRM-систем.</p>
+                                <a href="/blog/crm-management" class="text-primary font-medium hover:underline inline-flex items-center">
+                                    Читать
+                                    <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Article 4 -->
+                        <div class="blog-card bg-gray-50 rounded-xl overflow-hidden">
+                            <div class="relative">
+                                <div class="bg-gray-200 border-2 border-dashed w-full h-48"></div>
+                                <div class="category-badge">
+                                    <span class="bg-yellow-600 text-white text-sm px-3 py-1 rounded-full">Соцсети</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center text-gray-500 text-sm mb-3">
+                                    <span>12 апреля 2023</span>
+                                    <span class="mx-2">•</span>
+                                    <span>5 мин чтения</span>
+                                </div>
+                                <h2 class="text-xl font-bold mb-3">Продвижение бизнеса в Instagram: полное руководство для 2023</h2>
+                                <p class="text-gray-600 mb-4">Актуальные тренды и стратегии продвижения в самой популярной соцсети для бизнеса.</p>
+                                <a href="/blog/instagram-marketing" class="text-primary font-medium hover:underline inline-flex items-center">
+                                    Читать
+                                    <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="flex justify-center">
+                        <nav class="flex space-x-2">
+                            <a href="#" class="pagination-link w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-medium">1</a>
+                            <a href="#" class="pagination-link w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-medium">2</a>
+                            <a href="#" class="pagination-link w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-medium">3</a>
+                            <a href="#" class="pagination-link w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-medium">4</a>
+                            <a href="#" class="pagination-link w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-medium">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="lg:w-1/3">
+                    <!-- Categories -->
+                    <div class="bg-gray-50 rounded-xl p-6 mb-8">
+                        <h3 class="text-xl font-bold mb-4">Категории</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="#" class="sidebar-card flex justify-between items-center py-2 border-b border-gray-200">
+                                    <span>Маркетинг</span>
+                                    <span class="bg-gray-200 rounded-full w-6 h-6 flex items-center justify-center text-xs">12</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-card flex justify-between items-center py-2 border-b border-gray-200">
+                                    <span>Цифровизация</span>
+                                    <span class="bg-gray-200 rounded-full w-6 h-6 flex items-center justify-center text-xs">8</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-card flex justify-between items-center py-2 border-b border-gray-200">
+                                    <span>Управление</span>
+                                    <span class="bg-gray-200 rounded-full w-6 h-6 flex items-center justify-center text-xs">6</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-card flex justify-between items-center py-2 border-b border-gray-200">
+                                    <span>Аналитика</span>
+                                    <span class="bg-gray-200 rounded-full w-6 h-6 flex items-center justify-center text-xs">5</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar-card flex justify-between items-center py-2">
+                                    <span>Соцсети</span>
+                                    <span class="bg-gray-200 rounded-full w-6 h-6 flex items-center justify-center text-xs">9</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Popular Posts -->
+                    <div class="bg-gray-50 rounded-xl p-6 mb-8">
+                        <h3 class="text-xl font-bold mb-4">Популярные статьи</h3>
+                        <div class="space-y-4">
+                            <a href="#" class="sidebar-card flex items-start group">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-lg w-16 h-16 flex-shrink-0"></div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold group-hover:text-primary transition">Как увеличить продажи с помощью онлайн-каталога</h4>
+                                    <div class="text-gray-500 text-sm mt-1">24 марта 2023</div>
+                                </div>
+                            </a>
+                            <a href="#" class="sidebar-card flex items-start group">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-lg w-16 h-16 flex-shrink-0"></div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold group-hover:text-primary transition">5 инструментов для автоматизации бизнеса</h4>
+                                    <div class="text-gray-500 text-sm mt-1">17 марта 2023</div>
+                                </div>
+                            </a>
+                            <a href="#" class="sidebar-card flex items-start group">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-lg w-16 h-16 flex-shrink-0"></div>
+                                <div class="ml-4">
+                                    <h4 class="font-bold group-hover:text-primary transition">Как создать лояльную клиентскую базу</h4>
+                                    <div class="text-gray-500 text-sm mt-1">5 марта 2023</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Tags -->
+                    <div class="bg-gray-50 rounded-xl p-6 mb-8">
+                        <h3 class="text-xl font-bold mb-4">Теги</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="#" class="tag bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">маркетинг</a>
+                            <a href="#" class="tag bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">цифровизация</a>
+                            <a href="#" class="tag bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">аналитика</a>
+                            <a href="#" class="tag bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">соцсети</a>
+                            <a href="#" class="tag bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">SEO</a>
+                            <a href="#" class="tag bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">клиенты</a>
+                            <a href="#" class="tag bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">продажи</a>
+                            <a href="#" class="tag bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">CRM</a>
+                            <a href="#" class="tag bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">брендинг</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Newsletter -->
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold mb-4">Подписка на новости</h3>
+                        <p class="text-gray-600 mb-4">Получайте свежие статьи и бизнес-советы на почту</p>
+                        <form>
+                            <div class="mb-4">
+                                <input type="email" placeholder="Ваш email" class="w-full px-4 py-3 border border-gray-300 rounded-lg newsletter-input focus:outline-none">
+                            </div>
+                            <button type="submit" class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-3 px-8 rounded-lg transition">
+                                Подписаться
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="bg-primary rounded-2xl p-12 text-white text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Готовы продвигать свой бизнес?</h2>
+                <p class="text-xl max-w-2xl mx-auto mb-10">Создайте цифровую визитку и добавьте свою компанию в наш каталог уже сегодня</p>
+                <a href="/pricing" class="inline-block bg-white hover:bg-gray-100 text-primary font-medium py-3 px-8 rounded-lg transition">
+                    Начать сейчас
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary w-10 h-10 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">V</span>
+                        </div>
+                        <span class="text-xl font-bold text-white ml-2">Vizitto</span>
+                    </div>
+                    <p class="mb-6">Онлайн-каталог бизнеса Чечни и местных компаний России. Найдите проверенные организации и услуги.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://instagram.com/vizitka95" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <a href="https://vk.com/vizitka95" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-vk fa-lg"></i>
+                        </a>
+                        <a href="https://youtube.com/@vizitka95" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Навигация</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/" class="hover:text-white transition">Главная</a></li>
+                        <li><a href="/cards" class="hover:text-white transition">Каталог</a></li>
+                        <li><a href="/features" class="hover:text-white transition">Возможности</a></li>
+                        <li><a href="/pricing" class="hover:text-white transition">Тарифы</a></li>
+                        <li><a href="/blog" class="text-primary">Блог</a></li>
+                        <li><a href="/about" class="hover:text-white transition">О нас</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Ресурсы</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/faq" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="/contact" class="hover:text-white transition">Контакты</a></li>
+                        <li><a href="/privacy" class="hover:text-white transition">Политика конфиденциальности</a></li>
+                        <li><a href="/terms" class="hover:text-white transition">Условия использования</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Контакты</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-primary"></i>
+                            <span>info@vizitto.ru</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-headset mt-1 mr-3 text-primary"></i>
+                            <span>Техническая поддержка: 8 (800) 765-43-21</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                            <span>г. Грозный, ул. Маяковского, 14</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p>&copy; 2023 Vizitto. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Newsletter form
+        const newsletterForm = document.querySelector('.bg-gray-50.rounded-xl.p-6 form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
+                
+                if (emailInput.value) {
+                    alert('Спасибо за подписку! Мы отправили вам письмо с подтверждением.');
+                    emailInput.value = '';
+                } else {
+                    alert('Пожалуйста, введите ваш email');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
