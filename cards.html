@@ -299,13 +299,6 @@
                     <!-- Pagination -->
                     <div class="mt-12 flex justify-center" x-show="filteredListings.length > 0">
                         <nav class="flex space-x-2">
-                            <button 
-                                class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-medium hover:bg-gray-200 transition"
-                                :disabled="currentPage === 1"
-                                @click="currentPage--"
-                            >
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
                             
                             <div class="flex justify-center gap-2 mt-6 items-center">
 
@@ -341,14 +334,6 @@
                                 </button>
                             </div>
                           
-                            
-                            <button 
-                                class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center font-medium hover:bg-gray-200 transition"
-                                :disabled="currentPage === totalPages"
-                                @click="currentPage++"
-                            >
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
                         </nav>
                     </div>
                 </div>
