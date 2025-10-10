@@ -1,0 +1,3052 @@
+[
+    {
+        "id": "01",
+        "title": "Микрофинансы кредитные организации 48",
+        "category": "Финансы и страхование",
+        "subcategory": "Микрофинансы и кредитные организации",
+        "region": "North Ossetia",
+        "subregion": "Beslan",
+        "address": "ул. Центральная, д.14",
+        "phone": "+7 928 965 58 30",
+        "website": "https://микрoфинaнсыкре1.ru",
+        "images": [
+            "assets/images/cards/1/1.jpg"
+        ],
+        "rating": 4.7,
+        "reviews_count": 667,
+        "tags": [
+            "parking",
+            "cashback",
+            "микрофинансы",
+            "north ossetia",
+            "delivery",
+            "kids area"
+        ],
+        "services": [
+            "delivery",
+            "cashback",
+            "parking",
+            "kids area"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Beslan для посещения. Категория: Финансы и страхование.",
+        "updated_at": "2025-04-20"
+    },
+    {
+        "id": "02",
+        "title": "Сладости кондитерские 59",
+        "category": "Еда и напитки",
+        "subcategory": "Сладости и кондитерские",
+        "region": "North Ossetia",
+        "subregion": "Beslan",
+        "address": "ул. Центральная, д.100",
+        "phone": "+7 963 470 30 69",
+        "website": "https://слaдoстикoндите2.ru",
+        "images": [
+            "assets/images/cards/2/1.jpg"
+        ],
+        "rating": 3.8,
+        "reviews_count": 739,
+        "tags": [
+            "сладости",
+            "wifi",
+            "north ossetia"
+        ],
+        "services": [
+            "wifi"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Beslan для посещения. Категория: Еда и напитки.",
+        "updated_at": "2025-05-13"
+    },
+    {
+        "id": "03",
+        "title": "Религиозные организации 26",
+        "category": "Другое / Местные сервисы",
+        "subcategory": "Религиозные организации",
+        "region": "Ingushetia",
+        "subregion": "Magas",
+        "address": "ул. Центральная, д.86",
+        "phone": "+7 988 361 22 84",
+        "website": "https://религиoзныеoргa3.ru",
+        "images": [
+            "assets/images/cards/3/1.jpg"
+        ],
+        "rating": 4.1,
+        "reviews_count": 803,
+        "tags": [
+            "ingushetia",
+            "24/7",
+            "wifi",
+            "outdoor seating",
+            "религиозные",
+            "delivery"
+        ],
+        "services": [
+            "24/7",
+            "delivery",
+            "wifi",
+            "outdoor seating"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Magas для посещения. Категория: Другое / Местные сервисы.",
+        "updated_at": "2025-07-17"
+    },
+    {
+        "id": "04",
+        "title": "Волонтерские НКО 79",
+        "category": "Другое / Местные сервисы",
+        "subcategory": "Волонтерские и НКО",
+        "region": "Dagestan",
+        "subregion": "Derbent",
+        "address": "ул. Центральная, д.5",
+        "phone": "+7 928 300 23 35",
+        "website": "https://вoлoнтерскиенкo4.ru",
+        "images": [
+            "assets/images/cards/4/1.jpg"
+        ],
+        "rating": 3.1,
+        "reviews_count": 438,
+        "tags": [
+            "волонтерские",
+            "cashback",
+            "delivery",
+            "dagestan",
+            "kids area",
+            "booking"
+        ],
+        "services": [
+            "delivery",
+            "kids area",
+            "booking",
+            "cashback"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Derbent для посещения. Категория: Другое / Местные сервисы.",
+        "updated_at": "2025-08-09"
+    },
+    {
+        "id": "05",
+        "title": "Ремонт техники  электроники 63",
+        "category": "Услуги",
+        "subcategory": "Ремонт техники / электроники",
+        "region": "Ingushetia",
+        "subregion": "Magas",
+        "address": "ул. Центральная, д.106",
+        "phone": "+7 988 537 20 93",
+        "website": "https://ремoнттехникиэл5.ru",
+        "images": [
+            "assets/images/cards/5/1.jpg"
+        ],
+        "rating": 4.9,
+        "reviews_count": 338,
+        "tags": [
+            "ремонт",
+            "ingushetia",
+            "outdoor seating"
+        ],
+        "services": [
+            "outdoor seating"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Magas для посещения. Категория: Услуги.",
+        "updated_at": "2025-07-15"
+    },
+    {
+        "id": "06",
+        "title": "Репетиторы 5",
+        "category": "Образование и наука",
+        "subcategory": "Репетиторы",
+        "region": "North Ossetia",
+        "subregion": "Mozdok",
+        "address": "ул. Центральная, д.146",
+        "phone": "+7 963 749 60 74",
+        "website": "https://репетитoры56.ru",
+        "images": [
+            "assets/images/cards/6/1.jpg"
+        ],
+        "rating": 3.1,
+        "reviews_count": 688,
+        "tags": [
+            "parking",
+            "репетиторы",
+            "north ossetia",
+            "kids area",
+            "booking"
+        ],
+        "services": [
+            "parking",
+            "kids area",
+            "booking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Mozdok для посещения. Категория: Образование и наука.",
+        "updated_at": "2025-09-07"
+    },
+    {
+        "id": "07",
+        "title": "Обувь 52",
+        "category": "Товары и розница",
+        "subcategory": "Обувь",
+        "region": "Ingushetia",
+        "subregion": "Magas",
+        "address": "ул. Центральная, д.116",
+        "phone": "+7 938 949 48 28",
+        "website": "https://oбувь527.ru",
+        "images": [
+            "assets/images/cards/7/1.jpg"
+        ],
+        "rating": 4.3,
+        "reviews_count": 619,
+        "tags": [
+            "ingushetia",
+            "обувь",
+            "wifi",
+            "delivery",
+            "kids area",
+            "booking"
+        ],
+        "services": [
+            "kids area",
+            "delivery",
+            "booking",
+            "wifi"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Magas для посещения. Категория: Товары и розница.",
+        "updated_at": "2025-09-27"
+    },
+    {
+        "id": "08",
+        "title": "Публичные учреждения (музеи, библиотеки, МФЦ) 43",
+        "category": "Другое / Местные сервисы",
+        "subcategory": "Публичные учреждения (музеи, библиотеки, МФЦ)",
+        "region": "Chechnya",
+        "subregion": "Argun",
+        "address": "ул. Центральная, д.150",
+        "phone": "+7 938 527 12 26",
+        "website": "https://публичныеучрежд8.ru",
+        "images": [
+            "assets/images/cards/8/1.jpg"
+        ],
+        "rating": 3.9,
+        "reviews_count": 1129,
+        "tags": [
+            "публичные",
+            "cashback",
+            "24/7",
+            "kids area",
+            "booking",
+            "chechnya"
+        ],
+        "services": [
+            "cashback",
+            "kids area",
+            "24/7",
+            "booking"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Argun для посещения. Категория: Другое / Местные сервисы.",
+        "updated_at": "2025-04-27"
+    },
+    {
+        "id": "09",
+        "title": "Гостиница Юг",
+        "category": "Туризм и путешествия",
+        "subcategory": "Отели и гостиницы",
+        "region": "Ingushetia",
+        "subregion": "Dzheyrakh",
+        "address": "ул. Центральная, д.73",
+        "phone": "+7 928 251 31 24",
+        "website": "https://гoстиницaюг9.ru",
+        "images": [
+            "assets/images/cards/9/1.jpg"
+        ],
+        "rating": 4.2,
+        "reviews_count": 75,
+        "tags": [
+            "ingushetia",
+            "отели",
+            "outdoor seating",
+            "delivery",
+            "booking"
+        ],
+        "services": [
+            "delivery",
+            "outdoor seating",
+            "booking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Dzheyrakh для посещения. Категория: Туризм и путешествия.",
+        "updated_at": "2025-08-18"
+    },
+    {
+        "id": "10",
+        "title": "Спортзалы  фитнес-клубы 31",
+        "category": "Развлечения и досуг",
+        "subcategory": "Спортзалы / фитнес-клубы",
+        "region": "Chechnya",
+        "subregion": "Gudermes",
+        "address": "ул. Центральная, д.42",
+        "phone": "+7 928 703 88 59",
+        "website": "https://спoртзaлыфитнес10.ru",
+        "images": [
+            "assets/images/cards/10/1.jpg"
+        ],
+        "rating": 4.1,
+        "reviews_count": 667,
+        "tags": [
+            "спортзалы",
+            "wifi",
+            "outdoor seating",
+            "booking",
+            "chechnya"
+        ],
+        "services": [
+            "wifi",
+            "outdoor seating",
+            "booking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Gudermes для посещения. Категория: Развлечения и досуг.",
+        "updated_at": "2025-08-08"
+    },
+    {
+        "id": "11",
+        "title": "Волонтерские НКО 25",
+        "category": "Другое / Местные сервисы",
+        "subcategory": "Волонтерские и НКО",
+        "region": "Dagestan",
+        "subregion": "Kaspiysk",
+        "address": "ул. Центральная, д.84",
+        "phone": "+7 938 293 33 95",
+        "website": "https://вoлoнтерскиенкo11.ru",
+        "images": [
+            "assets/images/cards/11/1.jpg"
+        ],
+        "rating": 3.9,
+        "reviews_count": 888,
+        "tags": [
+            "волонтерские",
+            "cashback",
+            "outdoor seating",
+            "dagestan",
+            "booking"
+        ],
+        "services": [
+            "cashback",
+            "outdoor seating",
+            "booking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Kaspiysk для посещения. Категория: Другое / Местные сервисы.",
+        "updated_at": "2025-05-12"
+    },
+    {
+        "id": "12",
+        "title": "Ремонт домов квартир 4",
+        "category": "Дом и хозяйство",
+        "subcategory": "Ремонт домов и квартир",
+        "region": "Ingushetia",
+        "subregion": "Karabulak",
+        "address": "ул. Центральная, д.54",
+        "phone": "+7 988 784 23 78",
+        "website": "https://ремoнтдoмoвквaр12.ru",
+        "images": [
+            "assets/images/cards/12/1.jpg"
+        ],
+        "rating": 4.0,
+        "reviews_count": 428,
+        "tags": [
+            "parking",
+            "ingushetia",
+            "ремонт"
+        ],
+        "services": [
+            "parking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Karabulak для посещения. Категория: Дом и хозяйство.",
+        "updated_at": "2025-08-02"
+    },
+    {
+        "id": "13",
+        "title": "Мебельнтерьер 68",
+        "category": "Товары и розница",
+        "subcategory": "Мебель и интерьер",
+        "region": "Dagestan",
+        "subregion": "Derbent",
+        "address": "ул. Центральная, д.39",
+        "phone": "+7 963 738 13 77",
+        "website": "https://мебельнтерьер6813.ru",
+        "images": [
+            "assets/images/cards/13/1.jpg"
+        ],
+        "rating": 3.6,
+        "reviews_count": 621,
+        "tags": [
+            "parking",
+            "мебель",
+            "cashback",
+            "wifi",
+            "dagestan",
+            "kids area"
+        ],
+        "services": [
+            "parking",
+            "kids area",
+            "wifi",
+            "cashback"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Derbent для посещения. Категория: Товары и розница.",
+        "updated_at": "2025-08-02"
+    },
+    {
+        "id": "14",
+        "title": "Публичные учреждения (музеи, библиотеки, МФЦ) 14",
+        "category": "Другое / Местные сервисы",
+        "subcategory": "Публичные учреждения (музеи, библиотеки, МФЦ)",
+        "region": "Dagestan",
+        "subregion": "Derbent",
+        "address": "ул. Центральная, д.40",
+        "phone": "+7 938 921 53 97",
+        "website": "https://публичныеучрежд14.ru",
+        "images": [
+            "assets/images/cards/14/1.jpg"
+        ],
+        "rating": 4.9,
+        "reviews_count": 967,
+        "tags": [
+            "публичные",
+            "cashback",
+            "24/7",
+            "outdoor seating",
+            "dagestan",
+            "booking"
+        ],
+        "services": [
+            "outdoor seating",
+            "cashback",
+            "24/7",
+            "booking"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Derbent для посещения. Категория: Другое / Местные сервисы.",
+        "updated_at": "2025-07-26"
+    },
+    {
+        "id": "15",
+        "title": "Турагентства 17",
+        "category": "Туризм и путешествия",
+        "subcategory": "Турагентства",
+        "region": "Ingushetia",
+        "subregion": "Magas",
+        "address": "ул. Центральная, д.31",
+        "phone": "+7 963 312 46 45",
+        "website": "https://турaгентствa1715.ru",
+        "images": [
+            "assets/images/cards/15/1.jpg"
+        ],
+        "rating": 3.2,
+        "reviews_count": 1428,
+        "tags": [
+            "24/7",
+            "турагентства",
+            "ingushetia"
+        ],
+        "services": [
+            "24/7"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Magas для посещения. Категория: Туризм и путешествия.",
+        "updated_at": "2025-07-17"
+    },
+    {
+        "id": "16",
+        "title": "Grozny Coffee",
+        "category": "Еда и напитки",
+        "subcategory": "Кафе и кофейни",
+        "region": "Chechnya",
+        "subregion": "Shali",
+        "address": "ул. Центральная, д.145",
+        "phone": "+7 928 336 75 37",
+        "website": "https://groznycoffee16.ru",
+        "images": [
+            "assets/images/cards/16/1.jpg"
+        ],
+        "rating": 3.1,
+        "reviews_count": 71,
+        "tags": [
+            "кафе",
+            "kids area",
+            "chechnya"
+        ],
+        "services": [
+            "kids area"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Shali для посещения. Категория: Еда и напитки.",
+        "updated_at": "2025-06-01"
+    },
+    {
+        "id": "17",
+        "title": "Страховые компании 66",
+        "category": "Финансы и страхование",
+        "subcategory": "Страховые компании",
+        "region": "North Ossetia",
+        "subregion": "Vladikavkaz",
+        "address": "ул. Центральная, д.64",
+        "phone": "+7 928 266 83 60",
+        "website": "https://стрaхoвыекoмпaн17.ru",
+        "images": [
+            "assets/images/cards/17/1.jpg"
+        ],
+        "rating": 3.4,
+        "reviews_count": 329,
+        "tags": [
+            "kids area",
+            "north ossetia",
+            "страховые"
+        ],
+        "services": [
+            "kids area"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Vladikavkaz для посещения. Категория: Финансы и страхование.",
+        "updated_at": "2025-09-30"
+    },
+    {
+        "id": "18",
+        "title": "Гостевые дома апартаменты 86",
+        "category": "Туризм и путешествия",
+        "subcategory": "Гостевые дома и апартаменты",
+        "region": "Chechnya",
+        "subregion": "Argun",
+        "address": "ул. Центральная, д.88",
+        "phone": "+7 938 319 78 97",
+        "website": "https://гoстевыедoмaaпa18.ru",
+        "images": [
+            "assets/images/cards/18/1.jpg"
+        ],
+        "rating": 4.3,
+        "reviews_count": 406,
+        "tags": [
+            "chechnya",
+            "kids area",
+            "booking",
+            "гостевые"
+        ],
+        "services": [
+            "kids area",
+            "booking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Argun для посещения. Категория: Туризм и путешествия.",
+        "updated_at": "2025-04-29"
+    },
+    {
+        "id": "19",
+        "title": "Авто-Мастер",
+        "category": "Услуги",
+        "subcategory": "Автосервис и СТО",
+        "region": "Chechnya",
+        "subregion": "Grozny",
+        "address": "ул. Центральная, д.81",
+        "phone": "+7 938 833 80 80",
+        "website": "https://aвтoмaстер19.ru",
+        "images": [
+            "assets/images/cards/19/1.jpg"
+        ],
+        "rating": 3.9,
+        "reviews_count": 1357,
+        "tags": [
+            "24/7",
+            "outdoor seating",
+            "автосервис",
+            "kids area",
+            "booking",
+            "chechnya"
+        ],
+        "services": [
+            "outdoor seating",
+            "24/7",
+            "kids area",
+            "booking"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Grozny для посещения. Категория: Услуги.",
+        "updated_at": "2025-07-30"
+    },
+    {
+        "id": "20",
+        "title": "Страховые компании 13",
+        "category": "Финансы и страхование",
+        "subcategory": "Страховые компании",
+        "region": "Ingushetia",
+        "subregion": "Dzheyrakh",
+        "address": "ул. Центральная, д.42",
+        "phone": "+7 963 103 83 77",
+        "website": "https://стрaхoвыекoмпaн20.ru",
+        "images": [
+            "assets/images/cards/20/1.jpg"
+        ],
+        "rating": 4.9,
+        "reviews_count": 59,
+        "tags": [
+            "parking",
+            "ingushetia",
+            "страховые"
+        ],
+        "services": [
+            "parking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Dzheyrakh для посещения. Категория: Финансы и страхование.",
+        "updated_at": "2025-06-25"
+    },
+    {
+        "id": "21",
+        "title": "Волонтерские НКО 49",
+        "category": "Другое / Местные сервисы",
+        "subcategory": "Волонтерские и НКО",
+        "region": "Dagestan",
+        "subregion": "Kaspiysk",
+        "address": "ул. Центральная, д.52",
+        "phone": "+7 928 259 43 30",
+        "website": "https://вoлoнтерскиенкo21.ru",
+        "images": [
+            "assets/images/cards/21/1.jpg"
+        ],
+        "rating": 3.9,
+        "reviews_count": 18,
+        "tags": [
+            "dagestan",
+            "волонтерские",
+            "kids area",
+            "booking"
+        ],
+        "services": [
+            "kids area",
+            "booking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Kaspiysk для посещения. Категория: Другое / Местные сервисы.",
+        "updated_at": "2025-09-26"
+    },
+    {
+        "id": "22",
+        "title": "IT веб-разработка 9",
+        "category": "Услуги",
+        "subcategory": "IT и веб-разработка",
+        "region": "Chechnya",
+        "subregion": "Gudermes",
+        "address": "ул. Центральная, д.71",
+        "phone": "+7 963 452 30 30",
+        "website": "https://itвебрaзрaбoткa22.ru",
+        "images": [
+            "assets/images/cards/22/1.jpg"
+        ],
+        "rating": 4.6,
+        "reviews_count": 502,
+        "tags": [
+            "it",
+            "booking",
+            "wifi",
+            "chechnya"
+        ],
+        "services": [
+            "booking",
+            "wifi"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Gudermes для посещения. Категория: Услуги.",
+        "updated_at": "2025-08-01"
+    },
+    {
+        "id": "23",
+        "title": "Капитал Банк",
+        "category": "Финансы и страхование",
+        "subcategory": "Банки",
+        "region": "Ingushetia",
+        "subregion": "Dzheyrakh",
+        "address": "ул. Центральная, д.11",
+        "phone": "+7 928 170 55 24",
+        "website": "https://кaпитaлбaнк23.ru",
+        "images": [
+            "assets/images/cards/23/1.jpg"
+        ],
+        "rating": 4.7,
+        "reviews_count": 210,
+        "tags": [
+            "parking",
+            "банки",
+            "ingushetia"
+        ],
+        "services": [
+            "parking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Dzheyrakh для посещения. Категория: Финансы и страхование.",
+        "updated_at": "2025-09-11"
+    },
+    {
+        "id": "24",
+        "title": "Сад огород  питомники 72",
+        "category": "Дом и хозяйство",
+        "subcategory": "Сад и огород / питомники",
+        "region": "North Ossetia",
+        "subregion": "Vladikavkaz",
+        "address": "ул. Центральная, д.5",
+        "phone": "+7 988 246 69 99",
+        "website": "https://сaдoгoрoдпитoмн24.ru",
+        "images": [
+            "assets/images/cards/24/1.jpg"
+        ],
+        "rating": 3.1,
+        "reviews_count": 1278,
+        "tags": [
+            "parking",
+            "сад",
+            "wifi",
+            "north ossetia",
+            "kids area",
+            "booking"
+        ],
+        "services": [
+            "wifi",
+            "parking",
+            "booking",
+            "kids area"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Vladikavkaz для посещения. Категория: Дом и хозяйство.",
+        "updated_at": "2025-04-21"
+    },
+    {
+        "id": "25",
+        "title": "Книги канцтовары 96",
+        "category": "Товары и розница",
+        "subcategory": "Книги и канцтовары",
+        "region": "Chechnya",
+        "subregion": "Argun",
+        "address": "ул. Центральная, д.130",
+        "phone": "+7 988 404 22 75",
+        "website": "https://книгикaнцтoвaры25.ru",
+        "images": [
+            "assets/images/cards/25/1.jpg"
+        ],
+        "rating": 4.0,
+        "reviews_count": 70,
+        "tags": [
+            "wifi",
+            "книги",
+            "kids area",
+            "booking",
+            "chechnya"
+        ],
+        "services": [
+            "wifi",
+            "booking",
+            "kids area"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Argun для посещения. Категория: Товары и розница.",
+        "updated_at": "2025-08-26"
+    },
+    {
+        "id": "26",
+        "title": "Сад огород  питомники 99",
+        "category": "Дом и хозяйство",
+        "subcategory": "Сад и огород / питомники",
+        "region": "Ingushetia",
+        "subregion": "Magas",
+        "address": "ул. Центральная, д.44",
+        "phone": "+7 963 294 23 29",
+        "website": "https://сaдoгoрoдпитoмн26.ru",
+        "images": [
+            "assets/images/cards/26/1.jpg"
+        ],
+        "rating": 4.8,
+        "reviews_count": 463,
+        "tags": [
+            "ingushetia",
+            "сад",
+            "cashback",
+            "24/7",
+            "wifi",
+            "delivery"
+        ],
+        "services": [
+            "24/7",
+            "delivery",
+            "cashback",
+            "wifi"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Magas для посещения. Категория: Дом и хозяйство.",
+        "updated_at": "2025-06-06"
+    },
+    {
+        "id": "27",
+        "title": "Волонтерские НКО 64",
+        "category": "Другое / Местные сервисы",
+        "subcategory": "Волонтерские и НКО",
+        "region": "Dagestan",
+        "subregion": "Kaspiysk",
+        "address": "ул. Центральная, д.58",
+        "phone": "+7 963 869 34 21",
+        "website": "https://вoлoнтерскиенкo27.ru",
+        "images": [
+            "assets/images/cards/27/1.jpg"
+        ],
+        "rating": 3.6,
+        "reviews_count": 1108,
+        "tags": [
+            "волонтерские",
+            "24/7",
+            "wifi",
+            "outdoor seating",
+            "dagestan",
+            "booking"
+        ],
+        "services": [
+            "outdoor seating",
+            "24/7",
+            "booking",
+            "wifi"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Kaspiysk для посещения. Категория: Другое / Местные сервисы.",
+        "updated_at": "2025-09-09"
+    },
+    {
+        "id": "28",
+        "title": "Бухгалтерия финансы 66",
+        "category": "Услуги",
+        "subcategory": "Бухгалтерия и финансы",
+        "region": "Dagestan",
+        "subregion": "Derbent",
+        "address": "ул. Центральная, д.64",
+        "phone": "+7 988 137 95 70",
+        "website": "https://бухгaлтерияфинa28.ru",
+        "images": [
+            "assets/images/cards/28/1.jpg"
+        ],
+        "rating": 4.7,
+        "reviews_count": 177,
+        "tags": [
+            "бухгалтерия",
+            "cashback",
+            "24/7",
+            "wifi",
+            "dagestan"
+        ],
+        "services": [
+            "cashback",
+            "wifi",
+            "24/7"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Derbent для посещения. Категория: Услуги.",
+        "updated_at": "2025-05-25"
+    },
+    {
+        "id": "29",
+        "title": "Курьерские транспортные компании 89",
+        "category": "Транспорт и логистика",
+        "subcategory": "Курьерские и транспортные компании",
+        "region": "Chechnya",
+        "subregion": "Shali",
+        "address": "ул. Центральная, д.89",
+        "phone": "+7 988 240 89 90",
+        "website": "https://курьерскиетрaнс29.ru",
+        "images": [
+            "assets/images/cards/29/1.jpg"
+        ],
+        "rating": 3.2,
+        "reviews_count": 1007,
+        "tags": [
+            "курьерские",
+            "chechnya",
+            "cashback"
+        ],
+        "services": [
+            "cashback"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Shali для посещения. Категория: Транспорт и логистика.",
+        "updated_at": "2025-05-31"
+    },
+    {
+        "id": "30",
+        "title": "Волонтерские НКО 33",
+        "category": "Другое / Местные сервисы",
+        "subcategory": "Волонтерские и НКО",
+        "region": "Chechnya",
+        "subregion": "Grozny",
+        "address": "ул. Центральная, д.112",
+        "phone": "+7 988 265 56 92",
+        "website": "https://вoлoнтерскиенкo30.ru",
+        "images": [
+            "assets/images/cards/30/1.jpg"
+        ],
+        "rating": 3.5,
+        "reviews_count": 53,
+        "tags": [
+            "parking",
+            "волонтерские",
+            "chechnya",
+            "outdoor seating"
+        ],
+        "services": [
+            "outdoor seating",
+            "parking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Grozny для посещения. Категория: Другое / Местные сервисы.",
+        "updated_at": "2025-09-13"
+    },
+    {
+        "id": "31",
+        "title": "Гостевые дома апартаменты 12",
+        "category": "Туризм и путешествия",
+        "subcategory": "Гостевые дома и апартаменты",
+        "region": "Ingushetia",
+        "subregion": "Nazran",
+        "address": "ул. Центральная, д.47",
+        "phone": "+7 988 551 19 33",
+        "website": "https://гoстевыедoмaaпa31.ru",
+        "images": [
+            "assets/images/cards/31/1.jpg"
+        ],
+        "rating": 4.3,
+        "reviews_count": 1336,
+        "tags": [
+            "ingushetia",
+            "parking",
+            "outdoor seating",
+            "delivery",
+            "booking",
+            "гостевые"
+        ],
+        "services": [
+            "delivery",
+            "booking",
+            "parking",
+            "outdoor seating"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Nazran для посещения. Категория: Туризм и путешествия.",
+        "updated_at": "2025-06-05"
+    },
+    {
+        "id": "32",
+        "title": "Ремонт домов квартир 72",
+        "category": "Дом и хозяйство",
+        "subcategory": "Ремонт домов и квартир",
+        "region": "Ingushetia",
+        "subregion": "Magas",
+        "address": "ул. Центральная, д.95",
+        "phone": "+7 938 446 38 49",
+        "website": "https://ремoнтдoмoвквaр32.ru",
+        "images": [
+            "assets/images/cards/32/1.jpg"
+        ],
+        "rating": 3.6,
+        "reviews_count": 196,
+        "tags": [
+            "kids area",
+            "booking",
+            "ingushetia",
+            "ремонт"
+        ],
+        "services": [
+            "kids area",
+            "booking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Magas для посещения. Категория: Дом и хозяйство.",
+        "updated_at": "2025-08-23"
+    },
+    {
+        "id": "33",
+        "title": "Микрофинансы кредитные организации 75",
+        "category": "Финансы и страхование",
+        "subcategory": "Микрофинансы и кредитные организации",
+        "region": "North Ossetia",
+        "subregion": "Beslan",
+        "address": "ул. Центральная, д.118",
+        "phone": "+7 988 734 76 63",
+        "website": "https://микрoфинaнсыкре33.ru",
+        "images": [
+            "assets/images/cards/33/1.jpg"
+        ],
+        "rating": 3.5,
+        "reviews_count": 302,
+        "tags": [
+            "kids area",
+            "north ossetia",
+            "микрофинансы"
+        ],
+        "services": [
+            "kids area"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Beslan для посещения. Категория: Финансы и страхование.",
+        "updated_at": "2025-08-04"
+    },
+    {
+        "id": "34",
+        "title": "Мебель на заказ  дизайннтерьера 63",
+        "category": "Жильё и недвижимость",
+        "subcategory": "Мебель на заказ / дизайн интерьера",
+        "region": "Dagestan",
+        "subregion": "Derbent",
+        "address": "ул. Центральная, д.146",
+        "phone": "+7 963 467 62 11",
+        "website": "https://мебельнaзaкaзди34.ru",
+        "images": [
+            "assets/images/cards/34/1.jpg"
+        ],
+        "rating": 4.3,
+        "reviews_count": 1375,
+        "tags": [
+            "parking",
+            "мебель",
+            "24/7",
+            "outdoor seating",
+            "dagestan"
+        ],
+        "services": [
+            "outdoor seating",
+            "24/7",
+            "parking"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Derbent для посещения. Категория: Жильё и недвижимость.",
+        "updated_at": "2025-09-18"
+    },
+    {
+        "id": "35",
+        "title": "Фарма-Плюс",
+        "category": "Здоровье и красота",
+        "subcategory": "Аптеки",
+        "region": "Ingushetia",
+        "subregion": "Nazran",
+        "address": "ул. Центральная, д.87",
+        "phone": "+7 988 767 60 23",
+        "website": "https://фaрмaплюс35.ru",
+        "images": [
+            "assets/images/cards/35/1.jpg"
+        ],
+        "rating": 3.6,
+        "reviews_count": 1027,
+        "tags": [
+            "аптеки",
+            "booking",
+            "ingushetia"
+        ],
+        "services": [
+            "booking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Nazran для посещения. Категория: Здоровье и красота.",
+        "updated_at": "2025-07-12"
+    },
+    {
+        "id": "36",
+        "title": "Страховые компании 64",
+        "category": "Финансы и страхование",
+        "subcategory": "Страховые компании",
+        "region": "North Ossetia",
+        "subregion": "Vladikavkaz",
+        "address": "ул. Центральная, д.95",
+        "phone": "+7 988 518 73 19",
+        "website": "https://стрaхoвыекoмпaн36.ru",
+        "images": [
+            "assets/images/cards/36/1.jpg"
+        ],
+        "rating": 4.1,
+        "reviews_count": 334,
+        "tags": [
+            "страховые",
+            "north ossetia",
+            "cashback"
+        ],
+        "services": [
+            "cashback"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Vladikavkaz для посещения. Категория: Финансы и страхование.",
+        "updated_at": "2025-05-10"
+    },
+    {
+        "id": "37",
+        "title": "Магазины одежды 4",
+        "category": "Товары и розница",
+        "subcategory": "Магазины одежды",
+        "region": "North Ossetia",
+        "subregion": "Vladikavkaz",
+        "address": "ул. Центральная, д.138",
+        "phone": "+7 938 326 99 76",
+        "website": "https://мaгaзиныoдежды437.ru",
+        "images": [
+            "assets/images/cards/37/1.jpg"
+        ],
+        "rating": 4.4,
+        "reviews_count": 424,
+        "tags": [
+            "north ossetia",
+            "24/7",
+            "магазины",
+            "outdoor seating"
+        ],
+        "services": [
+            "outdoor seating",
+            "24/7"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Vladikavkaz для посещения. Категория: Товары и розница.",
+        "updated_at": "2025-07-17"
+    },
+    {
+        "id": "38",
+        "title": "Обувь 45",
+        "category": "Товары и розница",
+        "subcategory": "Обувь",
+        "region": "Chechnya",
+        "subregion": "Shali",
+        "address": "ул. Центральная, д.95",
+        "phone": "+7 928 176 19 34",
+        "website": "https://oбувь4538.ru",
+        "images": [
+            "assets/images/cards/38/1.jpg"
+        ],
+        "rating": 4.1,
+        "reviews_count": 1056,
+        "tags": [
+            "обувь",
+            "chechnya",
+            "delivery"
+        ],
+        "services": [
+            "delivery"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Shali для посещения. Категория: Товары и розница.",
+        "updated_at": "2025-04-27"
+    },
+    {
+        "id": "39",
+        "title": "Электроника гаджеты 7",
+        "category": "Товары и розница",
+        "subcategory": "Электроника и гаджеты",
+        "region": "Chechnya",
+        "subregion": "Grozny",
+        "address": "ул. Центральная, д.94",
+        "phone": "+7 988 836 28 26",
+        "website": "https://электрoникaгaдж39.ru",
+        "images": [
+            "assets/images/cards/39/1.jpg"
+        ],
+        "rating": 4.7,
+        "reviews_count": 328,
+        "tags": [
+            "электроника",
+            "chechnya",
+            "wifi",
+            "cashback"
+        ],
+        "services": [
+            "wifi",
+            "cashback"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Grozny для посещения. Категория: Товары и розница.",
+        "updated_at": "2025-09-07"
+    },
+    {
+        "id": "40",
+        "title": "Кинотеатры 34",
+        "category": "Развлечения и досуг",
+        "subcategory": "Кинотеатры",
+        "region": "Dagestan",
+        "subregion": "Derbent",
+        "address": "ул. Центральная, д.31",
+        "phone": "+7 938 912 39 94",
+        "website": "https://кинoтеaтры3440.ru",
+        "images": [
+            "assets/images/cards/40/1.jpg"
+        ],
+        "rating": 4.9,
+        "reviews_count": 128,
+        "tags": [
+            "dagestan",
+            "кинотеатры",
+            "kids area"
+        ],
+        "services": [
+            "kids area"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Derbent для посещения. Категория: Развлечения и досуг.",
+        "updated_at": "2025-05-29"
+    },
+    {
+        "id": "41",
+        "title": "Хозяйственные магазины 41",
+        "category": "Дом и хозяйство",
+        "subcategory": "Хозяйственные магазины",
+        "region": "North Ossetia",
+        "subregion": "Alagir",
+        "address": "ул. Центральная, д.44",
+        "phone": "+7 938 567 82 61",
+        "website": "https://хoзяйственныемa41.ru",
+        "images": [
+            "assets/images/cards/41/1.jpg"
+        ],
+        "rating": 4.6,
+        "reviews_count": 1430,
+        "tags": [
+            "хозяйственные",
+            "north ossetia",
+            "cashback"
+        ],
+        "services": [
+            "cashback"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Alagir для посещения. Категория: Дом и хозяйство.",
+        "updated_at": "2025-09-01"
+    },
+    {
+        "id": "42",
+        "title": "Восток Финанс",
+        "category": "Финансы и страхование",
+        "subcategory": "Банки",
+        "region": "Chechnya",
+        "subregion": "Argun",
+        "address": "ул. Центральная, д.102",
+        "phone": "+7 988 852 51 54",
+        "website": "https://вoстoкфинaнс42.ru",
+        "images": [
+            "assets/images/cards/42/1.jpg"
+        ],
+        "rating": 3.0,
+        "reviews_count": 1336,
+        "tags": [
+            "банки",
+            "wifi",
+            "chechnya"
+        ],
+        "services": [
+            "wifi"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Argun для посещения. Категория: Финансы и страхование.",
+        "updated_at": "2025-08-03"
+    },
+    {
+        "id": "43",
+        "title": "Клубы вечеринки 46",
+        "category": "Развлечения и досуг",
+        "subcategory": "Клубы и вечеринки",
+        "region": "North Ossetia",
+        "subregion": "Beslan",
+        "address": "ул. Центральная, д.99",
+        "phone": "+7 938 883 22 21",
+        "website": "https://клубывечеринки443.ru",
+        "images": [
+            "assets/images/cards/43/1.jpg"
+        ],
+        "rating": 4.2,
+        "reviews_count": 547,
+        "tags": [
+            "клубы",
+            "outdoor seating",
+            "24/7",
+            "north ossetia",
+            "wifi"
+        ],
+        "services": [
+            "wifi",
+            "24/7",
+            "outdoor seating"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Beslan для посещения. Категория: Развлечения и досуг.",
+        "updated_at": "2025-09-18"
+    },
+    {
+        "id": "44",
+        "title": "Клубы вечеринки 74",
+        "category": "Развлечения и досуг",
+        "subcategory": "Клубы и вечеринки",
+        "region": "Ingushetia",
+        "subregion": "Karabulak",
+        "address": "ул. Центральная, д.26",
+        "phone": "+7 988 419 90 69",
+        "website": "https://клубывечеринки744.ru",
+        "images": [
+            "assets/images/cards/44/1.jpg"
+        ],
+        "rating": 4.0,
+        "reviews_count": 1226,
+        "tags": [
+            "ingushetia",
+            "клубы",
+            "wifi",
+            "outdoor seating"
+        ],
+        "services": [
+            "outdoor seating",
+            "wifi"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Karabulak для посещения. Категория: Развлечения и досуг.",
+        "updated_at": "2025-08-26"
+    },
+    {
+        "id": "45",
+        "title": "Школы детсады 97",
+        "category": "Образование и наука",
+        "subcategory": "Школы и детсады",
+        "region": "Chechnya",
+        "subregion": "Grozny",
+        "address": "ул. Центральная, д.59",
+        "phone": "+7 988 604 32 12",
+        "website": "https://шкoлыдетсaды9745.ru",
+        "images": [
+            "assets/images/cards/45/1.jpg"
+        ],
+        "rating": 3.4,
+        "reviews_count": 49,
+        "tags": [
+            "школы",
+            "outdoor seating",
+            "chechnya",
+            "delivery"
+        ],
+        "services": [
+            "delivery",
+            "outdoor seating"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Grozny для посещения. Категория: Образование и наука.",
+        "updated_at": "2025-07-20"
+    },
+    {
+        "id": "46",
+        "title": "Волонтерские НКО 51",
+        "category": "Другое / Местные сервисы",
+        "subcategory": "Волонтерские и НКО",
+        "region": "Chechnya",
+        "subregion": "Argun",
+        "address": "ул. Центральная, д.19",
+        "phone": "+7 988 970 28 12",
+        "website": "https://вoлoнтерскиенкo46.ru",
+        "images": [
+            "assets/images/cards/46/1.jpg"
+        ],
+        "rating": 4.6,
+        "reviews_count": 594,
+        "tags": [
+            "delivery",
+            "волонтерские",
+            "chechnya",
+            "cashback"
+        ],
+        "services": [
+            "cashback",
+            "delivery"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Argun для посещения. Категория: Другое / Местные сервисы.",
+        "updated_at": "2025-05-18"
+    },
+    {
+        "id": "47",
+        "title": "Автошколы 59",
+        "category": "Транспорт и логистика",
+        "subcategory": "Автошколы",
+        "region": "North Ossetia",
+        "subregion": "Beslan",
+        "address": "ул. Центральная, д.14",
+        "phone": "+7 963 581 98 63",
+        "website": "https://aвтoшкoлы5947.ru",
+        "images": [
+            "assets/images/cards/47/1.jpg"
+        ],
+        "rating": 5.0,
+        "reviews_count": 1011,
+        "tags": [
+            "автошколы",
+            "outdoor seating",
+            "wifi",
+            "delivery",
+            "north ossetia",
+            "booking"
+        ],
+        "services": [
+            "booking",
+            "outdoor seating",
+            "wifi",
+            "delivery"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Beslan для посещения. Категория: Транспорт и логистика.",
+        "updated_at": "2025-04-28"
+    },
+    {
+        "id": "48",
+        "title": "Пекарни 18",
+        "category": "Еда и напитки",
+        "subcategory": "Пекарни",
+        "region": "Chechnya",
+        "subregion": "Argun",
+        "address": "ул. Центральная, д.67",
+        "phone": "+7 988 635 64 35",
+        "website": "https://пекaрни1848.ru",
+        "images": [
+            "assets/images/cards/48/1.jpg"
+        ],
+        "rating": 3.7,
+        "reviews_count": 1009,
+        "tags": [
+            "пекарни",
+            "24/7",
+            "wifi",
+            "outdoor seating",
+            "booking",
+            "chechnya"
+        ],
+        "services": [
+            "outdoor seating",
+            "24/7",
+            "booking",
+            "wifi"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Argun для посещения. Категория: Еда и напитки.",
+        "updated_at": "2025-10-09"
+    },
+    {
+        "id": "49",
+        "title": "Пекарни 14",
+        "category": "Еда и напитки",
+        "subcategory": "Пекарни",
+        "region": "North Ossetia",
+        "subregion": "Vladikavkaz",
+        "address": "ул. Центральная, д.85",
+        "phone": "+7 938 993 89 15",
+        "website": "https://пекaрни1449.ru",
+        "images": [
+            "assets/images/cards/49/1.jpg"
+        ],
+        "rating": 3.0,
+        "reviews_count": 601,
+        "tags": [
+            "пекарни",
+            "24/7",
+            "north ossetia",
+            "outdoor seating",
+            "booking"
+        ],
+        "services": [
+            "outdoor seating",
+            "24/7",
+            "booking"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Vladikavkaz для посещения. Категория: Еда и напитки.",
+        "updated_at": "2025-06-04"
+    },
+    {
+        "id": "50",
+        "title": "Школы детсады 12",
+        "category": "Образование и наука",
+        "subcategory": "Школы и детсады",
+        "region": "Chechnya",
+        "subregion": "Shali",
+        "address": "ул. Центральная, д.125",
+        "phone": "+7 938 902 33 95",
+        "website": "https://шкoлыдетсaды1250.ru",
+        "images": [
+            "assets/images/cards/50/1.jpg"
+        ],
+        "rating": 3.5,
+        "reviews_count": 518,
+        "tags": [
+            "школы",
+            "chechnya",
+            "delivery"
+        ],
+        "services": [
+            "delivery"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Shali для посещения. Категория: Образование и наука.",
+        "updated_at": "2025-05-12"
+    },
+    {
+        "id": "51",
+        "title": "Капитал Банк",
+        "category": "Финансы и страхование",
+        "subcategory": "Банки",
+        "region": "Ingushetia",
+        "subregion": "Nazran",
+        "address": "ул. Центральная, д.118",
+        "phone": "+7 928 687 23 62",
+        "website": "https://кaпитaлбaнк51.ru",
+        "images": [
+            "assets/images/cards/51/1.jpg"
+        ],
+        "rating": 4.6,
+        "reviews_count": 957,
+        "tags": [
+            "банки",
+            "parking",
+            "booking",
+            "ingushetia"
+        ],
+        "services": [
+            "booking",
+            "parking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Nazran для посещения. Категория: Финансы и страхование.",
+        "updated_at": "2025-09-25"
+    },
+    {
+        "id": "52",
+        "title": "Репетиторы 53",
+        "category": "Образование и наука",
+        "subcategory": "Репетиторы",
+        "region": "Ingushetia",
+        "subregion": "Karabulak",
+        "address": "ул. Центральная, д.97",
+        "phone": "+7 938 512 54 47",
+        "website": "https://репетитoры5352.ru",
+        "images": [
+            "assets/images/cards/52/1.jpg"
+        ],
+        "rating": 4.6,
+        "reviews_count": 106,
+        "tags": [
+            "ingushetia",
+            "24/7",
+            "репетиторы",
+            "wifi"
+        ],
+        "services": [
+            "24/7",
+            "wifi"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Karabulak для посещения. Категория: Образование и наука.",
+        "updated_at": "2025-08-18"
+    },
+    {
+        "id": "53",
+        "title": "Горный Аул",
+        "category": "Еда и напитки",
+        "subcategory": "Рестораны",
+        "region": "North Ossetia",
+        "subregion": "Beslan",
+        "address": "ул. Центральная, д.3",
+        "phone": "+7 938 611 91 47",
+        "website": "https://гoрныйaул53.ru",
+        "images": [
+            "assets/images/cards/53/1.jpg"
+        ],
+        "rating": 3.4,
+        "reviews_count": 883,
+        "tags": [
+            "рестораны",
+            "parking",
+            "24/7",
+            "north ossetia",
+            "outdoor seating",
+            "booking"
+        ],
+        "services": [
+            "parking",
+            "24/7",
+            "booking",
+            "outdoor seating"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Beslan для посещения. Категория: Еда и напитки.",
+        "updated_at": "2025-04-22"
+    },
+    {
+        "id": "54",
+        "title": "Страховые компании 16",
+        "category": "Финансы и страхование",
+        "subcategory": "Страховые компании",
+        "region": "Ingushetia",
+        "subregion": "Dzheyrakh",
+        "address": "ул. Центральная, д.32",
+        "phone": "+7 988 620 11 40",
+        "website": "https://стрaхoвыекoмпaн54.ru",
+        "images": [
+            "assets/images/cards/54/1.jpg"
+        ],
+        "rating": 4.9,
+        "reviews_count": 662,
+        "tags": [
+            "ingushetia",
+            "parking",
+            "outdoor seating",
+            "24/7",
+            "страховые"
+        ],
+        "services": [
+            "parking",
+            "outdoor seating",
+            "24/7"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Dzheyrakh для посещения. Категория: Финансы и страхование.",
+        "updated_at": "2025-09-09"
+    },
+    {
+        "id": "55",
+        "title": "ВУЗы  колледжи нституты 5",
+        "category": "Образование и наука",
+        "subcategory": "ВУЗы / колледжи / институты",
+        "region": "Dagestan",
+        "subregion": "Derbent",
+        "address": "ул. Центральная, д.97",
+        "phone": "+7 988 377 28 22",
+        "website": "https://вузыкoлледжинст55.ru",
+        "images": [
+            "assets/images/cards/55/1.jpg"
+        ],
+        "rating": 4.7,
+        "reviews_count": 1087,
+        "tags": [
+            "вузы",
+            "cashback",
+            "24/7",
+            "wifi",
+            "dagestan"
+        ],
+        "services": [
+            "wifi",
+            "cashback",
+            "24/7"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Derbent для посещения. Категория: Образование и наука.",
+        "updated_at": "2025-09-27"
+    },
+    {
+        "id": "56",
+        "title": "Волонтерские НКО 32",
+        "category": "Другое / Местные сервисы",
+        "subcategory": "Волонтерские и НКО",
+        "region": "Ingushetia",
+        "subregion": "Karabulak",
+        "address": "ул. Центральная, д.137",
+        "phone": "+7 963 536 64 51",
+        "website": "https://вoлoнтерскиенкo56.ru",
+        "images": [
+            "assets/images/cards/56/1.jpg"
+        ],
+        "rating": 3.0,
+        "reviews_count": 359,
+        "tags": [
+            "волонтерские",
+            "booking",
+            "ingushetia"
+        ],
+        "services": [
+            "booking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Karabulak для посещения. Категория: Другое / Местные сервисы.",
+        "updated_at": "2025-07-15"
+    },
+    {
+        "id": "57",
+        "title": "Аксессуары украшения 89",
+        "category": "Товары и розница",
+        "subcategory": "Аксессуары и украшения",
+        "region": "Chechnya",
+        "subregion": "Argun",
+        "address": "ул. Центральная, д.10",
+        "phone": "+7 928 536 77 60",
+        "website": "https://aксессуaрыукрaш57.ru",
+        "images": [
+            "assets/images/cards/57/1.jpg"
+        ],
+        "rating": 3.9,
+        "reviews_count": 746,
+        "tags": [
+            "parking",
+            "24/7",
+            "wifi",
+            "аксессуары",
+            "booking",
+            "chechnya"
+        ],
+        "services": [
+            "parking",
+            "wifi",
+            "booking",
+            "24/7"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Argun для посещения. Категория: Товары и розница.",
+        "updated_at": "2025-07-19"
+    },
+    {
+        "id": "58",
+        "title": "IT веб-разработка 69",
+        "category": "Услуги",
+        "subcategory": "IT и веб-разработка",
+        "region": "Chechnya",
+        "subregion": "Gudermes",
+        "address": "ул. Центральная, д.28",
+        "phone": "+7 963 847 63 89",
+        "website": "https://itвебрaзрaбoткa58.ru",
+        "images": [
+            "assets/images/cards/58/1.jpg"
+        ],
+        "rating": 4.8,
+        "reviews_count": 804,
+        "tags": [
+            "24/7",
+            "it",
+            "chechnya"
+        ],
+        "services": [
+            "24/7"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Gudermes для посещения. Категория: Услуги.",
+        "updated_at": "2025-05-05"
+    },
+    {
+        "id": "59",
+        "title": "Агентства недвижимости 15",
+        "category": "Жильё и недвижимость",
+        "subcategory": "Агентства недвижимости",
+        "region": "Ingushetia",
+        "subregion": "Dzheyrakh",
+        "address": "ул. Центральная, д.77",
+        "phone": "+7 928 116 27 61",
+        "website": "https://aгентствaнедвиж59.ru",
+        "images": [
+            "assets/images/cards/59/1.jpg"
+        ],
+        "rating": 4.6,
+        "reviews_count": 490,
+        "tags": [
+            "агентства",
+            "kids area",
+            "ingushetia"
+        ],
+        "services": [
+            "kids area"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Dzheyrakh для посещения. Категория: Жильё и недвижимость.",
+        "updated_at": "2025-05-13"
+    },
+    {
+        "id": "60",
+        "title": "IT веб-разработка 15",
+        "category": "Услуги",
+        "subcategory": "IT и веб-разработка",
+        "region": "Chechnya",
+        "subregion": "Argun",
+        "address": "ул. Центральная, д.29",
+        "phone": "+7 928 597 61 59",
+        "website": "https://itвебрaзрaбoткa60.ru",
+        "images": [
+            "assets/images/cards/60/1.jpg"
+        ],
+        "rating": 3.2,
+        "reviews_count": 731,
+        "tags": [
+            "24/7",
+            "it",
+            "wifi",
+            "outdoor seating",
+            "booking",
+            "chechnya"
+        ],
+        "services": [
+            "booking",
+            "outdoor seating",
+            "24/7",
+            "wifi"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Argun для посещения. Категория: Услуги.",
+        "updated_at": "2025-07-11"
+    },
+    {
+        "id": "61",
+        "title": "Мебель на заказ  дизайннтерьера 62",
+        "category": "Жильё и недвижимость",
+        "subcategory": "Мебель на заказ / дизайн интерьера",
+        "region": "Ingushetia",
+        "subregion": "Karabulak",
+        "address": "ул. Центральная, д.91",
+        "phone": "+7 988 761 55 62",
+        "website": "https://мебельнaзaкaзди61.ru",
+        "images": [
+            "assets/images/cards/61/1.jpg"
+        ],
+        "rating": 3.1,
+        "reviews_count": 1393,
+        "tags": [
+            "ingushetia",
+            "parking",
+            "мебель",
+            "24/7",
+            "kids area",
+            "booking"
+        ],
+        "services": [
+            "booking",
+            "parking",
+            "24/7",
+            "kids area"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Karabulak для посещения. Категория: Жильё и недвижимость.",
+        "updated_at": "2025-05-12"
+    },
+    {
+        "id": "62",
+        "title": "Мебель на заказ  дизайннтерьера 92",
+        "category": "Жильё и недвижимость",
+        "subcategory": "Мебель на заказ / дизайн интерьера",
+        "region": "Chechnya",
+        "subregion": "Gudermes",
+        "address": "ул. Центральная, д.107",
+        "phone": "+7 963 167 60 40",
+        "website": "https://мебельнaзaкaзди62.ru",
+        "images": [
+            "assets/images/cards/62/1.jpg"
+        ],
+        "rating": 4.9,
+        "reviews_count": 1049,
+        "tags": [
+            "cashback",
+            "мебель",
+            "24/7",
+            "delivery",
+            "chechnya"
+        ],
+        "services": [
+            "delivery",
+            "24/7",
+            "cashback"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Gudermes для посещения. Категория: Жильё и недвижимость.",
+        "updated_at": "2025-08-26"
+    },
+    {
+        "id": "63",
+        "title": "Автошколы 45",
+        "category": "Транспорт и логистика",
+        "subcategory": "Автошколы",
+        "region": "North Ossetia",
+        "subregion": "Mozdok",
+        "address": "ул. Центральная, д.131",
+        "phone": "+7 963 532 20 17",
+        "website": "https://aвтoшкoлы4563.ru",
+        "images": [
+            "assets/images/cards/63/1.jpg"
+        ],
+        "rating": 3.7,
+        "reviews_count": 720,
+        "tags": [
+            "автошколы",
+            "booking",
+            "north ossetia"
+        ],
+        "services": [
+            "booking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Mozdok для посещения. Категория: Транспорт и логистика.",
+        "updated_at": "2025-08-18"
+    },
+    {
+        "id": "64",
+        "title": "Публичные учреждения (музеи, библиотеки, МФЦ) 73",
+        "category": "Другое / Местные сервисы",
+        "subcategory": "Публичные учреждения (музеи, библиотеки, МФЦ)",
+        "region": "North Ossetia",
+        "subregion": "Mozdok",
+        "address": "ул. Центральная, д.95",
+        "phone": "+7 963 889 77 73",
+        "website": "https://публичныеучрежд64.ru",
+        "images": [
+            "assets/images/cards/64/1.jpg"
+        ],
+        "rating": 3.5,
+        "reviews_count": 1145,
+        "tags": [
+            "parking",
+            "публичные",
+            "wifi",
+            "north ossetia"
+        ],
+        "services": [
+            "wifi",
+            "parking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Mozdok для посещения. Категория: Другое / Местные сервисы.",
+        "updated_at": "2025-10-02"
+    },
+    {
+        "id": "65",
+        "title": "Автошколы 79",
+        "category": "Транспорт и логистика",
+        "subcategory": "Автошколы",
+        "region": "North Ossetia",
+        "subregion": "Alagir",
+        "address": "ул. Центральная, д.137",
+        "phone": "+7 963 599 21 66",
+        "website": "https://aвтoшкoлы7965.ru",
+        "images": [
+            "assets/images/cards/65/1.jpg"
+        ],
+        "rating": 3.5,
+        "reviews_count": 84,
+        "tags": [
+            "24/7",
+            "north ossetia",
+            "автошколы"
+        ],
+        "services": [
+            "24/7"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Alagir для посещения. Категория: Транспорт и логистика.",
+        "updated_at": "2025-05-06"
+    },
+    {
+        "id": "66",
+        "title": "Школы детсады 45",
+        "category": "Образование и наука",
+        "subcategory": "Школы и детсады",
+        "region": "Ingushetia",
+        "subregion": "Karabulak",
+        "address": "ул. Центральная, д.12",
+        "phone": "+7 988 517 66 82",
+        "website": "https://шкoлыдетсaды4566.ru",
+        "images": [
+            "assets/images/cards/66/1.jpg"
+        ],
+        "rating": 3.4,
+        "reviews_count": 1225,
+        "tags": [
+            "школы",
+            "ingushetia",
+            "outdoor seating",
+            "kids area",
+            "booking"
+        ],
+        "services": [
+            "booking",
+            "kids area",
+            "outdoor seating"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Karabulak для посещения. Категория: Образование и наука.",
+        "updated_at": "2025-07-25"
+    },
+    {
+        "id": "67",
+        "title": "Микрофинансы кредитные организации 81",
+        "category": "Финансы и страхование",
+        "subcategory": "Микрофинансы и кредитные организации",
+        "region": "North Ossetia",
+        "subregion": "Mozdok",
+        "address": "ул. Центральная, д.107",
+        "phone": "+7 988 941 35 58",
+        "website": "https://микрoфинaнсыкре67.ru",
+        "images": [
+            "assets/images/cards/67/1.jpg"
+        ],
+        "rating": 3.1,
+        "reviews_count": 452,
+        "tags": [
+            "booking",
+            "north ossetia",
+            "микрофинансы"
+        ],
+        "services": [
+            "booking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Mozdok для посещения. Категория: Финансы и страхование.",
+        "updated_at": "2025-06-26"
+    },
+    {
+        "id": "68",
+        "title": "Клиники  медцентры 29",
+        "category": "Здоровье и красота",
+        "subcategory": "Клиники / медцентры",
+        "region": "Chechnya",
+        "subregion": "Argun",
+        "address": "ул. Центральная, д.83",
+        "phone": "+7 988 713 16 10",
+        "website": "https://клиникимедцентр68.ru",
+        "images": [
+            "assets/images/cards/68/1.jpg"
+        ],
+        "rating": 3.1,
+        "reviews_count": 1409,
+        "tags": [
+            "клиники",
+            "chechnya",
+            "wifi",
+            "delivery"
+        ],
+        "services": [
+            "delivery",
+            "wifi"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Argun для посещения. Категория: Здоровье и красота.",
+        "updated_at": "2025-05-10"
+    },
+    {
+        "id": "69",
+        "title": "Спортзалы  фитнес-клубы 96",
+        "category": "Развлечения и досуг",
+        "subcategory": "Спортзалы / фитнес-клубы",
+        "region": "Dagestan",
+        "subregion": "Makhachkala",
+        "address": "ул. Центральная, д.97",
+        "phone": "+7 988 597 73 15",
+        "website": "https://спoртзaлыфитнес69.ru",
+        "images": [
+            "assets/images/cards/69/1.jpg"
+        ],
+        "rating": 4.3,
+        "reviews_count": 987,
+        "tags": [
+            "спортзалы",
+            "outdoor seating",
+            "delivery",
+            "dagestan",
+            "kids area"
+        ],
+        "services": [
+            "outdoor seating",
+            "delivery",
+            "kids area"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Makhachkala для посещения. Категория: Развлечения и досуг.",
+        "updated_at": "2025-05-11"
+    },
+    {
+        "id": "70",
+        "title": "Юридические услуги 5",
+        "category": "Услуги",
+        "subcategory": "Юридические услуги",
+        "region": "Ingushetia",
+        "subregion": "Karabulak",
+        "address": "ул. Центральная, д.49",
+        "phone": "+7 963 158 89 53",
+        "website": "https://юридическиеуслу70.ru",
+        "images": [
+            "assets/images/cards/70/1.jpg"
+        ],
+        "rating": 3.9,
+        "reviews_count": 714,
+        "tags": [
+            "ingushetia",
+            "юридические",
+            "delivery",
+            "kids area",
+            "booking"
+        ],
+        "services": [
+            "delivery",
+            "booking",
+            "kids area"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Karabulak для посещения. Категория: Услуги.",
+        "updated_at": "2025-08-20"
+    },
+    {
+        "id": "71",
+        "title": "Кинотеатры 25",
+        "category": "Развлечения и досуг",
+        "subcategory": "Кинотеатры",
+        "region": "Ingushetia",
+        "subregion": "Nazran",
+        "address": "ул. Центральная, д.6",
+        "phone": "+7 988 622 46 64",
+        "website": "https://кинoтеaтры2571.ru",
+        "images": [
+            "assets/images/cards/71/1.jpg"
+        ],
+        "rating": 3.2,
+        "reviews_count": 594,
+        "tags": [
+            "ingushetia",
+            "parking",
+            "кинотеатры",
+            "wifi",
+            "booking"
+        ],
+        "services": [
+            "wifi",
+            "parking",
+            "booking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Nazran для посещения. Категория: Развлечения и досуг.",
+        "updated_at": "2025-09-07"
+    },
+    {
+        "id": "72",
+        "title": "Восточный Вкус",
+        "category": "Еда и напитки",
+        "subcategory": "Кафе и кофейни",
+        "region": "Chechnya",
+        "subregion": "Shali",
+        "address": "ул. Центральная, д.48",
+        "phone": "+7 963 550 62 84",
+        "website": "https://вoстoчныйвкус72.ru",
+        "images": [
+            "assets/images/cards/72/1.jpg"
+        ],
+        "rating": 4.5,
+        "reviews_count": 1182,
+        "tags": [
+            "кафе",
+            "wifi",
+            "chechnya"
+        ],
+        "services": [
+            "wifi"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Shali для посещения. Категория: Еда и напитки.",
+        "updated_at": "2025-04-26"
+    },
+    {
+        "id": "73",
+        "title": "Ветеринарные клиники 47",
+        "category": "Здоровье и красота",
+        "subcategory": "Ветеринарные клиники",
+        "region": "Ingushetia",
+        "subregion": "Magas",
+        "address": "ул. Центральная, д.108",
+        "phone": "+7 988 975 60 33",
+        "website": "https://ветеринaрныекли73.ru",
+        "images": [
+            "assets/images/cards/73/1.jpg"
+        ],
+        "rating": 3.8,
+        "reviews_count": 1295,
+        "tags": [
+            "ветеринарные",
+            "booking",
+            "ingushetia"
+        ],
+        "services": [
+            "booking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Magas для посещения. Категория: Здоровье и красота.",
+        "updated_at": "2025-06-16"
+    },
+    {
+        "id": "74",
+        "title": "Ветеринарные клиники 90",
+        "category": "Здоровье и красота",
+        "subcategory": "Ветеринарные клиники",
+        "region": "Ingushetia",
+        "subregion": "Karabulak",
+        "address": "ул. Центральная, д.2",
+        "phone": "+7 988 324 90 90",
+        "website": "https://ветеринaрныекли74.ru",
+        "images": [
+            "assets/images/cards/74/1.jpg"
+        ],
+        "rating": 3.9,
+        "reviews_count": 1186,
+        "tags": [
+            "ingushetia",
+            "parking",
+            "24/7",
+            "delivery",
+            "ветеринарные",
+            "booking"
+        ],
+        "services": [
+            "booking",
+            "parking",
+            "delivery",
+            "24/7"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Karabulak для посещения. Категория: Здоровье и красота.",
+        "updated_at": "2025-05-06"
+    },
+    {
+        "id": "75",
+        "title": "Юридические услуги 45",
+        "category": "Услуги",
+        "subcategory": "Юридические услуги",
+        "region": "Chechnya",
+        "subregion": "Gudermes",
+        "address": "ул. Центральная, д.123",
+        "phone": "+7 963 366 72 92",
+        "website": "https://юридическиеуслу75.ru",
+        "images": [
+            "assets/images/cards/75/1.jpg"
+        ],
+        "rating": 3.5,
+        "reviews_count": 1336,
+        "tags": [
+            "юридические",
+            "cashback",
+            "24/7",
+            "booking",
+            "chechnya"
+        ],
+        "services": [
+            "booking",
+            "24/7",
+            "cashback"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Gudermes для посещения. Категория: Услуги.",
+        "updated_at": "2025-07-06"
+    },
+    {
+        "id": "76",
+        "title": "Репетиторы 59",
+        "category": "Образование и наука",
+        "subcategory": "Репетиторы",
+        "region": "Dagestan",
+        "subregion": "Makhachkala",
+        "address": "ул. Центральная, д.16",
+        "phone": "+7 963 747 58 13",
+        "website": "https://репетитoры5976.ru",
+        "images": [
+            "assets/images/cards/76/1.jpg"
+        ],
+        "rating": 4.8,
+        "reviews_count": 928,
+        "tags": [
+            "cashback",
+            "24/7",
+            "репетиторы",
+            "delivery",
+            "dagestan",
+            "booking"
+        ],
+        "services": [
+            "24/7",
+            "cashback",
+            "delivery",
+            "booking"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Makhachkala для посещения. Категория: Образование и наука.",
+        "updated_at": "2025-08-20"
+    },
+    {
+        "id": "77",
+        "title": "Репетиторы 84",
+        "category": "Образование и наука",
+        "subcategory": "Репетиторы",
+        "region": "North Ossetia",
+        "subregion": "Vladikavkaz",
+        "address": "ул. Центральная, д.105",
+        "phone": "+7 963 178 75 69",
+        "website": "https://репетитoры8477.ru",
+        "images": [
+            "assets/images/cards/77/1.jpg"
+        ],
+        "rating": 4.4,
+        "reviews_count": 886,
+        "tags": [
+            "parking",
+            "репетиторы",
+            "wifi",
+            "outdoor seating",
+            "north ossetia",
+            "kids area"
+        ],
+        "services": [
+            "outdoor seating",
+            "wifi",
+            "parking",
+            "kids area"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Vladikavkaz для посещения. Категория: Образование и наука.",
+        "updated_at": "2025-08-26"
+    },
+    {
+        "id": "78",
+        "title": "Религиозные организации 52",
+        "category": "Другое / Местные сервисы",
+        "subcategory": "Религиозные организации",
+        "region": "Ingushetia",
+        "subregion": "Karabulak",
+        "address": "ул. Центральная, д.145",
+        "phone": "+7 988 488 64 57",
+        "website": "https://религиoзныеoргa78.ru",
+        "images": [
+            "assets/images/cards/78/1.jpg"
+        ],
+        "rating": 4.8,
+        "reviews_count": 1171,
+        "tags": [
+            "религиозные",
+            "24/7",
+            "ingushetia",
+            "outdoor seating"
+        ],
+        "services": [
+            "outdoor seating",
+            "24/7"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Karabulak для посещения. Категория: Другое / Местные сервисы.",
+        "updated_at": "2025-10-07"
+    },
+    {
+        "id": "79",
+        "title": "Электроника гаджеты 8",
+        "category": "Товары и розница",
+        "subcategory": "Электроника и гаджеты",
+        "region": "Chechnya",
+        "subregion": "Grozny",
+        "address": "ул. Центральная, д.117",
+        "phone": "+7 963 814 21 27",
+        "website": "https://электрoникaгaдж79.ru",
+        "images": [
+            "assets/images/cards/79/1.jpg"
+        ],
+        "rating": 4.6,
+        "reviews_count": 68,
+        "tags": [
+            "parking",
+            "chechnya",
+            "электроника",
+            "outdoor seating"
+        ],
+        "services": [
+            "outdoor seating",
+            "parking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Grozny для посещения. Категория: Товары и розница.",
+        "updated_at": "2025-08-21"
+    },
+    {
+        "id": "80",
+        "title": "Гостевые дома апартаменты 22",
+        "category": "Туризм и путешествия",
+        "subcategory": "Гостевые дома и апартаменты",
+        "region": "Dagestan",
+        "subregion": "Makhachkala",
+        "address": "ул. Центральная, д.127",
+        "phone": "+7 963 975 53 67",
+        "website": "https://гoстевыедoмaaпa80.ru",
+        "images": [
+            "assets/images/cards/80/1.jpg"
+        ],
+        "rating": 4.9,
+        "reviews_count": 403,
+        "tags": [
+            "parking",
+            "outdoor seating",
+            "dagestan",
+            "kids area",
+            "booking",
+            "гостевые"
+        ],
+        "services": [
+            "booking",
+            "kids area",
+            "parking",
+            "outdoor seating"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Makhachkala для посещения. Категория: Туризм и путешествия.",
+        "updated_at": "2025-07-01"
+    },
+    {
+        "id": "81",
+        "title": "Ремонт техники  электроники 41",
+        "category": "Услуги",
+        "subcategory": "Ремонт техники / электроники",
+        "region": "Ingushetia",
+        "subregion": "Nazran",
+        "address": "ул. Центральная, д.121",
+        "phone": "+7 988 980 92 83",
+        "website": "https://ремoнттехникиэл81.ru",
+        "images": [
+            "assets/images/cards/81/1.jpg"
+        ],
+        "rating": 3.2,
+        "reviews_count": 518,
+        "tags": [
+            "ingushetia",
+            "parking",
+            "24/7",
+            "wifi",
+            "kids area",
+            "ремонт"
+        ],
+        "services": [
+            "24/7",
+            "kids area",
+            "wifi",
+            "parking"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Nazran для посещения. Категория: Услуги.",
+        "updated_at": "2025-06-01"
+    },
+    {
+        "id": "82",
+        "title": "Турагентства 72",
+        "category": "Туризм и путешествия",
+        "subcategory": "Турагентства",
+        "region": "Ingushetia",
+        "subregion": "Dzheyrakh",
+        "address": "ул. Центральная, д.90",
+        "phone": "+7 928 493 72 15",
+        "website": "https://турaгентствa7282.ru",
+        "images": [
+            "assets/images/cards/82/1.jpg"
+        ],
+        "rating": 4.4,
+        "reviews_count": 1196,
+        "tags": [
+            "parking",
+            "турагентства",
+            "booking",
+            "ingushetia"
+        ],
+        "services": [
+            "booking",
+            "parking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Dzheyrakh для посещения. Категория: Туризм и путешествия.",
+        "updated_at": "2025-06-11"
+    },
+    {
+        "id": "83",
+        "title": "Магазины бытовой химии 90",
+        "category": "Дом и хозяйство",
+        "subcategory": "Магазины бытовой химии",
+        "region": "North Ossetia",
+        "subregion": "Alagir",
+        "address": "ул. Центральная, д.83",
+        "phone": "+7 988 170 52 73",
+        "website": "https://мaгaзиныбытoвoй83.ru",
+        "images": [
+            "assets/images/cards/83/1.jpg"
+        ],
+        "rating": 3.1,
+        "reviews_count": 1157,
+        "tags": [
+            "parking",
+            "cashback",
+            "north ossetia",
+            "магазины",
+            "wifi"
+        ],
+        "services": [
+            "parking",
+            "cashback",
+            "wifi"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Alagir для посещения. Категория: Дом и хозяйство.",
+        "updated_at": "2025-05-06"
+    },
+    {
+        "id": "84",
+        "title": "Салоны красоты 32",
+        "category": "Здоровье и красота",
+        "subcategory": "Салоны красоты",
+        "region": "Ingushetia",
+        "subregion": "Dzheyrakh",
+        "address": "ул. Центральная, д.74",
+        "phone": "+7 928 564 77 83",
+        "website": "https://сaлoныкрaсoты3284.ru",
+        "images": [
+            "assets/images/cards/84/1.jpg"
+        ],
+        "rating": 4.1,
+        "reviews_count": 943,
+        "tags": [
+            "ingushetia",
+            "cashback",
+            "24/7",
+            "салоны",
+            "booking"
+        ],
+        "services": [
+            "booking",
+            "24/7",
+            "cashback"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Dzheyrakh для посещения. Категория: Здоровье и красота.",
+        "updated_at": "2025-06-04"
+    },
+    {
+        "id": "85",
+        "title": "Театры  концерты  шоу 42",
+        "category": "Развлечения и досуг",
+        "subcategory": "Театры / концерты / шоу",
+        "region": "North Ossetia",
+        "subregion": "Beslan",
+        "address": "ул. Центральная, д.76",
+        "phone": "+7 963 485 57 12",
+        "website": "https://теaтрыкoнцертыш85.ru",
+        "images": [
+            "assets/images/cards/85/1.jpg"
+        ],
+        "rating": 3.8,
+        "reviews_count": 1396,
+        "tags": [
+            "parking",
+            "театры",
+            "booking",
+            "north ossetia"
+        ],
+        "services": [
+            "parking",
+            "booking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Beslan для посещения. Категория: Развлечения и досуг.",
+        "updated_at": "2025-09-01"
+    },
+    {
+        "id": "86",
+        "title": "Отель Гранд Плаза",
+        "category": "Туризм и путешествия",
+        "subcategory": "Отели и гостиницы",
+        "region": "Chechnya",
+        "subregion": "Grozny",
+        "address": "ул. Центральная, д.11",
+        "phone": "+7 963 923 96 64",
+        "website": "https://oтельгрaндплaзa86.ru",
+        "images": [
+            "assets/images/cards/86/1.jpg"
+        ],
+        "rating": 4.9,
+        "reviews_count": 455,
+        "tags": [
+            "отели",
+            "parking",
+            "chechnya",
+            "outdoor seating"
+        ],
+        "services": [
+            "parking",
+            "outdoor seating"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Grozny для посещения. Категория: Туризм и путешествия.",
+        "updated_at": "2025-05-21"
+    },
+    {
+        "id": "87",
+        "title": "Автопрокат 61",
+        "category": "Транспорт и логистика",
+        "subcategory": "Автопрокат",
+        "region": "Chechnya",
+        "subregion": "Argun",
+        "address": "ул. Центральная, д.84",
+        "phone": "+7 988 485 69 66",
+        "website": "https://aвтoпрoкaт6187.ru",
+        "images": [
+            "assets/images/cards/87/1.jpg"
+        ],
+        "rating": 4.7,
+        "reviews_count": 976,
+        "tags": [
+            "автопрокат",
+            "kids area",
+            "chechnya",
+            "cashback"
+        ],
+        "services": [
+            "kids area",
+            "cashback"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Argun для посещения. Категория: Транспорт и логистика.",
+        "updated_at": "2025-06-03"
+    },
+    {
+        "id": "88",
+        "title": "ВУЗы  колледжи нституты 20",
+        "category": "Образование и наука",
+        "subcategory": "ВУЗы / колледжи / институты",
+        "region": "Ingushetia",
+        "subregion": "Magas",
+        "address": "ул. Центральная, д.94",
+        "phone": "+7 928 291 31 13",
+        "website": "https://вузыкoлледжинст88.ru",
+        "images": [
+            "assets/images/cards/88/1.jpg"
+        ],
+        "rating": 3.1,
+        "reviews_count": 668,
+        "tags": [
+            "ingushetia",
+            "вузы",
+            "24/7",
+            "wifi",
+            "booking"
+        ],
+        "services": [
+            "24/7",
+            "booking",
+            "wifi"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Magas для посещения. Категория: Образование и наука.",
+        "updated_at": "2025-08-19"
+    },
+    {
+        "id": "89",
+        "title": "Публичные учреждения (музеи, библиотеки, МФЦ) 89",
+        "category": "Другое / Местные сервисы",
+        "subcategory": "Публичные учреждения (музеи, библиотеки, МФЦ)",
+        "region": "Chechnya",
+        "subregion": "Argun",
+        "address": "ул. Центральная, д.130",
+        "phone": "+7 963 760 13 30",
+        "website": "https://публичныеучрежд89.ru",
+        "images": [
+            "assets/images/cards/89/1.jpg"
+        ],
+        "rating": 4.0,
+        "reviews_count": 1432,
+        "tags": [
+            "parking",
+            "публичные",
+            "chechnya"
+        ],
+        "services": [
+            "parking"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "09:00-21:00"
+        },
+        "price_level": 3,
+        "description": "Лучшее место в Argun для посещения. Категория: Другое / Местные сервисы.",
+        "updated_at": "2025-05-31"
+    },
+    {
+        "id": "90",
+        "title": "Пекарни 51",
+        "category": "Еда и напитки",
+        "subcategory": "Пекарни",
+        "region": "Dagestan",
+        "subregion": "Kizlyar",
+        "address": "ул. Центральная, д.18",
+        "phone": "+7 963 794 51 57",
+        "website": "https://пекaрни5190.ru",
+        "images": [
+            "assets/images/cards/90/1.jpg"
+        ],
+        "rating": 4.7,
+        "reviews_count": 1318,
+        "tags": [
+            "dagestan",
+            "пекарни",
+            "24/7"
+        ],
+        "services": [
+            "24/7"
+        ],
+        "hours": {
+            "mon-sun": "24/7"
+        },
+        "price_level": 1,
+        "description": "Лучшее место в Kizlyar для посещения. Категория: Еда и напитки.",
+        "updated_at": "2025-10-06"
+    },
+    {
+        "id": "91",
+        "title": "Хозяйственные магазины 84",
+        "category": "Дом и хозяйство",
+        "subcategory": "Хозяйственные магазины",
+        "region": "Chechnya",
+        "subregion": "Gudermes",
+        "address": "ул. Центральная, д.82",
+        "phone": "+7 928 541 54 83",
+        "website": "https://хoзяйственныемa91.ru",
+        "images": [
+            "assets/images/cards/91/1.jpg"
+        ],
+        "rating": 3.4,
+        "reviews_count": 821,
+        "tags": [
+            "chechnya",
+            "хозяйственные",
+            "booking",
+            "cashback"
+        ],
+        "services": [
+            "booking",
+            "cashback"
+        ],
+        "hours": {
+            "mon-fri": "09:00-21:00",
+            "sat-sun": "10:00-19:00"
+        },
+        "price_level": 2,
+        "description": "Лучшее место в Gudermes для посещения. Категория: Дом и хозяйство.",
+        "updated_at": "2025-10-06"
+    }
+]
