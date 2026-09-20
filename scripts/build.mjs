@@ -220,6 +220,19 @@ const RATING_SOURCES = { yandex: 'Яндекс.Картах', '2gis': '2ГИС',
 
 const clean = (v) => String(v ?? '').replace(/ /g, ' ').trim();
 const nullIfEmpty = (v) => { const c = clean(v); return c === '' || c === '-' ? null : c; };
+/**
+ * Russian typography (brief section 10): the sheet is typed with straight
+ * quotes, the site sets «ёлочки». Pairs are converted in order; an unmatched
+ * quote is left alone rather than guessed at.
+ */
+export function typographize(text) {
+  if (!text) return text;
+  const parts = String(text).split('"');
+  if (parts.length < 3 || parts.length % 2 === 0) return text;
+  return parts.reduce((acc, part, i) =>
+    i === 0 ? part : acc + (i % 2 === 1 ? '«' : '»') + part, '');
+}
+
 const splitList = (v) => clean(v).split(/[\n,;]+/).map((s) => s.trim()).filter(Boolean);
 // Addresses legitimately contain commas, so only newlines separate entries.
 const splitLines = (v) => clean(v).split(/\n+/).map((s) => s.trim()).filter(Boolean);
@@ -369,7 +382,7 @@ function readTaxonomy(csvText) {
 
 function buildCard(row, cell, ctx) {
   const id = cell(row, 'id');
-  const title = nullIfEmpty(cell(row, 'title'));
+  const title = typographize(nullIfEmpty(cell(row, 'title')));
 
   // --- hard rejects -------------------------------------------------------
   const status = nullIfEmpty(cell(row, 'status'));
@@ -513,7 +526,7 @@ function buildCard(row, cell, ctx) {
     map_url: nullIfEmpty(cell(row, 'map_url')),
     contacts,
     image,
-    description: nullIfEmpty(cell(row, 'description')),
+    description: typographize(nullIfEmpty(cell(row, 'description'))),
     tags,
     features,
     hours: {

@@ -4,7 +4,7 @@
  * sheet's messy cells depend on. Run: node scripts/selftest.mjs
  */
 import assert from 'node:assert/strict';
-import { parseCsv, slugify, normalisePhone } from './build.mjs';
+import { parseCsv, slugify, normalisePhone, typographize } from './build.mjs';
 
 let passed = 0;
 const t = (name, fn) => { fn(); passed++; console.log(`  ok  ${name}`); };
@@ -65,6 +65,18 @@ t('rejects phone junk rather than inventing digits', () => {
 
 t('undoes scientific notation from gviz', () => {
   assert.equal(normalisePhone('8.928789573E10'), '+79287895730');
+});
+
+t('converts paired straight quotes to ёлочки', () => {
+  assert.equal(typographize('ТД "Баркалла"'), 'ТД «Баркалла»');
+  assert.equal(typographize('"Исцеляющие руки"'), '«Исцеляющие руки»');
+  assert.equal(typographize('ТРЦ "Беркат", 34 блок'), 'ТРЦ «Беркат», 34 блок');
+});
+
+t('leaves an unmatched quote alone rather than guessing', () => {
+  assert.equal(typographize('ТД "Баркалла'), 'ТД "Баркалла');
+  assert.equal(typographize('без кавычек'), 'без кавычек');
+  assert.equal(typographize(null), null);
 });
 
 console.log(`\n${passed} assertions passed.`);

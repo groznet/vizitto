@@ -2,7 +2,7 @@
   {
     "id": 27,
     "slug": "iscelyayuschie-ruki",
-    "title": "\"Исцеляющие руки\"",
+    "title": "«Исцеляющие руки»",
     "category": {
       "slug": "health-beauty",
       "ru": "Здоровье и красота"
@@ -97,7 +97,7 @@
   {
     "id": 39,
     "slug": "agentstvo-nedvizhimosti-region",
-    "title": "Агентство недвижимости \"Регион\"",
+    "title": "Агентство недвижимости «Регион»",
     "category": {
       "slug": "real-estate",
       "ru": "Жильё и недвижимость"
@@ -238,7 +238,7 @@
   {
     "id": 45,
     "slug": "gostinica-korona",
-    "title": "Гостиница \"Корона\"",
+    "title": "Гостиница «Корона»",
     "category": {
       "slug": "travel",
       "ru": "Туризм и путешествия"
@@ -427,7 +427,7 @@
   {
     "id": 16,
     "slug": "zoomagizin-akvarium",
-    "title": "Зоомагизин \"Аквариум\"",
+    "title": "Зоомагизин «Аквариум»",
     "category": {
       "slug": "other",
       "ru": "Другое и местные сервисы"
@@ -1235,7 +1235,7 @@
   {
     "id": 9,
     "slug": "td-barkalla",
-    "title": "ТД \"Баркалла\"",
+    "title": "ТД «Баркалла»",
     "category": {
       "slug": "home-household",
       "ru": "Дом и хозяйство"
