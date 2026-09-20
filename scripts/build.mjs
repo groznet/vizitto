@@ -35,7 +35,12 @@ const DROP_INSTAGRAM = true;
 const VIZITTO_PHONE = null;   // TBD
 const VIZITTO_ADDRESS = null; // TBD
 
-const CARD_IMAGE_PATH = (id) => `assets/images/cards/${id}/1.jpg`;
+// assets/images/cards/{n}/ holds 91 scanned business cards, but {n} is NOT the
+// sheet's id: folder 13 is ARTMEDIA (id 7) and folder 21 is ТД "Баркалла"
+// (id 9) — the offsets differ, so no mapping can be derived. Attaching them by
+// id would print one business's phone number and address on another's page, so
+// images come only from the sheet's `image` column. Cards without one render
+// the category placeholder (brief section 6.4).
 const GENERATED_MARKER = '<!-- generated:vizitto-card -->';
 
 /* ------------------------------------------------------------------ logging */
@@ -477,7 +482,6 @@ function buildCard(row, cell, ctx) {
 
   // --- image --------------------------------------------------------------
   let image = nullIfEmpty(cell(row, 'image'));
-  if (!image && id && existsSync(join(ROOT, CARD_IMAGE_PATH(id)))) image = '/' + CARD_IMAGE_PATH(id);
   if (image && !/^(https?:)?\/\//i.test(image) && !image.startsWith('/')) image = '/' + image;
 
   // --- slug ---------------------------------------------------------------
@@ -808,6 +812,7 @@ async function main() {
       warnings: log.warnings.length,
       card_pages: generated,
       pruned_pages: pruned,
+      without_image: cards.filter((c) => !c.image).length,
     },
     rejected: log.rejected,
     warnings: log.warnings,

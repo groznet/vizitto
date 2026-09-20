@@ -1,321 +1,207 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vizitto - Онлайн-каталог бизнеса Чечни и России</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0d47a1',
-                        secondary: '#ff6f00',
-                        accent: '#1a237e',
-                        light: '#f5f7fa',
-                        dark: '#1e293b'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif']
-                    }
-                }
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vizitto — каталог организаций Чечни</title>
+  <meta name="description" content="Каталог организаций Чечни и других регионов России. Найдите магазин, аптеку, заведение или специалиста в Грозном, посмотрите контакты и свяжитесь напрямую.">
+  <link rel="canonical" href="https://vizitto.ru/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vizitto — каталог организаций Чечни">
+  <meta property="og:description" content="Каталог организаций Чечни и других регионов России. Найдите магазин, аптеку, заведение или специалиста в Грозном, посмотрите контакты и свяжитесь напрямую.">
+  <meta property="og:url" content="https://vizitto.ru/">
+  <meta property="og:locale" content="ru_RU">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Guard so the page still renders if the Tailwind CDN is unreachable.
+    window.tailwind = window.tailwind || {};
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F6B47',
+            'primary-hover': '#0B5438',
+            accent: '#C77D2E',
+            ink: '#14201B',
+            muted: '#5C6B64',
+            subtle: '#F4F7F5',
+            border: '#DDE5E0'
+          },
+          fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] }
         }
-    </script>
-    <style>
-        .hero-pattern {
-            background: radial-gradient(circle, rgba(13,71,161,0.1) 0%, rgba(255,255,255,0) 70%);
-        }
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
-        }
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-        }
-    </style>
+      }
+    };
+  </script>
+  <script defer src="/assets/js/main.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
 </head>
-<body id="site-header" class="font-sans text-gray-800 bg-gray-50">
-    <!-- Header -->
-    <div x-data x-html="$store.layout.header" x-init="$store.layout.loadHeader()"></div>    
+<body class="bg-subtle font-sans text-ink antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:text-primary">Перейти к содержимому</a>
 
-    <!-- Hero Section -->
-    <section class="hero-pattern">
-        <div class="container mx-auto px-4 py-16 md:py-24">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-12 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold text-dark mb-6 leading-tight">
-                        Народный онлайн-каталог <span class="text-primary">магазинов, услуг, компаний</span> по всей России
-                    </h1>
-                    <p class="text-xl text-gray-600 mb-8">
-                        Найдите проверенные организации и услуги в нашем каталоге визиток. Ваш бизнес в цифровом формате для новых клиентов.
-                    </p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="/cards" class="bg-primary hover:bg-blue-800 text-white text-center font-medium py-3 px-8 rounded-lg transition shadow-lg">
-                            Найти услуги
-                        </a>
-                        <a href="/pricing" class="bg-white hover:bg-gray-100 text-primary border border-primary text-center font-medium py-3 px-8 rounded-lg transition">
-                            Зарегистрировать бизнес
-                        </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="relative">
-                        <div class="bg-white p-6 rounded-2xl shadow-xl max-w-md w-full transform rotate-3">
-                            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64"></div>
-                            <div class="mt-4">
-                                <h3 class="font-bold text-lg">ООО "КавказСтрой"</h3>
-                                <p class="text-gray-600 mt-1">Строительные услуги в Грозном</p>
-                                <div class="flex mt-4 space-x-2">
-                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Строительство</span>
-                                    <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Проверено</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-lg w-2/3 transform -rotate-3">
-                            <div class="flex items-center">
-                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16"></div>
-                                <div class="ml-3">
-                                    <h4 class="font-bold">ИП Магомедов</h4>
-                                    <p class="text-gray-600 text-sm">Автосервис</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <header class="border-b border-border bg-white" x-data="siteNav">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <a href="/" class="rounded text-lg font-bold text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">Vizitto</a>
+
+      <nav class="hidden md:block" aria-label="Основная навигация">
+        <ul class="flex items-center gap-5 text-sm">
+          <li><a class="rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="/catalog/">Каталог</a></li>
+          <li><a class="rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="/about/">О проекте</a></li>
+          <li><a class="rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="/faq/">Вопросы</a></li>
+          <li><a class="rounded bg-primary px-3 py-1.5 text-white transition-colors hover:bg-primary-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2" href="/add/">Добавить организацию</a></li>
+        </ul>
+      </nav>
+
+      <button type="button" class="rounded p-2 md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              @click="toggle()" :aria-expanded="open" aria-controls="mobile-nav">
+        <span class="sr-only">Меню</span>
+        <i class="fa-solid" :class="open ? 'fa-xmark' : 'fa-bars'" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <nav id="mobile-nav" x-show="open" x-cloak @keydown.escape.window="close()" class="border-t border-border md:hidden" aria-label="Мобильная навигация">
+      <ul class="mx-auto max-w-6xl space-y-1 px-4 py-3 text-sm">
+        <li><a class="block rounded py-2 hover:text-primary" href="/catalog/">Каталог</a></li>
+        <li><a class="block rounded py-2 hover:text-primary" href="/about/">О проекте</a></li>
+        <li><a class="block rounded py-2 hover:text-primary" href="/faq/">Вопросы</a></li>
+        <li><a class="block rounded py-2 font-medium text-primary" href="/add/">Добавить организацию</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" x-data="homeFeed">
+    <section class="border-b border-border bg-white">
+      <div class="mx-auto max-w-4xl px-4 py-14 text-center sm:py-20">
+        <h1 class="text-3xl font-bold leading-tight sm:text-4xl">Найдите нужный бизнес рядом</h1>
+        <p class="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-muted">
+          Vizitto — каталог визитных карточек бизнеса Чечни. Быстро находите магазин, аптеку,
+          заведение или специалиста, смотрите контакты и связывайтесь напрямую.
+        </p>
+
+        <form class="mx-auto mt-8 flex max-w-xl gap-2" x-data="homeSearch" @submit.prevent="submit()" role="search">
+          <label for="home-q" class="sr-only">Что вы ищете?</label>
+          <input id="home-q" type="search" x-model="q" placeholder="Например: торты, аптека, шиномонтаж"
+                 class="flex-1 rounded border border-border bg-white px-4 py-2.5 text-sm focus:border-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <button type="submit" class="rounded bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+            Найти
+          </button>
+        </form>
+
+        <p class="mt-4 text-sm text-muted" x-show="!loading" x-cloak>
+          В каталоге <span x-text="totalLabel()"></span>
+        </p>
+      </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="bg-primary text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-3xl md:text-4xl font-bold mb-2">850+</div>
-                    <div class="text-gray-200">Компаний в каталоге</div>
-                </div>
-                <div>
-                    <div class="text-3xl md:text-4xl font-bold mb-2">32</div>
-                    <div class="text-gray-200">Категории услуг</div>
-                </div>
-                <div>
-                    <div class="text-3xl md:text-4xl font-bold mb-2">15K+</div>
-                    <div class="text-gray-200">Посетителей в месяц</div>
-                </div>
-                <div>
-                    <div class="text-3xl md:text-4xl font-bold mb-2">96%</div>
-                    <div class="text-gray-200">Проверенных организаций</div>
-                </div>
-            </div>
-        </div>
+    <section class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="text-xl font-bold sm:text-2xl">Категории</h2>
+      <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <a href="/catalog/?category=food-drink" class="flex items-center gap-3 rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <i class="fa-solid fa-utensils w-5 text-primary" aria-hidden="true"></i>
+          <span class="flex-1 text-sm font-medium">Еда и напитки</span>
+          <span class="text-xs text-muted" x-text="countFor('food-drink') || ''"></span>
+        </a>
+        <a href="/catalog/?category=health-beauty" class="flex items-center gap-3 rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <i class="fa-solid fa-heart-pulse w-5 text-primary" aria-hidden="true"></i>
+          <span class="flex-1 text-sm font-medium">Здоровье и красота</span>
+          <span class="text-xs text-muted" x-text="countFor('health-beauty') || ''"></span>
+        </a>
+        <a href="/catalog/?category=retail" class="flex items-center gap-3 rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <i class="fa-solid fa-bag-shopping w-5 text-primary" aria-hidden="true"></i>
+          <span class="flex-1 text-sm font-medium">Товары и розница</span>
+          <span class="text-xs text-muted" x-text="countFor('retail') || ''"></span>
+        </a>
+        <a href="/catalog/?category=services" class="flex items-center gap-3 rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <i class="fa-solid fa-screwdriver-wrench w-5 text-primary" aria-hidden="true"></i>
+          <span class="flex-1 text-sm font-medium">Услуги</span>
+          <span class="text-xs text-muted" x-text="countFor('services') || ''"></span>
+        </a>
+        <a href="/catalog/?category=real-estate" class="flex items-center gap-3 rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <i class="fa-solid fa-house w-5 text-primary" aria-hidden="true"></i>
+          <span class="flex-1 text-sm font-medium">Жильё и недвижимость</span>
+          <span class="text-xs text-muted" x-text="countFor('real-estate') || ''"></span>
+        </a>
+        <a href="/catalog/?category=entertainment" class="flex items-center gap-3 rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <i class="fa-solid fa-masks-theater w-5 text-primary" aria-hidden="true"></i>
+          <span class="flex-1 text-sm font-medium">Развлечения и досуг</span>
+          <span class="text-xs text-muted" x-text="countFor('entertainment') || ''"></span>
+        </a>
+        <a href="/catalog/?category=transport" class="flex items-center gap-3 rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <i class="fa-solid fa-truck w-5 text-primary" aria-hidden="true"></i>
+          <span class="flex-1 text-sm font-medium">Транспорт и логистика</span>
+          <span class="text-xs text-muted" x-text="countFor('transport') || ''"></span>
+        </a>
+        <a href="/catalog/?category=finance" class="flex items-center gap-3 rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <i class="fa-solid fa-building-columns w-5 text-primary" aria-hidden="true"></i>
+          <span class="flex-1 text-sm font-medium">Финансы и страхование</span>
+          <span class="text-xs text-muted" x-text="countFor('finance') || ''"></span>
+        </a>
+        <a href="/catalog/?category=education" class="flex items-center gap-3 rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <i class="fa-solid fa-graduation-cap w-5 text-primary" aria-hidden="true"></i>
+          <span class="flex-1 text-sm font-medium">Образование и наука</span>
+          <span class="text-xs text-muted" x-text="countFor('education') || ''"></span>
+        </a>
+        <a href="/catalog/?category=home-household" class="flex items-center gap-3 rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <i class="fa-solid fa-couch w-5 text-primary" aria-hidden="true"></i>
+          <span class="flex-1 text-sm font-medium">Дом и хозяйство</span>
+          <span class="text-xs text-muted" x-text="countFor('home-household') || ''"></span>
+        </a>
+        <a href="/catalog/?category=travel" class="flex items-center gap-3 rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <i class="fa-solid fa-plane w-5 text-primary" aria-hidden="true"></i>
+          <span class="flex-1 text-sm font-medium">Туризм и путешествия</span>
+          <span class="text-xs text-muted" x-text="countFor('travel') || ''"></span>
+        </a>
+        <a href="/catalog/?category=other" class="flex items-center gap-3 rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <i class="fa-solid fa-circle-info w-5 text-primary" aria-hidden="true"></i>
+          <span class="flex-1 text-sm font-medium">Другое и местные сервисы</span>
+          <span class="text-xs text-muted" x-text="countFor('other') || ''"></span>
+        </a>
+      </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Преимущества нашей платформы</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Все, что нужно для продвижения вашего бизнеса и поиска надежных партнеров</p>
-            </div>
+    <section class="mx-auto max-w-6xl px-4 pb-14">
+      <div class="flex items-baseline justify-between gap-4">
+        <h2 class="text-xl font-bold sm:text-2xl">Недавно добавленные</h2>
+        <a href="/catalog/" class="rounded text-sm text-primary underline underline-offset-2 hover:text-primary-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">Весь каталог</a>
+      </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-xl card-hover">
-                    <div class="feature-icon bg-blue-100 text-primary">
-                        <i class="fas fa-search fa-2x"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Удобный поиск</h3>
-                    <p class="text-gray-600">Находите компании по категориям, местоположению и отзывам. Удобный фильтр для быстрого поиска нужных услуг.</p>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl card-hover">
-                    <div class="feature-icon bg-orange-100 text-secondary">
-                        <i class="fas fa-shield-alt fa-2x"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Проверенные организации</h3>
-                    <p class="text-gray-600">Мы проверяем все карточки перед добавлением в каталог. Работайте только с надежными партнерами.</p>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl card-hover">
-                    <div class="feature-icon bg-purple-100 text-accent">
-                        <i class="fas fa-mobile-alt fa-2x"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Цифровые визитки</h3>
-                    <p class="text-gray-600">Создайте современную цифровую визитку для вашего бизнеса. Делитесь контактами в один клик.</p>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl card-hover">
-                    <div class="feature-icon bg-green-100 text-green-700">
-                        <i class="fas fa-chart-line fa-2x"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Аналитика</h3>
-                    <p class="text-gray-600">Отслеживайте статистику просмотров вашей карточки. Узнайте, кто интересуется вашими услугами.</p>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl card-hover">
-                    <div class="feature-icon bg-yellow-100 text-yellow-700">
-                        <i class="fas fa-sync fa-2x"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Обновляемая информация</h3>
-                    <p class="text-gray-600">Всегда актуальные данные о компаниях. Регулярное обновление контактов и услуг.</p>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl card-hover">
-                    <div class="feature-icon bg-red-100 text-red-700">
-                        <i class="fas fa-comments fa-2x"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Отзывы клиентов</h3>
-                    <p class="text-gray-600">Читайте реальные отзывы о компаниях. Делитесь своим опытом сотрудничества.</p>
-                </div>
-            </div>
-        </div>
+      <div x-show="loading" class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <template x-for="i in 3" :key="i"><div class="h-48 animate-pulse rounded-lg border border-border bg-white"></div></template>
+      </div>
+
+      <div x-show="!loading" x-cloak class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <template x-for="card in highlighted" :key="card.slug">
+          <article class="flex flex-col rounded-lg border border-border bg-white p-4 transition-colors hover:border-primary">
+            <p class="text-xs text-muted">
+              <span x-text="card.category.ru"></span> <span aria-hidden="true">·</span> <span x-text="card.city.ru"></span>
+            </p>
+            <h3 class="mt-1 text-base font-semibold leading-snug">
+              <a :href="cardUrl(card)" class="rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" x-text="card.title"></a>
+            </h3>
+            <p class="mt-2 flex-1 text-sm text-muted" x-text="excerpt(card)"></p>
+            <a :href="cardUrl(card)" class="mt-3 self-start rounded text-sm text-primary underline underline-offset-2 hover:text-primary-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">Подробнее</a>
+          </article>
+        </template>
+      </div>
     </section>
+  </main>
 
-    <!-- How It Works -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Как это работает</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Простой процесс для бизнеса и клиентов</p>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6">1</div>
-                    <h3 class="text-xl font-bold mb-3">Регистрация</h3>
-                    <p class="text-gray-600">Создайте профиль вашей компании за несколько минут</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 rounded-full bg-secondary text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6">2</div>
-                    <h3 class="text-xl font-bold mb-3">Настройка</h3>
-                    <p class="text-gray-600">Добавьте услуги, фото и контактные данные</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 rounded-full bg-accent text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6">3</div>
-                    <h3 class="text-xl font-bold mb-3">Проверка</h3>
-                    <p class="text-gray-600">Наши модераторы проверяют информацию</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 rounded-full bg-green-600 text-white flex items-center justify-center text-2xl font-bold mx-auto mb-6">4</div>
-                    <h3 class="text-xl font-bold mb-3">Публикация</h3>
-                    <p class="text-gray-600">Ваша компания появляется в каталоге</p>
-                </div>
-            </div>
-
-            <div class="mt-16 bg-white rounded-2xl shadow-lg p-8">
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/2 mb-8 md:mb-0">
-                        <h3 class="text-2xl font-bold mb-4">Создайте свою цифровую визитку уже сегодня</h3>
-                        <p class="text-gray-600 mb-6">Присоединяйтесь к сотням компаний Чечни, которые уже используют наш каталог для привлечения новых клиентов.</p>
-                        <a href="/pricing" class="inline-block bg-primary hover:bg-blue-800 text-white font-medium py-3 px-8 rounded-lg transition">
-                            Начать сейчас
-                        </a>
-                    </div>
-                    <div class="md:w-1/2 flex justify-center">
-                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 md:h-80"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Что говорят наши пользователи</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Отзывы компаний, которые уже с нами</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16"></div>
-                        <div class="ml-4">
-                            <h4 class="font-bold">Аслан Ахмадов</h4>
-                            <p class="text-gray-600">Кафе "Беркат"</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-4">"После добавления в каталог количество заказов выросло на 40%. Клиенты находят нас через поиск по категориям."</p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16"></div>
-                        <div class="ml-4">
-                            <h4 class="font-bold">Мадина Сулейманова</h4>
-                            <p class="text-gray-600">Салон красоты "Элита"</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-4">"Очень удобная платформа. Клиенты могут сразу видеть наши услуги и цены. Аналитика показывает откуда приходят клиенты."</p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                <div class="bg-gray-50 p-8 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16"></div>
-                        <div class="ml-4">
-                            <h4 class="font-bold">Ислам Магомадов</h4>
-                            <p class="text-gray-600">Автосервис "Турбо"</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 mb-4">"Цифровая визитка заменила нам бумажные. Клиенты могут сохранить контакт в телефон одним нажатием. Очень удобно!"</p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-primary text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Начните привлекать новых клиентов уже сегодня</h2>
-            <p class="text-xl max-w-2xl mx-auto mb-10">Присоединяйтесь к онлайн-каталогу бизнеса Чечни и покажите свои услуги тысячам потенциальных клиентов</p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="/pricing" class="bg-white hover:bg-gray-100 text-primary font-medium py-3 px-8 rounded-lg transition">
-                    Зарегистрировать бизнес
-                </a>
-                <a href="/cards" class="bg-transparent hover:bg-blue-800 border-2 border-white text-white font-medium py-3 px-8 rounded-lg transition">
-                    Поиск услуг
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <div id="site-footer" x-data x-html="$store.layout.footer" x-init="$store.layout.loadFooter()"></div>
-
-    <!-- Main.js Alpine.js -->
-    <script src="assets/js/main.js" defer></script>
-    <script src="https://unpkg.com/alpinejs" defer></script>
-
-    <!-- Mobile Menu Script -->
-    
+  <footer class="mt-12 border-t border-border bg-white">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+      <p>© Vizitto — каталог организаций Чечни</p>
+      <ul class="flex flex-wrap gap-4">
+        <li><a class="rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="/about/">О проекте</a></li>
+        <li><a class="rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="/contact/">Контакты</a></li>
+        <li><a class="rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="/faq/">Вопросы</a></li>
+        <li><a class="rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="/privacy/">Конфиденциальность</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>

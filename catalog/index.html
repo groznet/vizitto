@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог организаций Чечни | Vizitto</title>
+  <meta name="description" content="Каталог организаций Чечни: магазины, аптеки, кафе, сервисы и специалисты Грозного. Поиск по категории и городу, проверенные контакты и часы работы.">
+  <link rel="canonical" href="https://vizitto.ru/catalog/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Каталог организаций Чечни | Vizitto">
+  <meta property="og:description" content="Найдите магазин, аптеку, заведение или специалиста в Грозном и других городах Чечни.">
+  <meta property="og:url" content="https://vizitto.ru/catalog/">
+  <meta property="og:locale" content="ru_RU">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Guard so the page still renders if the Tailwind CDN is unreachable.
+    window.tailwind = window.tailwind || {};
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F6B47',
+            'primary-hover': '#0B5438',
+            accent: '#C77D2E',
+            ink: '#14201B',
+            muted: '#5C6B64',
+            subtle: '#F4F7F5',
+            border: '#DDE5E0'
+          },
+          fontFamily: { sans: ['Manrope', 'system-ui', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+  <script defer src="/assets/js/main.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.1/dist/cdn.min.js"></script>
+</head>
+<body class="bg-subtle font-sans text-ink antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:text-primary">Перейти к содержимому</a>
+
+  <header class="border-b border-border bg-white" x-data="siteNav">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <a href="/" class="rounded text-lg font-bold text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">Vizitto</a>
+
+      <nav class="hidden md:block" aria-label="Основная навигация">
+        <ul class="flex items-center gap-5 text-sm">
+          <li><a class="rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="/catalog/" aria-current="page">Каталог</a></li>
+          <li><a class="rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="/about/">О проекте</a></li>
+          <li><a class="rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="/faq/">Вопросы</a></li>
+          <li><a class="rounded bg-primary px-3 py-1.5 text-white transition-colors hover:bg-primary-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2" href="/add/">Добавить организацию</a></li>
+        </ul>
+      </nav>
+
+      <button type="button" class="rounded p-2 md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              @click="toggle()" :aria-expanded="open" aria-controls="mobile-nav">
+        <span class="sr-only">Меню</span>
+        <i class="fa-solid" :class="open ? 'fa-xmark' : 'fa-bars'" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <nav id="mobile-nav" x-show="open" x-cloak @keydown.escape.window="close()" class="border-t border-border md:hidden" aria-label="Мобильная навигация">
+      <ul class="mx-auto max-w-6xl space-y-1 px-4 py-3 text-sm">
+        <li><a class="block rounded py-2 hover:text-primary" href="/catalog/">Каталог</a></li>
+        <li><a class="block rounded py-2 hover:text-primary" href="/about/">О проекте</a></li>
+        <li><a class="block rounded py-2 hover:text-primary" href="/faq/">Вопросы</a></li>
+        <li><a class="block rounded py-2 font-medium text-primary" href="/add/">Добавить организацию</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="mx-auto max-w-6xl px-4 py-8" x-data="catalog">
+    <h1 class="text-2xl font-bold sm:text-3xl">Каталог организаций</h1>
+    <p class="mt-2 text-sm text-muted">Найдите магазин, аптеку, заведение или специалиста и свяжитесь напрямую.</p>
+
+    <!-- Filters: three controls only, per the brief's core taxonomy. -->
+    <section class="mt-6 rounded-lg border border-border bg-white p-4" aria-label="Фильтры">
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_2fr]">
+        <div>
+          <label for="f-category" class="mb-1 block text-sm font-medium">Категория</label>
+          <select id="f-category" x-ref="categorySelect" x-model="filters.category" @change="onFilterChange()"
+                  class="w-full rounded border border-border bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+            <option value="">Все категории</option>
+            <template x-for="c in categories" :key="c.slug">
+              <option :value="c.slug" x-text="`${c.ru} (${c.count})`"></option>
+            </template>
+          </select>
+        </div>
+
+        <div>
+          <label for="f-city" class="mb-1 block text-sm font-medium">Город</label>
+          <select id="f-city" x-ref="citySelect" x-model="filters.city" @change="onFilterChange()"
+                  class="w-full rounded border border-border bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+            <option value="">Все города</option>
+            <template x-for="city in cities" :key="city.slug">
+              <option :value="city.slug" x-text="`${city.ru} (${city.count})`"></option>
+            </template>
+          </select>
+        </div>
+
+        <div>
+          <label for="f-q" class="mb-1 block text-sm font-medium">Поиск</label>
+          <input id="f-q" type="search" x-model="filters.q" @input.debounce.300ms="onFilterChange()"
+                 placeholder="Например: торты, аптека, шиномонтаж"
+                 class="w-full rounded border border-border bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+        </div>
+      </div>
+
+      <div class="mt-3 flex flex-wrap items-center justify-between gap-3">
+        <p class="text-sm text-muted" aria-live="polite" x-text="loading ? 'Загружаем каталог…' : resultsLabel"></p>
+        <button type="button" x-show="hasActiveFilters" x-cloak @click="reset()"
+                class="rounded text-sm text-primary underline underline-offset-2 hover:text-primary-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          Сбросить фильтры
+        </button>
+      </div>
+    </section>
+
+    <p x-show="error" x-cloak x-text="error" class="mt-6 rounded border border-border bg-white p-4 text-sm text-ink"></p>
+
+    <!-- Results -->
+    <section class="mt-6" aria-label="Результаты">
+      <div x-show="loading" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <template x-for="i in 6" :key="i">
+          <div class="h-56 animate-pulse rounded-lg border border-border bg-white"></div>
+        </template>
+      </div>
+
+      <div x-show="!loading && results.length" x-cloak class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <template x-for="card in visible" :key="card.slug">
+          <article class="flex flex-col overflow-hidden rounded-lg border border-border bg-white transition-colors hover:border-primary">
+            <a :href="cardUrl(card)" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+              <div class="aspect-[3/2] w-full bg-subtle">
+                <template x-if="card.image">
+                  <img :src="card.image" :alt="card.title" width="1200" height="800" loading="lazy" class="h-full w-full object-cover">
+                </template>
+                <template x-if="!card.image">
+                  <div class="flex h-full w-full items-center justify-center text-muted" role="img" :aria-label="card.category.ru">
+                    <i class="fa-solid text-3xl" :class="`fa-${categoryIcon(card.category.slug)}`" aria-hidden="true"></i>
+                  </div>
+                </template>
+              </div>
+            </a>
+
+            <div class="flex flex-1 flex-col p-4">
+              <p class="text-xs text-muted">
+                <span x-text="card.category.ru"></span>
+                <span aria-hidden="true">·</span>
+                <span x-text="card.city.ru"></span>
+              </p>
+
+              <h2 class="mt-1 text-base font-semibold leading-snug">
+                <a :href="cardUrl(card)" class="rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" x-text="card.title"></a>
+              </h2>
+
+              <p class="mt-2 flex-1 text-sm text-muted" x-text="excerpt(card)"></p>
+
+              <template x-if="card.rating">
+                <p class="mt-2 text-sm">
+                  <span class="font-semibold text-accent" x-text="card.rating.value.toFixed(1)"></span><span class="text-muted" x-text="ratingSuffix(card)"></span>
+                </p>
+              </template>
+
+              <template x-if="card.features.length">
+                <ul class="mt-3 flex flex-wrap gap-1.5">
+                  <template x-for="f in card.features.slice(0, 3)" :key="f">
+                    <li class="rounded border border-border bg-subtle px-2 py-0.5 text-xs" x-text="featureLabel(f)"></li>
+                  </template>
+                </ul>
+              </template>
+
+              <div class="mt-4 flex items-center gap-3">
+                <template x-if="primaryPhone(card)">
+                  <a :href="`tel:${primaryPhone(card)}`"
+                     class="rounded bg-primary px-3 py-1.5 text-sm text-white transition-colors hover:bg-primary-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+                    Позвонить
+                  </a>
+                </template>
+                <a :href="cardUrl(card)" class="rounded text-sm text-primary underline underline-offset-2 hover:text-primary-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                  Подробнее
+                </a>
+              </div>
+            </div>
+          </article>
+        </template>
+      </div>
+
+      <div x-show="!loading && !error && !results.length" x-cloak class="rounded-lg border border-border bg-white p-8 text-center">
+        <p class="font-medium">Ничего не найдено</p>
+        <p class="mt-2 text-sm text-muted">Попробуйте изменить запрос или сбросить фильтры.</p>
+        <button type="button" @click="reset()" class="mt-4 rounded bg-primary px-4 py-2 text-sm text-white transition-colors hover:bg-primary-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
+          Сбросить фильтры
+        </button>
+      </div>
+
+      <div x-show="hasMore" x-cloak class="mt-6 text-center">
+        <button type="button" @click="showMore()" class="rounded border border-border bg-white px-5 py-2 text-sm font-medium transition-colors hover:border-primary hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          Показать ещё
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-12 border-t border-border bg-white">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+      <p>© Vizitto — каталог организаций Чечни</p>
+      <ul class="flex flex-wrap gap-4">
+        <li><a class="rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="/about/">О проекте</a></li>
+        <li><a class="rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="/contact/">Контакты</a></li>
+        <li><a class="rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="/faq/">Вопросы</a></li>
+        <li><a class="rounded hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary" href="/privacy/">Конфиденциальность</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
