@@ -1,0 +1,11 @@
+/*
+ * The only hand-written CSS in the project. Tailwind (Play CDN) and Alpine do
+ * everything else.
+ *
+ * [x-cloak] is Alpine's own documented requirement: it hides elements until
+ * Alpine initialises, preventing a flash of unfiltered markup. !important is
+ * needed here because Tailwind's display utilities (grid, flex) sit at the same
+ * specificity and the CDN injects its stylesheet at runtime, so source order
+ * cannot be relied on.
+ */
+[x-cloak] { display: none !important; }

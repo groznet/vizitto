@@ -1,0 +1,393 @@
+[
+  {
+    "slug": "food-drink",
+    "ru": "Еда и напитки",
+    "icon": "utensils",
+    "count": 5,
+    "subcategories": [
+      {
+        "slug": "cafe",
+        "ru": "Кафе и кофейни",
+        "count": 3
+      },
+      {
+        "slug": "restaurant",
+        "ru": "Рестораны",
+        "count": 0
+      },
+      {
+        "slug": "bar",
+        "ru": "Бары и пабы",
+        "count": 0
+      },
+      {
+        "slug": "fastfood",
+        "ru": "Фастфуд",
+        "count": 1
+      },
+      {
+        "slug": "bakery",
+        "ru": "Пекарни",
+        "count": 0
+      },
+      {
+        "slug": "grocery",
+        "ru": "Магазины продуктов / супермаркеты",
+        "count": 0
+      },
+      {
+        "slug": "confectionery",
+        "ru": "Сладости и кондитерские",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "slug": "health-beauty",
+    "ru": "Здоровье и красота",
+    "icon": "heart-pulse",
+    "count": 7,
+    "subcategories": [
+      {
+        "slug": "pharmacy",
+        "ru": "Аптеки",
+        "count": 0
+      },
+      {
+        "slug": "clinic",
+        "ru": "Клиники / медцентры",
+        "count": 7
+      },
+      {
+        "slug": "dentistry",
+        "ru": "Стоматология",
+        "count": 0
+      },
+      {
+        "slug": "veterinary",
+        "ru": "Ветеринарные клиники",
+        "count": 1
+      },
+      {
+        "slug": "beauty-salon",
+        "ru": "Салоны красоты",
+        "count": 0
+      },
+      {
+        "slug": "barbershop",
+        "ru": "Парикмахерские",
+        "count": 0
+      },
+      {
+        "slug": "spa",
+        "ru": "СПА и массаж",
+        "count": 0
+      }
+    ]
+  },
+  {
+    "slug": "retail",
+    "ru": "Товары и розница",
+    "icon": "bag-shopping",
+    "count": 8,
+    "subcategories": [
+      {
+        "slug": "clothing",
+        "ru": "Магазины одежды",
+        "count": 0
+      },
+      {
+        "slug": "shoes",
+        "ru": "Обувь",
+        "count": 0
+      },
+      {
+        "slug": "accessories",
+        "ru": "Аксессуары и украшения",
+        "count": 0
+      },
+      {
+        "slug": "electronics",
+        "ru": "Электроника и гаджеты",
+        "count": 1
+      },
+      {
+        "slug": "furniture",
+        "ru": "Мебель и интерьер",
+        "count": 3
+      },
+      {
+        "slug": "books-stationery",
+        "ru": "Книги и канцтовары",
+        "count": 3
+      },
+      {
+        "slug": "sporting-goods",
+        "ru": "Спорттовары",
+        "count": 0
+      }
+    ]
+  },
+  {
+    "slug": "services",
+    "ru": "Услуги",
+    "icon": "screwdriver-wrench",
+    "count": 6,
+    "subcategories": [
+      {
+        "slug": "repair",
+        "ru": "Ремонт техники / электроники",
+        "count": 0
+      },
+      {
+        "slug": "auto-service",
+        "ru": "Автосервис и СТО",
+        "count": 4
+      },
+      {
+        "slug": "legal",
+        "ru": "Юридические услуги",
+        "count": 0
+      },
+      {
+        "slug": "accounting",
+        "ru": "Бухгалтерия и финансы",
+        "count": 0
+      },
+      {
+        "slug": "marketing",
+        "ru": "Маркетинг и реклама",
+        "count": 2
+      },
+      {
+        "slug": "courses",
+        "ru": "Обучение и курсы",
+        "count": 1
+      },
+      {
+        "slug": "it-web",
+        "ru": "IT и веб-разработка",
+        "count": 0
+      },
+      {
+        "slug": "photo-video",
+        "ru": "Фотографы и видеографы",
+        "count": 0
+      }
+    ]
+  },
+  {
+    "slug": "real-estate",
+    "ru": "Жильё и недвижимость",
+    "icon": "house",
+    "count": 2,
+    "subcategories": [
+      {
+        "slug": "agency",
+        "ru": "Агентства недвижимости",
+        "count": 1
+      },
+      {
+        "slug": "construction",
+        "ru": "Строительство и ремонт",
+        "count": 5
+      },
+      {
+        "slug": "custom-furniture",
+        "ru": "Мебель на заказ / дизайн интерьера",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "slug": "entertainment",
+    "ru": "Развлечения и досуг",
+    "icon": "masks-theater",
+    "count": 1,
+    "subcategories": [
+      {
+        "slug": "cinema",
+        "ru": "Кинотеатры",
+        "count": 0
+      },
+      {
+        "slug": "theatre",
+        "ru": "Театры / концерты / шоу",
+        "count": 0
+      },
+      {
+        "slug": "parks",
+        "ru": "Парки, зоопарки, аттракционы",
+        "count": 0
+      },
+      {
+        "slug": "fitness",
+        "ru": "Спортзалы / фитнес-клубы",
+        "count": 0
+      },
+      {
+        "slug": "clubs",
+        "ru": "Клубы и вечеринки",
+        "count": 0
+      }
+    ]
+  },
+  {
+    "slug": "transport",
+    "ru": "Транспорт и логистика",
+    "icon": "truck",
+    "count": 4,
+    "subcategories": [
+      {
+        "slug": "taxi",
+        "ru": "Такси / каршеринг",
+        "count": 0
+      },
+      {
+        "slug": "car-rental",
+        "ru": "Автопрокат",
+        "count": 0
+      },
+      {
+        "slug": "delivery-company",
+        "ru": "Курьерские и транспортные компании",
+        "count": 1
+      },
+      {
+        "slug": "driving-school",
+        "ru": "Автошколы",
+        "count": 0
+      }
+    ]
+  },
+  {
+    "slug": "finance",
+    "ru": "Финансы и страхование",
+    "icon": "building-columns",
+    "count": 0,
+    "subcategories": [
+      {
+        "slug": "bank",
+        "ru": "Банки",
+        "count": 0
+      },
+      {
+        "slug": "insurance",
+        "ru": "Страховые компании",
+        "count": 0
+      },
+      {
+        "slug": "microfinance",
+        "ru": "Микрофинансы и кредитные организации",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "slug": "education",
+    "ru": "Образование и наука",
+    "icon": "graduation-cap",
+    "count": 1,
+    "subcategories": [
+      {
+        "slug": "school",
+        "ru": "Школы и детсады",
+        "count": 0
+      },
+      {
+        "slug": "university",
+        "ru": "ВУЗы / колледжи / институты",
+        "count": 0
+      },
+      {
+        "slug": "tutor",
+        "ru": "Репетиторы",
+        "count": 0
+      },
+      {
+        "slug": "research",
+        "ru": "Научные и исследовательские центры",
+        "count": 0
+      }
+    ]
+  },
+  {
+    "slug": "home-household",
+    "ru": "Дом и хозяйство",
+    "icon": "couch",
+    "count": 8,
+    "subcategories": [
+      {
+        "slug": "household-chemicals",
+        "ru": "Магазины бытовой химии",
+        "count": 0
+      },
+      {
+        "slug": "hardware-store",
+        "ru": "Хозяйственные магазины",
+        "count": 4
+      },
+      {
+        "slug": "garden",
+        "ru": "Сад и огород / питомники",
+        "count": 0
+      },
+      {
+        "slug": "renovation",
+        "ru": "Ремонт домов и квартир",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "slug": "travel",
+    "ru": "Туризм и путешествия",
+    "icon": "plane",
+    "count": 1,
+    "subcategories": [
+      {
+        "slug": "hotel",
+        "ru": "Отели и гостиницы",
+        "count": 1
+      },
+      {
+        "slug": "guesthouse",
+        "ru": "Гостевые дома и апартаменты",
+        "count": 0
+      },
+      {
+        "slug": "travel-agency",
+        "ru": "Турагентства",
+        "count": 0
+      },
+      {
+        "slug": "excursions",
+        "ru": "Экскурсионные услуги",
+        "count": 0
+      }
+    ]
+  },
+  {
+    "slug": "other",
+    "ru": "Другое и местные сервисы",
+    "icon": "circle-info",
+    "count": 1,
+    "subcategories": [
+      {
+        "slug": "religious",
+        "ru": "Религиозные организации",
+        "count": 0
+      },
+      {
+        "slug": "nonprofit",
+        "ru": "Волонтерские и НКО",
+        "count": 0
+      },
+      {
+        "slug": "public-institution",
+        "ru": "Публичные учреждения (музеи, библиотеки, МФЦ)",
+        "count": 0
+      }
+    ]
+  }
+]

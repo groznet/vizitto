@@ -1,247 +1,263 @@
-// Alpine.js store and components
+/**
+ * Alpine components for Vizitto.
+ *
+ * Logic lives here rather than in inline x-data expressions (brief section 10).
+ * The catalog loads data/cards.json once and filters it in memory — fine to
+ * roughly 2,000 cards, after which the JSON is split per category.
+ */
+
+/** Normalises for search: case, ё/е, and surrounding whitespace. */
+function foldText(value) {
+  return String(value ?? '').toLowerCase().replace(/ё/g, 'е').trim();
+}
+
+/** Collects every string on a card that free-text search should match. */
+function searchIndexFor(card) {
+  return foldText([
+    card.title,
+    card.description,
+    card.address,
+    card.category?.ru,
+    card.subcategory?.ru,
+    card.city?.ru,
+    ...(card.tags ?? []),
+  ].filter(Boolean).join(' '));
+}
+
+const FEATURE_LABELS = {
+  delivery: 'Доставка', pickup: 'Самовывоз', wifi: 'Wi-Fi', parking: 'Парковка',
+  card: 'Оплата картой', halal: 'Халяль', '24h': 'Круглосуточно',
+  kids: 'Детская комната', accessible: 'Доступная среда',
+};
+
+const RATING_SOURCE_LABELS = {
+  yandex: 'Яндекс.Картах', '2gis': '2ГИС', google: 'Google Картах', own: 'Vizitto',
+};
+
+/** Russian plural picker: 1 отзыв, 2 отзыва, 5 отзывов. */
+function plural(n, one, few, many) {
+  const m10 = n % 10;
+  const m100 = n % 100;
+  if (m10 === 1 && m100 !== 11) return one;
+  if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few;
+  return many;
+}
+
 document.addEventListener('alpine:init', () => {
+  /* ----------------------------------------------------------- mobile menu */
+  Alpine.data('siteNav', () => ({
+    open: false,
+    toggle() { this.open = !this.open; },
+    close() { this.open = false; },
+  }));
 
-    const { nextTick } = Alpine
-    
-    Alpine.store('layout', {
-        header: '',
-        footer: '',
+  /* ------------------------------------------------- home page search box */
+  Alpine.data('homeSearch', () => ({
+    q: '',
+    submit() {
+      const query = this.q.trim();
+      window.location.href = query
+        ? `/catalog/?q=${encodeURIComponent(query)}`
+        : '/catalog/';
+    },
+  }));
 
-        async loadHeader() {
-            try {
-                const response = await fetch('/components/header.html');
-                this.header = await response.text();
+  /* ----------------------------------------------------------- home page */
+  /**
+   * The home page's category tiles are static HTML so search engines see them.
+   * This only fills in the per-category counts and the recent-cards strip.
+   */
+  Alpine.data('homeFeed', () => ({
+    cards: [],
+    counts: {},
+    total: 0,
+    loading: true,
 
-                // wait for Alpine to place the HTML into the DOM
-                await nextTick();
+    async init() {
+      try {
+        const [cards, categories] = await Promise.all([
+          fetch('/data/cards.json').then((r) => r.ok ? r.json() : []),
+          fetch('/data/categories.json').then((r) => r.ok ? r.json() : []),
+        ]);
+        this.total = cards.length;
+        this.cards = cards;
+        this.counts = Object.fromEntries(categories.map((c) => [c.slug, c.count]));
+      } catch (err) {
+        console.error('home feed load failed:', err);
+      } finally {
+        this.loading = false;
+      }
+    },
 
-                // initialize Alpine inside the inserted header
-                const headerEl = document.getElementById('site-header');
-                if (headerEl) Alpine.initTree(headerEl);
-            } catch (error) {
-                console.error('Error loading header:', error);
-                this.header = '<div class="p-4">Error loading header</div>';
-            }
-        },
+    /**
+     * cards.json already arrives in the brief's sort order (section 6.8:
+     * featured, then verified, then rating, then title). It is not recency —
+     * most rows have no updated_at — so the heading says «Из каталога».
+     */
+    get highlighted() {
+      return this.cards.slice(0, 6);
+    },
 
-        async loadFooter() {
-            try {
-                const response = await fetch('/components/footer.html');
-                this.footer = await response.text();
+    countFor(slug) { return this.counts[slug] ?? 0; },
 
-                await nextTick();
-                const footerEl = document.getElementById('site-footer');
-                if (footerEl) Alpine.initTree(footerEl);
-            } catch (error) {
-                console.error('Error loading footer:', error);
-                this.footer = '<div class="p-4">Error loading footer</div>';
-            }
-        }
-    });
+    cardUrl(card) { return `/catalog/${card.slug}/`; },
 
-    // Cards Page Script
-    // Catalog component
-    Alpine.data('catalog', () => ({
-        // Data
-        allListings: [],
-        filteredListings: [],
-        paginatedListings: [],
-        selectedListing: null,
-        
-        // State
-        lightboxOpen: false,
-        currentPage: 1,
-        itemsPerPage: 6,
-        
-        // Filters
-        filters: {
-            region: '',
-            category: '',
-            minRating: 0,
-            price_level: ''
-        },
-        searchQuery: '',
-        sortBy: 'rating',
-        
-        // Computed properties
-        get regions() {
-            return [...new Set(this.allListings.map(listing => listing.region))].sort();
-        },
-        
-        get categories() {
-            return [...new Set(this.allListings.map(listing => listing.category))].sort();
-        },
-        
-        get totalPages() {
-            return Math.ceil(this.filteredListings.length / this.itemsPerPage);
-        },
+    excerpt(card) {
+      if (card.description) {
+        return card.description.length > 120
+          ? card.description.slice(0, 117).replace(/\s+\S*$/, '') + '…'
+          : card.description;
+      }
+      return card.subcategory ? card.subcategory.ru : card.category.ru;
+    },
 
-        get services() {
-            return [...new Set(this.allListings.flatMap(listing => listing.services))].sort();
-        },
-        
-        
-        // Methods
-        async init() {
-            await this.loadListings();
-            this.filterListings();
-        },
-        
-        async loadListings() {
-            try {
-                const response = await fetch('/data/cards.json');
-                this.allListings = await response.json();
-            } catch (error) {
-                console.error('Error loading listings:', error);
-                this.allListings = [];
-            }
-        },
-        
-        // Filtering method
-        filterListings() {
-            let filtered = [...this.allListings];
-            
-            // Search filter
-            if (this.searchQuery) {
-                const query = this.searchQuery.toLowerCase();
-                filtered = filtered.filter(listing => 
-                    listing.title.toLowerCase().includes(query) ||
-                    listing.category.toLowerCase().includes(query) ||
-                    listing.subcategory.toLowerCase().includes(query) ||
-                    listing.tags.some(tag => tag.toLowerCase().includes(query)) ||
-                    listing.description.toLowerCase().includes(query)
-                );
-            }
-            
-            // Region filter
-            if (this.filters.region) {
-                filtered = filtered.filter(listing => listing.region === this.filters.region);
-            }
-            
-            // Category filter
-            if (this.filters.category) {
-                filtered = filtered.filter(listing => listing.category === this.filters.category);
-            }
-            
-            // Rating filter
-            if (this.filters.minRating > 0) {
-                filtered = filtered.filter(listing => listing.rating >= this.filters.minRating);
-            }
+    totalLabel() {
+      return `${this.total} ${plural(this.total, 'организация', 'организации', 'организаций')}`;
+    },
+  }));
 
-            // Price level filter
-            if (this.filters.price_level) {
-                filtered = filtered.filter(listing => listing.price_level == this.filters.price_level);
-            }            
-            
-            this.filteredListings = filtered;
-            this.currentPage = 1;
-            this.sortListings();
-            this.updatePagination();
-        },
-        
-        // Sorting method
-        sortListings() {
-            switch (this.sortBy) {
-                case 'rating':
-                    this.filteredListings.sort((a, b) => b.rating - a.rating);
-                    break;
-                case 'updated_at':
-                    this.filteredListings.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
-                    break;
-                case 'title_asc':
-                    this.filteredListings.sort((a, b) => a.title.localeCompare(b.title));
-                    break;
-                case 'title_desc':
-                    this.filteredListings.sort((a, b) => b.title.localeCompare(a.title));
-                    break;
-                case 'reviews':
-                    this.filteredListings.sort((a, b) => b.reviews_count - a.reviews_count);
-                    break;
-            }
-            this.updatePagination();
-        },
-        
-        // Pagination methods
-        updatePagination() {
-            const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-            const endIndex = startIndex + this.itemsPerPage;
-            this.paginatedListings = this.filteredListings.slice(startIndex, endIndex);
-        },
+  /* ------------------------------------------------------------- catalog */
+  Alpine.data('catalog', () => ({
+    cards: [],
+    categories: [],
+    regions: [],
+    loading: true,
+    error: null,
+    pageSize: 24,
+    shown: 24,
 
-        goToPage(page) {
-            if (page < 1 || page > this.totalPages) return;
-            this.currentPage = page;
-            this.updatePagination();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        },
+    filters: { category: '', city: '', q: '' },
 
-        shouldShowPage(page) {
-            const delta = 2; // number of pages before/after current page to show
-            return page === 1 || page === this.totalPages || (page >= this.currentPage - delta && page <= this.currentPage + delta);
-        },
+    async init() {
+      this.readFiltersFromUrl();
+      try {
+        const [cards, categories, regions] = await Promise.all([
+          fetch('/data/cards.json').then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+          fetch('/data/categories.json').then((r) => r.ok ? r.json() : []),
+          fetch('/data/regions.json').then((r) => r.ok ? r.json() : []),
+        ]);
+        this.cards = cards.map((c) => ({ ...c, _search: searchIndexFor(c) }));
+        this.categories = categories.filter((c) => c.count > 0);
+        this.regions = regions;
+      } catch (err) {
+        this.error = 'Не удалось загрузить каталог. Обновите страницу.';
+        console.error('catalog load failed:', err);
+      } finally {
+        this.loading = false;
+      }
 
-        showLeftDots(page) {
-            return page === 2 && this.currentPage - 2 > 1;
-        },
+      // x-model writes the select's value during init, before the <option>
+      // elements exist, so a shared URL left the control looking unset even
+      // though the filter was applied. Re-assert it now that they are rendered.
+      this.$nextTick(() => this.syncSelects());
 
-        showRightDots(page) {
-            return page === this.totalPages - 1 && this.currentPage + 2 < this.totalPages;
-        },
-        // End pagination methods
+      // Back/forward should restore the filters the URL describes.
+      window.addEventListener('popstate', () => {
+        this.readFiltersFromUrl();
+        this.shown = this.pageSize;
+        this.$nextTick(() => this.syncSelects());
+      });
+    },
 
-        // Other methods
-        resetFilters() {
-            this.filters = {
-                region: '',
-                category: '',
-                minRating: 0
-            };
-            this.searchQuery = '';
-            this.sortBy = 'rating';
-            this.filterListings();
-        },
-        
-        openLightbox(listing) {
-            this.selectedListing = listing;
-            this.lightboxOpen = true;
-            document.body.style.overflow = 'hidden';
-        },
-        
-        closeLightbox() {
-            this.lightboxOpen = false;
-            this.selectedListing = null;
-            document.body.style.overflow = 'auto';
-        }
-    }));
-});
+    /* --- URL state ------------------------------------------------------ */
+    readFiltersFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      this.filters.category = params.get('category') ?? '';
+      this.filters.city = params.get('city') ?? '';
+      this.filters.q = params.get('q') ?? '';
+    },
 
-// Close lightbox on ESC key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        const catalog = Alpine.$data(document.querySelector('[x-data="catalog()"]'));
-        if (catalog && catalog.lightboxOpen) {
-            catalog.closeLightbox();
-        }
-    }
-});
+    /** Filter state lives in the query string so a filtered view is shareable. */
+    writeFiltersToUrl() {
+      const params = new URLSearchParams();
+      if (this.filters.category) params.set('category', this.filters.category);
+      if (this.filters.city) params.set('city', this.filters.city);
+      if (this.filters.q.trim()) params.set('q', this.filters.q.trim());
+      const query = params.toString();
+      window.history.replaceState(null, '', query ? `?${query}` : window.location.pathname);
+    },
 
-// Run loaders after Alpine has finished initializing
-document.addEventListener('alpine:initialized', () => {
-    const store = Alpine.store && Alpine.store('layout');
-    if (store) {
-        store.loadHeader();
-        store.loadFooter();
-    }
-});
+    /** Pushes filter state onto the select elements themselves. */
+    syncSelects() {
+      if (this.$refs.categorySelect) this.$refs.categorySelect.value = this.filters.category;
+      if (this.$refs.citySelect) this.$refs.citySelect.value = this.filters.city;
+    },
 
-// Fallback: if your Alpine version doesn't emit alpine:initialized, use DOMContentLoaded
-document.addEventListener('DOMContentLoaded', () => {
-    // small delay to let alpine:init run if needed
-    setTimeout(() => {
-        const store = Alpine.store && Alpine.store('layout');
-        if (store && !document.getElementById('site-header').innerHTML.trim()) {
-            store.loadHeader();
-            store.loadFooter();
-        }
-    }, 50);
+    onFilterChange() {
+      this.shown = this.pageSize;
+      this.writeFiltersToUrl();
+    },
+
+    reset() {
+      this.filters = { category: '', city: '', q: '' };
+      this.onFilterChange();
+    },
+
+    get hasActiveFilters() {
+      return Boolean(this.filters.category || this.filters.city || this.filters.q.trim());
+    },
+
+    /* --- derived data --------------------------------------------------- */
+    get cities() {
+      return this.regions.flatMap((r) => r.cities ?? []);
+    },
+
+    get results() {
+      const q = foldText(this.filters.q);
+      const terms = q ? q.split(/\s+/).filter(Boolean) : [];
+      return this.cards.filter((card) => {
+        if (this.filters.category && card.category?.slug !== this.filters.category) return false;
+        if (this.filters.city && card.city?.slug !== this.filters.city) return false;
+        return terms.every((term) => card._search.includes(term));
+      });
+    },
+
+    get visible() {
+      return this.results.slice(0, this.shown);
+    },
+
+    get hasMore() {
+      return this.results.length > this.shown;
+    },
+
+    showMore() {
+      this.shown += this.pageSize;
+    },
+
+    get resultsLabel() {
+      const n = this.results.length;
+      return `${n} ${plural(n, 'организация', 'организации', 'организаций')}`;
+    },
+
+    /* --- presentation helpers ------------------------------------------ */
+    cardUrl(card) { return `/catalog/${card.slug}/`; },
+
+    /** Listings show the description's first ~120 chars, or a truthful fallback. */
+    excerpt(card) {
+      if (card.description) {
+        return card.description.length > 120
+          ? card.description.slice(0, 117).replace(/\s+\S*$/, '') + '…'
+          : card.description;
+      }
+      return card.subcategory ? card.subcategory.ru : card.category.ru;
+    },
+
+    primaryPhone(card) { return card.contacts?.phone?.[0] ?? null; },
+
+    featureLabel(slug) { return FEATURE_LABELS[slug] ?? slug; },
+
+    /** Everything after the score, e.g. " · 54 отзыва на Яндекс.Картах". */
+    ratingSuffix(card) {
+      if (!card.rating) return '';
+      const source = RATING_SOURCE_LABELS[card.rating.source] ?? card.rating.source;
+      const count = card.rating.count
+        ? ` · ${card.rating.count} ${plural(card.rating.count, 'отзыв', 'отзыва', 'отзывов')}`
+        : '';
+      return `${count} на ${source}`;
+    },
+
+    categoryIcon(slug) {
+      return this.categories.find((c) => c.slug === slug)?.icon ?? 'circle-info';
+    },
+  }));
 });

@@ -1,0 +1,137 @@
+{
+  "generated_at": "2026-09-20T11:34:14.585Z",
+  "source": "fixture:scripts/fixtures",
+  "counts": {
+    "rows_read": 45,
+    "published": 44,
+    "rejected": 1,
+    "warnings": 29,
+    "card_pages": 44,
+    "pruned_pages": 0,
+    "without_image": 44
+  },
+  "rejected": [
+    {
+      "id": "38",
+      "reason": "missing required field: title"
+    }
+  ],
+  "warnings": [
+    {
+      "id": "1",
+      "reason": "rating 4.8 has no rating_source — dropped (brief section 6.3)"
+    },
+    {
+      "id": "2",
+      "reason": "instagram link withheld pending legal check: instagram.com/chaypey95"
+    },
+    {
+      "id": "2",
+      "reason": "rating 4.7 has no rating_source — dropped (brief section 6.3)"
+    },
+    {
+      "id": "3",
+      "reason": "subcategory \"Автосервис и СТО\" sits under \"Услуги\" in the taxonomy, not \"Транспорт и логистика\" — kept, please align the sheet"
+    },
+    {
+      "id": "6",
+      "reason": "subcategory \"Микрофинансы и кредитные организации\" sits under \"Финансы и страхование\" in the taxonomy, not \"Товары и розница\" — kept, please align the sheet"
+    },
+    {
+      "id": "8",
+      "reason": "subcategory \"Строительство и ремонт\" sits under \"Жильё и недвижимость\" in the taxonomy, not \"Дом и хозяйство\" — kept, please align the sheet"
+    },
+    {
+      "id": "9",
+      "reason": "subcategory \"Строительство и ремонт\" sits under \"Жильё и недвижимость\" in the taxonomy, not \"Дом и хозяйство\" — kept, please align the sheet"
+    },
+    {
+      "id": "12",
+      "reason": "subcategory \"Строительство и ремонт\" sits under \"Жильё и недвижимость\" in the taxonomy, not \"Дом и хозяйство\" — kept, please align the sheet"
+    },
+    {
+      "id": "15",
+      "reason": "\"@oko.land\" is not a valid Telegram handle — dropped rather than linked"
+    },
+    {
+      "id": "16",
+      "reason": "subcategory \"Ветеринарные клиники\" sits under \"Здоровье и красота\" in the taxonomy, not \"Другое и местные сервисы\" — kept, please align the sheet"
+    },
+    {
+      "id": "18",
+      "reason": "subcategory \"Автосервис и СТО\" sits under \"Услуги\" in the taxonomy, not \"Транспорт и логистика\" — kept, please align the sheet"
+    },
+    {
+      "id": "19",
+      "reason": "subcategory \"Автосервис и СТО\" sits under \"Услуги\" in the taxonomy, not \"Транспорт и логистика\" — kept, please align the sheet"
+    },
+    {
+      "id": "22",
+      "reason": "subcategory \"Хозяйственные магазины\" sits under \"Дом и хозяйство\" in the taxonomy, not \"Развлечения и досуг\" — kept, please align the sheet"
+    },
+    {
+      "id": "23",
+      "reason": "subcategory \"Автосервис и СТО\" sits under \"Услуги\" in the taxonomy, not \"Транспорт и логистика\" — kept, please align the sheet"
+    },
+    {
+      "id": "24",
+      "reason": "subcategory \"Курьерские и транспортные компании\" sits under \"Транспорт и логистика\" in the taxonomy, not \"Услуги\" — kept, please align the sheet"
+    },
+    {
+      "id": "25",
+      "reason": "subcategory \"Хозяйственные магазины\" sits under \"Дом и хозяйство\" in the taxonomy, not \"Товары и розница\" — kept, please align the sheet"
+    },
+    {
+      "id": "26",
+      "reason": "subcategory \"Строительство и ремонт\" sits under \"Жильё и недвижимость\" in the taxonomy, not \"Дом и хозяйство\" — kept, please align the sheet"
+    },
+    {
+      "id": "29",
+      "reason": "subcategory \"Ремонт домов и квартир\" sits under \"Дом и хозяйство\" in the taxonomy, not \"Услуги\" — kept, please align the sheet"
+    },
+    {
+      "id": "32",
+      "reason": "subcategory \"Мебель на заказ / дизайн интерьера\" sits under \"Жильё и недвижимость\" in the taxonomy, not \"Товары и розница\" — kept, please align the sheet"
+    },
+    {
+      "id": "36",
+      "reason": "subcategory \"Строительство и ремонт\" sits under \"Жильё и недвижимость\" in the taxonomy, not \"Дом и хозяйство\" — kept, please align the sheet"
+    },
+    {
+      "id": "37",
+      "reason": "subcategory is the placeholder text \"Подкатегория\" — dropped"
+    },
+    {
+      "id": "40",
+      "reason": "subcategory \"Мебель и интерьер\" sits under \"Товары и розница\" in the taxonomy, not \"Жильё и недвижимость\" — kept, please align the sheet"
+    },
+    {
+      "id": "41",
+      "reason": "subcategory is the placeholder text \"Подкатегория\" — dropped"
+    },
+    {
+      "id": "42",
+      "reason": "subcategory \"Мебель и интерьер\" sits under \"Товары и розница\" in the taxonomy, not \"Услуги\" — kept, please align the sheet"
+    },
+    {
+      "id": "43",
+      "reason": "subcategory \"Мебель и интерьер\" sits under \"Товары и розница\" in the taxonomy, not \"Дом и хозяйство\" — kept, please align the sheet"
+    },
+    {
+      "id": "43",
+      "reason": "slug \"natyazhnye-potolki\" already taken — using \"natyazhnye-potolki-2\""
+    },
+    {
+      "id": "44",
+      "reason": "subcategory \"Обучение и курсы\" sits under \"Услуги\" in the taxonomy, not \"Образование и наука\" — kept, please align the sheet"
+    },
+    {
+      "id": "44",
+      "reason": "city case normalised: \"грозный\" -> \"Грозный\""
+    },
+    {
+      "id": "45",
+      "reason": "city \"Нальчик\" is not in the Helpers tab city list"
+    }
+  ]
+}
