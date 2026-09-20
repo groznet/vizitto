@@ -26,10 +26,30 @@ file.
 ### Commands (CI only — you never need to run these)
 
 ```bash
-node scripts/selftest.mjs                        # 14 assertions over the parsers
+node scripts/selftest.mjs                        # 17 assertions over the parsers
 node scripts/build.mjs                           # fetch the live sheet and build
 node scripts/build.mjs --fixture scripts/fixtures # build offline from committed sample rows
+node scripts/build.mjs --force                   # publish a sharp drop the guard would block
 ```
+
+### Why not the gviz endpoint
+
+gviz infers a data type per column and returns an **empty** cell for anything
+that does not fit. `phone` is mostly bare numbers, so it was typed numeric and
+every cell holding several newline-separated numbers came back blank: 11
+businesses silently lost their phones and 7 cards were dropped for having no
+contact left. `/export?format=csv` does no coercion and is used instead.
+
+Set `gid` for each tab in `TABS` (select the tab in the sheet; the address bar
+shows `#gid=N`). With `gid: null` the cards tab reads the **first** sheet.
+
+### Regression guard
+
+Each build compares published cards, phone numbers and descriptions against the
+previous `data/cards.json`. A drop over 20% in any of them fails the build
+before anything is written. In the incident above the card count fell only 16%
+— under the threshold — while the phone count fell 44%, which is why more than
+one metric is tracked.
 
 ### Generated — never edit by hand
 

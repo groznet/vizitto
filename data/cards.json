@@ -47,6 +47,54 @@
     "updated_at": null
   },
   {
+    "id": 19,
+    "slug": "avtomagazin-magnit",
+    "title": "Автомагазин Магнит",
+    "category": {
+      "slug": "transport",
+      "ru": "Транспорт и логистика"
+    },
+    "subcategory": {
+      "slug": "auto-service",
+      "ru": "Автосервис и СТО"
+    },
+    "region": {
+      "slug": "chechnya",
+      "ru": "Чечня"
+    },
+    "city": {
+      "slug": "grozny",
+      "ru": "Грозный"
+    },
+    "address": "ул.Кирова,8",
+    "map_url": null,
+    "contacts": {
+      "phone": [
+        "+79388992059",
+        "+79635877644"
+      ],
+      "whatsapp": null,
+      "telegram": null,
+      "vk": null,
+      "email": null,
+      "website": null
+    },
+    "image": null,
+    "description": null,
+    "tags": [],
+    "features": [],
+    "hours": {
+      "mon_fri": null,
+      "sat_sun": null,
+      "note": null
+    },
+    "price_level": null,
+    "rating": null,
+    "verified": false,
+    "featured": false,
+    "updated_at": null
+  },
+  {
     "id": 39,
     "slug": "agentstvo-nedvizhimosti-region",
     "title": "Агентство недвижимости «Регион»",
@@ -212,6 +260,54 @@
     "contacts": {
       "phone": [
         "+78662720037"
+      ],
+      "whatsapp": null,
+      "telegram": null,
+      "vk": null,
+      "email": null,
+      "website": null
+    },
+    "image": null,
+    "description": null,
+    "tags": [],
+    "features": [],
+    "hours": {
+      "mon_fri": null,
+      "sat_sun": null,
+      "note": null
+    },
+    "price_level": null,
+    "rating": null,
+    "verified": false,
+    "featured": false,
+    "updated_at": null
+  },
+  {
+    "id": 24,
+    "slug": "grzoperevozki",
+    "title": "Грзоперевозки",
+    "category": {
+      "slug": "services",
+      "ru": "Услуги"
+    },
+    "subcategory": {
+      "slug": "delivery-company",
+      "ru": "Курьерские и транспортные компании"
+    },
+    "region": {
+      "slug": "chechnya",
+      "ru": "Чечня"
+    },
+    "city": {
+      "slug": "grozny",
+      "ru": "Грозный"
+    },
+    "address": null,
+    "map_url": null,
+    "contacts": {
+      "phone": [
+        "+79640089595",
+        "+79659590050"
       ],
       "whatsapp": null,
       "telegram": null,
@@ -492,7 +588,11 @@
     "address": null,
     "map_url": null,
     "contacts": {
-      "phone": [],
+      "phone": [
+        "+79287895730",
+        "+79634282053",
+        "+79899321640"
+      ],
       "whatsapp": null,
       "telegram": null,
       "vk": null,
@@ -639,6 +739,54 @@
     "contacts": {
       "phone": [
         "+79280223063"
+      ],
+      "whatsapp": null,
+      "telegram": null,
+      "vk": null,
+      "email": null,
+      "website": null
+    },
+    "image": null,
+    "description": null,
+    "tags": [],
+    "features": [],
+    "hours": {
+      "mon_fri": null,
+      "sat_sun": null,
+      "note": null
+    },
+    "price_level": null,
+    "rating": null,
+    "verified": false,
+    "featured": false,
+    "updated_at": null
+  },
+  {
+    "id": 33,
+    "slug": "massazh",
+    "title": "Массаж",
+    "category": {
+      "slug": "health-beauty",
+      "ru": "Здоровье и красота"
+    },
+    "subcategory": {
+      "slug": "clinic",
+      "ru": "Клиники / медцентры"
+    },
+    "region": {
+      "slug": "chechnya",
+      "ru": "Чечня"
+    },
+    "city": {
+      "slug": "grozny",
+      "ru": "Грозный"
+    },
+    "address": "ул.8-го марта,37А",
+    "map_url": null,
+    "contacts": {
+      "phone": [
+        "+79280206715",
+        "+79280181106"
       ],
       "whatsapp": null,
       "telegram": null,
@@ -872,7 +1020,10 @@
     "address": "Пр.Путина,20",
     "map_url": null,
     "contacts": {
-      "phone": [],
+      "phone": [
+        "+79288889091",
+        "+79280899484"
+      ],
       "whatsapp": null,
       "telegram": "rassrochka_95",
       "vk": null,
@@ -1033,6 +1184,55 @@
     "updated_at": null
   },
   {
+    "id": 25,
+    "slug": "servis-garant",
+    "title": "Сервис Гарант",
+    "category": {
+      "slug": "retail",
+      "ru": "Товары и розница"
+    },
+    "subcategory": {
+      "slug": "hardware-store",
+      "ru": "Хозяйственные магазины"
+    },
+    "region": {
+      "slug": "chechnya",
+      "ru": "Чечня"
+    },
+    "city": {
+      "slug": "grozny",
+      "ru": "Грозный"
+    },
+    "address": "ул.Жуковского,13",
+    "map_url": null,
+    "contacts": {
+      "phone": [
+        "+79289536958",
+        "+79287355358",
+        "+79287844902"
+      ],
+      "whatsapp": null,
+      "telegram": null,
+      "vk": null,
+      "email": null,
+      "website": null
+    },
+    "image": null,
+    "description": null,
+    "tags": [],
+    "features": [],
+    "hours": {
+      "mon_fri": null,
+      "sat_sun": null,
+      "note": null
+    },
+    "price_level": null,
+    "rating": null,
+    "verified": false,
+    "featured": false,
+    "updated_at": null
+  },
+  {
     "id": 9,
     "slug": "td-barkalla",
     "title": "ТД «Баркалла»",
@@ -1055,7 +1255,10 @@
     "address": "ул.Дербентская,47",
     "map_url": null,
     "contacts": {
-      "phone": [],
+      "phone": [
+        "+79287354879",
+        "+79226730751"
+      ],
       "whatsapp": null,
       "telegram": null,
       "vk": null,
@@ -1152,6 +1355,56 @@
       ],
       "whatsapp": null,
       "telegram": "halimi_hingalsh",
+      "vk": null,
+      "email": null,
+      "website": null
+    },
+    "image": null,
+    "description": null,
+    "tags": [],
+    "features": [],
+    "hours": {
+      "mon_fri": null,
+      "sat_sun": null,
+      "note": null
+    },
+    "price_level": null,
+    "rating": null,
+    "verified": false,
+    "featured": false,
+    "updated_at": null
+  },
+  {
+    "id": 2,
+    "slug": "chaypey-set-magazinov-chaya-i-kofe",
+    "title": "ЧайПей \nСеть магазинов чая и кофе",
+    "category": {
+      "slug": "food-drink",
+      "ru": "Еда и напитки"
+    },
+    "subcategory": {
+      "slug": "cafe",
+      "ru": "Кафе и кофейни"
+    },
+    "region": {
+      "slug": "chechnya",
+      "ru": "Чечня"
+    },
+    "city": {
+      "slug": "grozny",
+      "ru": "Грозный"
+    },
+    "address": "Ул. Орзамиева, 30\nУл. Назарбаева, 89\nУл. Дьякова, 12",
+    "map_url": null,
+    "contacts": {
+      "phone": [
+        "+79389898111",
+        "+79389952995",
+        "+79389953995",
+        "+79389954995"
+      ],
+      "whatsapp": null,
+      "telegram": null,
       "vk": null,
       "email": null,
       "website": null
@@ -1454,6 +1707,54 @@
     "updated_at": null
   },
   {
+    "id": 11,
+    "slug": "kdl-kliniko-diagnosticheskaya-laboratoriya",
+    "title": "KDL Клинико-диагностическая лаборатория",
+    "category": {
+      "slug": "health-beauty",
+      "ru": "Здоровье и красота"
+    },
+    "subcategory": {
+      "slug": "clinic",
+      "ru": "Клиники / медцентры"
+    },
+    "region": {
+      "slug": "chechnya",
+      "ru": "Чечня"
+    },
+    "city": {
+      "slug": "grozny",
+      "ru": "Грозный"
+    },
+    "address": "ул.Лорсанова,6",
+    "map_url": null,
+    "contacts": {
+      "phone": [
+        "+79889090535",
+        "+78712296163"
+      ],
+      "whatsapp": null,
+      "telegram": null,
+      "vk": null,
+      "email": null,
+      "website": null
+    },
+    "image": null,
+    "description": null,
+    "tags": [],
+    "features": [],
+    "hours": {
+      "mon_fri": null,
+      "sat_sun": null,
+      "note": null
+    },
+    "price_level": null,
+    "rating": null,
+    "verified": false,
+    "featured": false,
+    "updated_at": null
+  },
+  {
     "id": 30,
     "slug": "kitab",
     "title": "Kitab",
@@ -1520,7 +1821,7 @@
       "slug": "grozny",
       "ru": "Грозный"
     },
-    "address": "РТЦ«Беркат»,34 блок\r\n2 этаж",
+    "address": "РТЦ«Беркат»,34 блок\n2 этаж",
     "map_url": null,
     "contacts": {
       "phone": [
@@ -1577,6 +1878,54 @@
       "telegram": "miss_blesk_",
       "vk": null,
       "email": "abbazova_91@mail.ru",
+      "website": null
+    },
+    "image": null,
+    "description": null,
+    "tags": [],
+    "features": [],
+    "hours": {
+      "mon_fri": null,
+      "sat_sun": null,
+      "note": null
+    },
+    "price_level": null,
+    "rating": null,
+    "verified": false,
+    "featured": false,
+    "updated_at": null
+  },
+  {
+    "id": 13,
+    "slug": "nokia-n",
+    "title": "Nokia n",
+    "category": {
+      "slug": "retail",
+      "ru": "Товары и розница"
+    },
+    "subcategory": {
+      "slug": "electronics",
+      "ru": "Электроника и гаджеты"
+    },
+    "region": {
+      "slug": "chechnya",
+      "ru": "Чечня"
+    },
+    "city": {
+      "slug": "grozny",
+      "ru": "Грозный"
+    },
+    "address": "ул.Грибоедова,13",
+    "map_url": null,
+    "contacts": {
+      "phone": [
+        "+79280007077",
+        "+79380007077"
+      ],
+      "whatsapp": null,
+      "telegram": null,
+      "vk": null,
+      "email": null,
       "website": null
     },
     "image": null,
@@ -1711,7 +2060,10 @@
     "address": null,
     "map_url": null,
     "contacts": {
-      "phone": [],
+      "phone": [
+        "+79280225862",
+        "+79286465666"
+      ],
       "whatsapp": null,
       "telegram": "waycars_shop",
       "vk": null,

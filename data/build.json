@@ -1,44 +1,16 @@
 {
-  "generated_at": "2026-09-20T11:48:30.908Z",
-  "source": "sheet:1oUc3bWqXlEx1LvUggUHxZHdvexqt0P_JcdxNa8rjwFA",
+  "generated_at": "2026-09-20T13:16:52.462Z",
+  "source": "fixture:scripts/fixtures",
   "counts": {
     "rows_read": 45,
-    "published": 37,
-    "rejected": 8,
-    "warnings": 25,
-    "card_pages": 37,
+    "published": 44,
+    "rejected": 1,
+    "warnings": 29,
+    "card_pages": 44,
     "pruned_pages": 0,
-    "without_image": 37
+    "without_image": 44
   },
   "rejected": [
-    {
-      "id": "2",
-      "reason": "no contact method (phone/whatsapp/telegram/website/email all empty)"
-    },
-    {
-      "id": "11",
-      "reason": "no contact method (phone/whatsapp/telegram/website/email all empty)"
-    },
-    {
-      "id": "13",
-      "reason": "no contact method (phone/whatsapp/telegram/website/email all empty)"
-    },
-    {
-      "id": "19",
-      "reason": "no contact method (phone/whatsapp/telegram/website/email all empty)"
-    },
-    {
-      "id": "24",
-      "reason": "no contact method (phone/whatsapp/telegram/website/email all empty)"
-    },
-    {
-      "id": "25",
-      "reason": "no contact method (phone/whatsapp/telegram/website/email all empty)"
-    },
-    {
-      "id": "33",
-      "reason": "no contact method (phone/whatsapp/telegram/website/email all empty)"
-    },
     {
       "id": "38",
       "reason": "missing required field: title"
@@ -52,6 +24,10 @@
     {
       "id": "2",
       "reason": "instagram link withheld pending legal check: instagram.com/chaypey95"
+    },
+    {
+      "id": "2",
+      "reason": "rating 4.7 has no rating_source — dropped (brief section 6.3)"
     },
     {
       "id": "3",
@@ -86,12 +62,24 @@
       "reason": "subcategory \"Автосервис и СТО\" sits under \"Услуги\" in the taxonomy, not \"Транспорт и логистика\" — kept, please align the sheet"
     },
     {
+      "id": "19",
+      "reason": "subcategory \"Автосервис и СТО\" sits under \"Услуги\" in the taxonomy, not \"Транспорт и логистика\" — kept, please align the sheet"
+    },
+    {
       "id": "22",
       "reason": "subcategory \"Хозяйственные магазины\" sits under \"Дом и хозяйство\" in the taxonomy, not \"Развлечения и досуг\" — kept, please align the sheet"
     },
     {
       "id": "23",
       "reason": "subcategory \"Автосервис и СТО\" sits under \"Услуги\" in the taxonomy, not \"Транспорт и логистика\" — kept, please align the sheet"
+    },
+    {
+      "id": "24",
+      "reason": "subcategory \"Курьерские и транспортные компании\" sits under \"Транспорт и логистика\" in the taxonomy, not \"Услуги\" — kept, please align the sheet"
+    },
+    {
+      "id": "25",
+      "reason": "subcategory \"Хозяйственные магазины\" sits under \"Дом и хозяйство\" in the taxonomy, not \"Товары и розница\" — kept, please align the sheet"
     },
     {
       "id": "26",

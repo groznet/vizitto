@@ -4,7 +4,7 @@
  * sheet's messy cells depend on. Run: node scripts/selftest.mjs
  */
 import assert from 'node:assert/strict';
-import { parseCsv, slugify, normalisePhone, typographize } from './build.mjs';
+import { parseCsv, slugify, normalisePhone, typographize, csvUrl } from './build.mjs';
 
 let passed = 0;
 const t = (name, fn) => { fn(); passed++; console.log(`  ok  ${name}`); };
@@ -77,6 +77,24 @@ t('leaves an unmatched quote alone rather than guessing', () => {
   assert.equal(typographize('ТД "Баркалла'), 'ТД "Баркалла');
   assert.equal(typographize('без кавычек'), 'без кавычек');
   assert.equal(typographize(null), null);
+});
+
+t('cards tab never goes through gviz (it coerces types and blanks cells)', () => {
+  const url = csvUrl('SHEET', { name: 'List', gid: null });
+  assert.ok(url.includes('/export?format=csv'), url);
+  assert.ok(!url.includes('gviz'), url);
+});
+
+t('a known gid addresses the tab exactly', () => {
+  assert.equal(csvUrl('SHEET', { name: 'List', gid: 0 }),
+    'https://docs.google.com/spreadsheets/d/SHEET/export?format=csv&gid=0');
+  assert.equal(csvUrl('SHEET', { name: 'Helpers', gid: 12345 }),
+    'https://docs.google.com/spreadsheets/d/SHEET/export?format=csv&gid=12345');
+});
+
+t('text-only tabs may fall back to gviz by name', () => {
+  const url = csvUrl('SHEET', { name: 'Helpers', gid: null }, { allowGvizFallback: true });
+  assert.ok(url.includes('gviz') && url.includes('sheet=Helpers'), url);
 });
 
 console.log(`\n${passed} assertions passed.`);

@@ -13,7 +13,7 @@
  */
 
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync, readdirSync } from 'node:fs';
-import { join, dirname } from 'node:path';
+import { join, dirname, isAbsolute } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -21,9 +21,30 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 /* ------------------------------------------------------------------ config */
 
 const SHEET_ID = '1oUc3bWqXlEx1LvUggUHxZHdvexqt0P_JcdxNa8rjwFA';
-// Tabs are addressed by name. Renaming a tab in the sheet breaks the build
-// loudly (non-zero exit, last good site stays live) rather than silently.
-const TABS = { cards: 'List', taxonomy: 'Helpers' };
+/*
+ * Tabs, and how they are fetched.
+ *
+ * The gviz endpoint infers a data type per column and returns an EMPTY cell for
+ * anything that does not fit. The `phone` column is mostly bare numbers, so
+ * gviz typed it numeric and silently blanked every cell holding several
+ * newline-separated numbers — 11 businesses lost their phones and 7 cards were
+ * dropped entirely for having no contact left. The /export endpoint does no
+ * type coercion, so it is used instead wherever a gid is known.
+ *
+ * Set `gid` from the sheet URL (select the tab; the address bar shows #gid=N).
+ * With gid null the cards tab falls back to /export with no gid, which returns
+ * the FIRST sheet — correct while `List` is first, and a wrong tab fails loudly
+ * because buildHeaderMap rejects a header row without `id` and `title`.
+ */
+const TABS = {
+  cards: { name: 'List', gid: null },
+  taxonomy: { name: 'Helpers', gid: null },
+};
+
+// A drop this large between builds means the source broke, not that an editor
+// removed rows. The build stops rather than publishing the loss. Override with
+// --force for a genuine bulk removal.
+const REGRESSION_THRESHOLD = 0.2;
 const SITE_ORIGIN = 'https://vizitto.ru';
 
 // Open question 5 in the brief: linking business Instagram profiles from a
@@ -294,9 +315,17 @@ function normaliseWhatsapp(raw) {
 
 /* ------------------------------------------------------------------ fetch */
 
-async function fetchCsv(tabName) {
-  const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq`
-    + `?tqx=out:csv&sheet=${encodeURIComponent(tabName)}`;
+/** Prefers /export (no type coercion); falls back to gviz only for text-only tabs. */
+export function csvUrl(sheetId, { name, gid }, { allowGvizFallback = false } = {}) {
+  const base = `https://docs.google.com/spreadsheets/d/${sheetId}`;
+  if (gid !== null && gid !== undefined) return `${base}/export?format=csv&gid=${gid}`;
+  if (allowGvizFallback) return `${base}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(name)}`;
+  return `${base}/export?format=csv`;
+}
+
+async function fetchCsv(tab, options) {
+  const url = csvUrl(SHEET_ID, tab, options);
+  const tabName = tab.name;
   let lastError;
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
@@ -316,11 +345,14 @@ async function fetchCsv(tabName) {
 
 async function loadTab(which, fixtureDir) {
   if (fixtureDir) {
-    const file = join(ROOT, fixtureDir, which === 'cards' ? 'list.csv' : 'helpers.csv');
+    const name = which === 'cards' ? 'list.csv' : 'helpers.csv';
+    const file = isAbsolute(fixtureDir) ? join(fixtureDir, name) : join(ROOT, fixtureDir, name);
     console.log(`  reading fixture ${file}`);
     return readFileSync(file, 'utf8');
   }
-  return fetchCsv(TABS[which]);
+  // The taxonomy tab holds only text, so gviz coercion cannot damage it; the
+  // cards tab must never go through gviz.
+  return fetchCsv(TABS[which], { allowGvizFallback: which === 'taxonomy' });
 }
 
 /* ------------------------------------------------------- header mapping */
@@ -746,6 +778,49 @@ function buildSitemap(cards) {
     + '\n</urlset>\n';
 }
 
+/* -------------------------------------------------------- regression guard */
+
+/**
+ * The gviz incident published a silent loss: phone numbers vanished from 11
+ * businesses and nothing failed. Counts are compared against the previous
+ * build so a source fault stops the pipeline instead of shipping.
+ */
+function checkForRegression(cards, force) {
+  const file = join(ROOT, 'data/cards.json');
+  if (!existsSync(file)) return;
+
+  let previous;
+  try {
+    previous = JSON.parse(readFileSync(file, 'utf8'));
+  } catch {
+    return; // unreadable previous build is not evidence of a regression
+  }
+  if (!Array.isArray(previous) || previous.length === 0) return;
+
+  const phones = (list) => list.reduce((n, c) => n + (c.contacts?.phone?.length ?? 0), 0);
+  const metrics = [
+    ['published cards', previous.length, cards.length],
+    ['phone numbers', phones(previous), phones(cards)],
+    ['cards with a description', previous.filter((c) => c.description).length, cards.filter((c) => c.description).length],
+  ];
+
+  const faults = metrics.filter(([, before, after]) =>
+    before >= 5 && after < before * (1 - REGRESSION_THRESHOLD));
+
+  if (!faults.length) return;
+
+  for (const [label, before, after] of faults) {
+    console.error(`  REGRESSION: ${label} fell ${before} -> ${after}`);
+  }
+  if (force) {
+    console.warn('  --force given, publishing the drop anyway.');
+    return;
+  }
+  throw new Error(
+    'output shrank sharply against the previous build — treating this as a source fault. '
+    + 'Re-run with --force if the rows really were removed.');
+}
+
 /* ------------------------------------------------------------------- main */
 
 async function main() {
@@ -772,6 +847,9 @@ async function main() {
 
   const ctx = { known, slugs: new Set() };
   const cards = sortCards(rows.slice(1).map((r) => buildCard(r, cell, ctx)).filter(Boolean));
+
+  // Throws before any file is touched, so a bad fetch leaves the site intact.
+  checkForRegression(cards, process.argv.includes('--force'));
 
   // --- aggregates ---------------------------------------------------------
   const categories = CATEGORIES.map((c) => ({
