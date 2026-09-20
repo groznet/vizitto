@@ -3,12 +3,12 @@
     "slug": "food-drink",
     "ru": "Еда и напитки",
     "icon": "utensils",
-    "count": 5,
+    "count": 4,
     "subcategories": [
       {
         "slug": "cafe",
         "ru": "Кафе и кофейни",
-        "count": 3
+        "count": 2
       },
       {
         "slug": "restaurant",
@@ -46,7 +46,7 @@
     "slug": "health-beauty",
     "ru": "Здоровье и красота",
     "icon": "heart-pulse",
-    "count": 7,
+    "count": 5,
     "subcategories": [
       {
         "slug": "pharmacy",
@@ -56,7 +56,7 @@
       {
         "slug": "clinic",
         "ru": "Клиники / медцентры",
-        "count": 7
+        "count": 5
       },
       {
         "slug": "dentistry",
@@ -89,7 +89,7 @@
     "slug": "retail",
     "ru": "Товары и розница",
     "icon": "bag-shopping",
-    "count": 8,
+    "count": 6,
     "subcategories": [
       {
         "slug": "clothing",
@@ -109,7 +109,7 @@
       {
         "slug": "electronics",
         "ru": "Электроника и гаджеты",
-        "count": 1
+        "count": 0
       },
       {
         "slug": "furniture",
@@ -132,7 +132,7 @@
     "slug": "services",
     "ru": "Услуги",
     "icon": "screwdriver-wrench",
-    "count": 6,
+    "count": 5,
     "subcategories": [
       {
         "slug": "repair",
@@ -142,7 +142,7 @@
       {
         "slug": "auto-service",
         "ru": "Автосервис и СТО",
-        "count": 4
+        "count": 3
       },
       {
         "slug": "legal",
@@ -236,7 +236,7 @@
     "slug": "transport",
     "ru": "Транспорт и логистика",
     "icon": "truck",
-    "count": 4,
+    "count": 3,
     "subcategories": [
       {
         "slug": "taxi",
@@ -251,7 +251,7 @@
       {
         "slug": "delivery-company",
         "ru": "Курьерские и транспортные компании",
-        "count": 1
+        "count": 0
       },
       {
         "slug": "driving-school",
@@ -325,7 +325,7 @@
       {
         "slug": "hardware-store",
         "ru": "Хозяйственные магазины",
-        "count": 4
+        "count": 3
       },
       {
         "slug": "garden",

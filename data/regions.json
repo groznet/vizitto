@@ -2,12 +2,12 @@
   {
     "slug": "chechnya",
     "ru": "Чечня",
-    "count": 43,
+    "count": 36,
     "cities": [
       {
         "slug": "grozny",
         "ru": "Грозный",
-        "count": 43
+        "count": 36
       }
     ]
   },
