@@ -1377,7 +1377,7 @@
   {
     "id": 2,
     "slug": "chaypey-set-magazinov-chaya-i-kofe",
-    "title": "ЧайПей \nСеть магазинов чая и кофе",
+    "title": "ЧайПей \r\nСеть магазинов чая и кофе",
     "category": {
       "slug": "food-drink",
       "ru": "Еда и напитки"
@@ -1821,7 +1821,7 @@
       "slug": "grozny",
       "ru": "Грозный"
     },
-    "address": "РТЦ«Беркат»,34 блок\n2 этаж",
+    "address": "РТЦ«Беркат»,34 блок\r\n2 этаж",
     "map_url": null,
     "contacts": {
       "phone": [
