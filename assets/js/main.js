@@ -89,7 +89,11 @@ document.addEventListener('alpine:init', () => {
       }
     },
 
-    /** cards.json already arrives in the brief's sort order (section 6.8). */
+    /**
+     * cards.json already arrives in the brief's sort order (section 6.8:
+     * featured, then verified, then rating, then title). It is not recency —
+     * most rows have no updated_at — so the heading says «Из каталога».
+     */
     get highlighted() {
       return this.cards.slice(0, 6);
     },

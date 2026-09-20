@@ -687,9 +687,14 @@ function renderCardPage(card, template) {
     DESCRIPTION_HTML: card.description
       ? `<p class="mt-4 text-[15px] leading-relaxed text-ink">${escapeHtml(card.description)}</p>`
       : '',
-    IMAGE_HTML: card.image
-      ? `<img src="${escapeAttr(card.image)}" alt="${escapeAttr(card.title)}" width="1200" height="800" loading="lazy" class="h-full w-full rounded-lg object-cover">`
-      : `<div class="flex h-full w-full items-center justify-center rounded-lg bg-subtle text-muted" role="img" aria-label="${escapeAttr(card.category.ru)}"><i class="fa-solid fa-${CATEGORIES.find((c) => c.slug === card.category.slug)?.icon ?? 'circle-info'} text-4xl" aria-hidden="true"></i></div>`,
+    // No image means no block at all: a full-width empty placeholder on a
+    // detail page is worse than starting with the business name. The listing
+    // grid still shows a placeholder, where it keeps the tiles aligned.
+    IMAGE_BLOCK: card.image
+      ? `<div class="mb-5 aspect-[3/2] w-full overflow-hidden rounded-lg bg-subtle">
+            <img src="${escapeAttr(card.image)}" alt="${escapeAttr(card.title)}" width="1200" height="800" loading="lazy" class="h-full w-full object-cover">
+          </div>`
+      : '',
     CONTACTS_HTML: contactsHtml(card),
     DETAILS_HTML: detailsHtml(card),
     UPDATED_HTML: card.updated_at

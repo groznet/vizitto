@@ -134,18 +134,15 @@
       <div x-show="!loading && results.length" x-cloak class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <template x-for="card in visible" :key="card.slug">
           <article class="flex flex-col overflow-hidden rounded-lg border border-border bg-white transition-colors hover:border-primary">
-            <a :href="cardUrl(card)" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
-              <div class="aspect-[3/2] w-full bg-subtle">
-                <template x-if="card.image">
+            <!-- No image means no media block: an empty placeholder on every
+                 tile would double the page height for nothing. -->
+            <template x-if="card.image">
+              <a :href="cardUrl(card)" class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                <div class="aspect-[3/2] w-full bg-subtle">
                   <img :src="card.image" :alt="card.title" width="1200" height="800" loading="lazy" class="h-full w-full object-cover">
-                </template>
-                <template x-if="!card.image">
-                  <div class="flex h-full w-full items-center justify-center text-muted" role="img" :aria-label="card.category.ru">
-                    <i class="fa-solid text-3xl" :class="`fa-${categoryIcon(card.category.slug)}`" aria-hidden="true"></i>
-                  </div>
-                </template>
-              </div>
-            </a>
+                </div>
+              </a>
+            </template>
 
             <div class="flex flex-1 flex-col p-4">
               <p class="text-xs text-muted">
