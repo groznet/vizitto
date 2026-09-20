@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "chechnya",
+    "ru": "Чечня",
+    "count": 43,
+    "cities": [
+      {
+        "slug": "grozny",
+        "ru": "Грозный",
+        "count": 43
+      }
+    ]
+  },
+  {
+    "slug": "kabardino-balkaria",
+    "ru": "Кабардино-Балкария",
+    "count": 1,
+    "cities": [
+      {
+        "slug": "nalchik",
+        "ru": "Нальчик",
+        "count": 1
+      }
+    ]
+  }
+]

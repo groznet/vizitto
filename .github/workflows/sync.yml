@@ -1,0 +1,47 @@
+name: Sync catalog
+
+on:
+  schedule:
+    # Every 30 minutes. Sheet-to-live time is a few minutes after a run starts.
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+
+# A long run must not overlap the next scheduled one.
+concurrency:
+  group: sync-catalog
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Guards the parsing primitives the messy sheet cells depend on.
+      - name: Self-test
+        run: node scripts/selftest.mjs
+
+      # Exits non-zero on a fatal error without writing, so the last good
+      # site stays live.
+      - name: Build catalog
+        run: node scripts/build.mjs
+
+      - name: Commit if the catalog changed
+        run: |
+          git config user.name "vizitto-bot"
+          git config user.email "bot@vizitto.ru"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No catalog changes."
+          else
+            git commit -m "chore: sync catalog"
+            git push
+          fi
