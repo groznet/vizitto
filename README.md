@@ -26,7 +26,7 @@ file.
 ### Commands (CI only — you never need to run these)
 
 ```bash
-node scripts/selftest.mjs                        # 17 assertions over the parsers
+node scripts/selftest.mjs                        # 22 assertions over the parsers
 node scripts/build.mjs                           # fetch the live sheet and build
 node scripts/build.mjs --fixture scripts/fixtures # build offline from committed sample rows
 node scripts/build.mjs --force                   # publish a sharp drop the guard would block
@@ -42,6 +42,23 @@ contact left. `/export?format=csv` does no coercion and is used instead.
 
 Set `gid` for each tab in `TABS` (select the tab in the sheet; the address bar
 shows `#gid=N`). With `gid: null` the cards tab reads the **first** sheet.
+
+### Two withhold switches
+
+Both are constants at the top of `build.mjs`, and both exist because the data
+makes a claim nobody has checked yet:
+
+| Constant | Effect while `false` / `true` |
+| --- | --- |
+| `RATING_SOURCE_CONFIRMED = false` | The v3 import set `rating_source` to `yandex` for every rated row without verifying it. Ratings are withheld and each one logs a warning. Set to `true` once the sources are confirmed — nothing else needs changing. |
+| `DROP_INSTAGRAM = true` | Instagram handles (stored in `tags` as `instagram:handle`) are withheld pending brief open question 5. Set to `false` to publish all 14 as contacts. |
+
+### Contact prefixes
+
+The v3 sheet encodes contact kind as a prefix: `mailto:`, `tel:`, `instagram:`.
+`routeContact` strips these **before** pattern matching. This ordering matters —
+`mailto:x@mail.ru` matches the e-mail regex with the prefix still attached, which
+would produce `href="mailto:mailto:x@mail.ru"`.
 
 ### Regression guard
 
@@ -61,7 +78,12 @@ output. A card page removed from the sheet is pruned on the next build.
 
 ## Editing the catalog
 
-Editors work only in the Google Sheet, tab `List`. A card needs a title, a
+Editors work only in the Google Sheet **Vizitto_Cards_Info_v3**, tab `cards`
+(`1ALkQay0yMQqZt5mZnUDB2qrSwfkYXQ4RmjbHNYrmpTo`). Five tabs: `cards` is the only
+one edited by hand; `categories` and `regions` are reference lists the build
+reads; `inbox` receives form submissions; the last tab documents the rules.
+
+A card needs a title, a
 category, a region, a city and at least one way to contact the business.
 Publishing happens within ~30 minutes, or immediately via
 **Actions → Sync catalog → Run workflow**.
@@ -76,7 +98,8 @@ exact rows to tidy.
 
 | Decision | Why |
 | --- | --- |
-| **Adapter-mode validation** | The sheet still uses the pre-restructure columns, and only one row of 45 has `description`/`updated_at`. Those are optional here, so 44 cards publish now. Section 6 columns (`status`, `slug`, `city`, `features`, …) activate automatically once added — no code change. |
+| **Adapter-mode validation** | Optional columns stay optional, so a partly-filled sheet still publishes. The v3 sheet now supplies the full Section 6 column set and it activated with no code change. |
+| **Regions come from the sheet** | The `regions` tab drives the region whitelist and city list, so a new region is a sheet edit rather than a deploy. Category and subcategory **slugs stay in code** — §7 fixes them and moving one breaks every card URL. |
 | **Tailwind via Play CDN** | No build step anywhere. Tokens live in the inline `tailwind.config` on each page. The brief's §8 compiled-CSS route was declined in favour of this. |
 | **Alpine pinned to 3.14.1** | It was previously unpinned on unpkg. |
 | **`contacts.email` added** | The sheet's `website` column mixes URLs, `@handles` and e-mail addresses. Six businesses have an e-mail as their only non-phone contact, so the contract gained a field rather than dropping them. **This extends brief §6.7.** |
@@ -121,8 +144,10 @@ Font: **Manrope** 400/500/600/700. All combinations meet WCAG AA on white.
   points at `/contact/`; the embed goes in where the page marks `TBD`.
 - **`/privacy/` and `/terms/` are drafts** and need legal review before the form
   goes live.
-- **~18 rows file a subcategory under the wrong category.** They publish with the
+- **~15 rows file a subcategory under the wrong category.** They publish with the
   subcategory kept and a warning logged; see `data/build.json`.
+- **`updated_at` is `2026-09-20` on every row** — a placeholder the v3 import
+  wrote over an Excel serial number. The sheet's own notes ask for real dates.
 
 ---
 

@@ -1,0 +1,48 @@
+status,id,slug,title,category,category_slug,subcategory,region,city,address,map_url,phone,whatsapp,telegram,website,image,rating,rating_source,reviews_count,price_level,features,tags,hours_mon_fri,hours_sat_sun,hours_note,description,verified,featured,updated_at
+published,1,konditerskaya-safiya,Кондитерская Сафия,Еда и напитки,food-drink,Сладости и кондитерские,Чечня,Грозный,,,"+79287895730, +79634282053, +79899321640",,,https://safiya-cakes.ru,,4.8,yandex,54,4,,"cakes,desserts,wifi,birthday cakes",09:00-21:00,10:00-20:00,,Популярная кондитерская в Грозном с широким выбором тортов и десертов.,FALSE,FALSE,2026-09-20
+published,2,chaypey-set-magazinov-chaya-i-kofe,ЧайПей Сеть магазинов чая и кофе,Еда и напитки,food-drink,Кафе и кофейни,Чечня,Грозный,"Ул. Орзамиева, 30
+Ул. Назарбаева, 89
+Ул. Дьякова, 12",,"+79389898111, +79389952995, +79389953995, +79389954995",,,,,4.7,yandex,,,,instagram:chaypey95,,,,,FALSE,FALSE,2026-09-20
+published,3,autostil,AutoСтиль,Транспорт и логистика,transport,Автосервис и СТО,Чечня,Грозный,,,+79298992999,,,,,,,,,,instagram:auto_style_95,,,,,FALSE,FALSE,2026-09-20
+published,4,soren,Soren,Еда и напитки,food-drink,Кафе и кофейни,Чечня,Грозный,"Пр.Путина,19",,+79380003293,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,5,coffeeman,Coffeeman,Еда и напитки,food-drink,Кафе и кофейни,Чечня,Грозный,"пр.Путина,7",,+79380220000,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,6,otdel-rassrochki,Отдел рассрочки,Товары и розница,retail,Микрофинансы и кредитные организации,Чечня,Грозный,"Пр.Путина,20",,"+79288889091, +79280899484",,,,,,,,,,instagram:rassrochka_95,,,,,FALSE,FALSE,2026-09-20
+published,7,artmedia,Artmedia,Услуги,services,Маркетинг и реклама,Чечня,Грозный,,,+79288882007,,,,,,,,,,instagram:artmedia95,,,,,FALSE,FALSE,2026-09-20
+published,8,kraski-i-laki,Краски и лаки,Дом и хозяйство,home-household,Строительство и ремонт,Чечня,Грозный,"ул.Умара Кадырова,52",,+79287804987,,,,,,,,,,instagram:kraski_dali95,,,,,FALSE,FALSE,2026-09-20
+published,9,td-barkalla,"ТД ""Баркалла""",Дом и хозяйство,home-household,Строительство и ремонт,Чечня,Грозный,"ул.Дербентская,47",,"+79287354879, +79226730751",,,mailto:barkalla.opt@mail.ru,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,10,halimi-hingalsh,Халими хингалш,Еда и напитки,food-drink,Фастфуд,Чечня,Грозный,,,+79287863355,,,,,,,,,,instagram:halimi_hingalsh,,,,,FALSE,FALSE,2026-09-20
+published,11,kdl-kliniko-diagnosticheskaya-laboratoriya,KDL Клинико-диагностическая лаборатория,Здоровье и красота,health-beauty,Клиники / медцентры,Чечня,Грозный,"ул.Лорсанова,6",,"+79889090535, +78712296163",,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,12,miss-blesk-cleaning-service,Miss Blesk Cleaning service,Дом и хозяйство,home-household,Строительство и ремонт,Чечня,Грозный,"ул.Гадаева,9",,+79637010275,,,mailto:abbazova_91@mail.ru,,,,,,,instagram:miss_blesk_,,,,,FALSE,FALSE,2026-09-20
+published,13,nokia-n,Nokia n,Товары и розница,retail,Электроника и гаджеты,Чечня,Грозный,"ул.Грибоедова,13",,"+79280007077, +79380007077",,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,14,noxciyn-kiniska,Noxciyn kiniska,Товары и розница,retail,Книги и канцтовары,Чечня,Грозный,,,+79062225522,,,,,,,,,,instagram:nohchiyn_kinischka,,,,,FALSE,FALSE,2026-09-20
+published,15,optika-oko-land,Оптика ОКО LAND,Здоровье и красота,health-beauty,Клиники / медцентры,Чечня,Грозный,"ул.Сурикова,23",,+79389086660,,,mailto:oko.land@mail.ru,,,,,,,instagram:oko.land,,,,,FALSE,FALSE,2026-09-20
+published,16,zoomagizin-akvarium,"Зоомагизин ""Аквариум""",Другое / Местные сервисы,other,Ветеринарные клиники,Чечня,Грозный,"ТРЦ ""Беркат"", 34 блок, 1 этаж",,+79288868153,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,17,marsho,Marsho,Услуги,services,Маркетинг и реклама,Чечня,Грозный,"РТЦ«Беркат»,34 блок 2 этаж",,+79284789696,,,,,,,,,,instagram:marsho_wear,,,,,FALSE,FALSE,2026-09-20
+published,18,way-cars,Way Cars,Транспорт и логистика,transport,Автосервис и СТО,Чечня,Грозный,,,"+79280225862, +79286465666",,,mailto:ramzaev7490@mail.ru,,,,,,,instagram:waycars_shop,,,,,FALSE,FALSE,2026-09-20
+published,19,avtomagazin-magnit,Автомагазин Магнит,Транспорт и логистика,transport,Автосервис и СТО,Чечня,Грозный,"ул.Кирова,8",,"+79388992059, +79635877644",,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,20,psiholog-reabilitolog,Психолог-реабилитолог,Здоровье и красота,health-beauty,Клиники / медцентры,Чечня,Грозный,,,+79280008799,,,mailto:aelita1sintem@gmail.com,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,21,karcher,Karcher,Дом и хозяйство,home-household,Хозяйственные магазины,Чечня,Грозный,"ул.Маяковского,93 а",,+79280089999,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,22,vash-otdyh,Ваш отдых,Развлечения и досуг,entertainment,Хозяйственные магазины,Чечня,Грозный,"ул.Сайханова,69",,+79288822666,,,,,,,,,,instagram:vashotdih,,,,,FALSE,FALSE,2026-09-20
+published,23,gruzovoy-servis,Грузовой сервис,Транспорт и логистика,transport,Автосервис и СТО,Чечня,Грозный,"ул.Маяковского,91",,+79280022242,,,mailto:kameta.2010@yandex.ru,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,24,grzoperevozki,Грзоперевозки,Услуги,services,Курьерские и транспортные компании,Чечня,Грозный,,,"+79640089595, +79659590050",,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,25,servis-garant,Сервис Гарант,Товары и розница,retail,Хозяйственные магазины,Чечня,Грозный,"ул.Жуковского,13",,"+79289536958, +79287355358, +79287844902",,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,26,zhalyuzi,Жалюзи,Дом и хозяйство,home-household,Строительство и ремонт,Чечня,Грозный,,,+79899225155,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,27,istselyayuschie-ruki,"""Исцеляющие руки""",Здоровье и красота,health-beauty,Клиники / медцентры,Чечня,Грозный,"ул.Митаева,83",,+79284772478,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,28,instrumenty-po-samym-nizkim-tsenam,Инструменты по самым низким ценам,Дом и хозяйство,home-household,Хозяйственные магазины,Чечня,Грозный,"ул.Гоголя,56",,+79288884013,,,,,,,,,,instagram:bakar093,,,,,FALSE,FALSE,2026-09-20
+published,29,izgotovlenie-klyuchey,Изготовление ключей,Услуги,services,Ремонт домов и квартир,Чечня,Грозный,РТЦ Беркат,,+79679554847,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,30,kitab,Kitab,Товары и розница,retail,Книги и канцтовары,Чечня,Грозный,,,+79631799913,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,31,uchebnik,Учебник,Товары и розница,retail,Книги и канцтовары,Чечня,Грозный,РТЦ Беркат,,+79637015565,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,32,magazin-mebeli,Магазин Мебели,Товары и розница,retail,Мебель на заказ / дизайн интерьера,Чечня,Грозный,,,+79639885685,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,33,massazh,Массаж,Здоровье и красота,health-beauty,Клиники / медцентры,Чечня,Грозный,"ул.8-го марта,37А",,"+79280206715, +79280181106",,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,34,bers-meditsinskiy-tsentr,Берс. Медицинский центр,Здоровье и красота,health-beauty,Клиники / медцентры,Чечня,Грозный,"ул.Трудовая,43А",,+79288967628,,,mailto:mc-bers@mail.ru,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,35,moskovskie-apteki,Московские аптеки,Здоровье и красота,health-beauty,Клиники / медцентры,Чечня,Грозный,"ул.Дербентская,54А",,+79681756313,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,36,natyazhnye-potolki,Натяжные потолки,Дом и хозяйство,home-household,Строительство и ремонт,Чечня,Грозный,,,+79288888111,,,,,,,,,,instagram:potolki311,,,,,FALSE,FALSE,2026-09-20
+published,37,magazin-podarkov,Магазин подарков,Услуги,services,,Чечня,Грозный,,,+79280223063,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+draft,38,,,Другое / Местные сервисы,other,,Чечня,Гудермес,"ул. Ростовская, 11А",,+79380190406,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,39,agentstvo-nedvizhimosti-region,"Агентство недвижимости ""Регион""",Жильё и недвижимость,real-estate,Агентства недвижимости,Чечня,Грозный,"Пр.Кадырова, 40а, офис 22",,+79659656060,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,40,remont-i-dizayn-kvartir,Ремонт и дизайн квартир,Жильё и недвижимость,real-estate,Мебель и интерьер,Чечня,Грозный,,,+79287802999,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,41,seyfy,Сейфы,Товары и розница,retail,,Чечня,Грозный,"ул.Маяковского, 5",,+79287395000,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,42,shkafy-kupe,Шкафы-купе,Услуги,services,Мебель и интерьер,Чечня,Грозный,,,+79280003111,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,43,natyazhnye-potolki-2,Натяжные потолки,Дом и хозяйство,home-household,Мебель и интерьер,Чечня,Грозный,,,+79288888111,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,44,shkola-dizayna,Школа дизайна,Образование и наука,education,Обучение и курсы,Чечня,Грозный,,,+79289494488,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20
+published,45,gostinitsa-korona,"Гостиница ""Корона""",Туризм и путешествия,travel,Отели и гостиницы,Кабардино-Балкария,Нальчик,"ул.Балкарова,6",,+78662720037,,,,,,,,,,,,,,,FALSE,FALSE,2026-09-20

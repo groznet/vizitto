@@ -4,7 +4,7 @@
  * sheet's messy cells depend on. Run: node scripts/selftest.mjs
  */
 import assert from 'node:assert/strict';
-import { parseCsv, slugify, normalisePhone, typographize, csvUrl } from './build.mjs';
+import { parseCsv, slugify, normalisePhone, typographize, csvUrl, routeContact } from './build.mjs';
 
 let passed = 0;
 const t = (name, fn) => { fn(); passed++; console.log(`  ok  ${name}`); };
@@ -95,6 +95,41 @@ t('a known gid addresses the tab exactly', () => {
 t('text-only tabs may fall back to gviz by name', () => {
   const url = csvUrl('SHEET', { name: 'Helpers', gid: null }, { allowGvizFallback: true });
   assert.ok(url.includes('gviz') && url.includes('sheet=Helpers'), url);
+});
+
+const contacts = () => ({ phone: [], whatsapp: null, telegram: null, vk: null, email: null, website: null });
+
+t('strips the v3 mailto: prefix instead of nesting it', () => {
+  const c = contacts();
+  routeContact('mailto:barkalla.opt@mail.ru', c, 9);
+  assert.equal(c.email, 'barkalla.opt@mail.ru');   // not "mailto:barkalla.opt@mail.ru"
+});
+
+t('routes a bare e-mail the same way', () => {
+  const c = contacts();
+  routeContact('mc-bers@mail.ru', c, 34);
+  assert.equal(c.email, 'mc-bers@mail.ru');
+});
+
+t('withholds an instagram: handle rather than dropping it as unroutable', () => {
+  const c = contacts();
+  routeContact('instagram:chaypey95', c, 2);
+  assert.equal(c.instagram, undefined);
+  assert.equal(c.website, null);                   // must not leak into website
+});
+
+t('strips a tel: prefix into a normalised phone', () => {
+  const c = contacts();
+  routeContact('tel:+79287895730', c, 1);
+  assert.deepEqual(c.phone, ['+79287895730']);
+});
+
+t('still routes plain URLs and Telegram handles', () => {
+  const c = contacts();
+  routeContact('https://safiya-cakes.ru', c, 1);
+  routeContact('@marsho_wear', c, 17);
+  assert.equal(c.website, 'https://safiya-cakes.ru');
+  assert.equal(c.telegram, 'marsho_wear');
 });
 
 console.log(`\n${passed} assertions passed.`);

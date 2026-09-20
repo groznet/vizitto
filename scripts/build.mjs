@@ -20,7 +20,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 /* ------------------------------------------------------------------ config */
 
-const SHEET_ID = '1oUc3bWqXlEx1LvUggUHxZHdvexqt0P_JcdxNa8rjwFA';
+const SHEET_ID = '1ALkQay0yMQqZt5mZnUDB2qrSwfkYXQ4RmjbHNYrmpTo'; // Vizitto_Cards_Info_v3
 /*
  * Tabs, and how they are fetched.
  *
@@ -37,8 +37,9 @@ const SHEET_ID = '1oUc3bWqXlEx1LvUggUHxZHdvexqt0P_JcdxNa8rjwFA';
  * because buildHeaderMap rejects a header row without `id` and `title`.
  */
 const TABS = {
-  cards: { name: 'List', gid: null },
-  taxonomy: { name: 'Helpers', gid: null },
+  cards: { name: 'cards', gid: null },
+  categories: { name: 'categories', gid: null },
+  regions: { name: 'regions', gid: null },
 };
 
 // A drop this large between builds means the source broke, not that an editor
@@ -50,6 +51,13 @@ const SITE_ORIGIN = 'https://vizitto.ru';
 // Open question 5 in the brief: linking business Instagram profiles from a
 // Russian site needs a legal check. Parsed but withheld until that is answered.
 const DROP_INSTAGRAM = true;
+
+// The v3 import set rating_source to "yandex" for every rated row without
+// checking — the sheet's own notes say «подтвердите источник». Until that is
+// done a rating counts as unsourced and is withheld (brief section 6.3): an
+// assumed source is a specific, checkable claim, and a wrong one costs more
+// trust than showing nothing. Flip to true once the sources are verified.
+const RATING_SOURCE_CONFIRMED = false;
 
 // Open question 1 in the brief: Vizitto's own contact details are unknown.
 // These stay null until answered — no invented contact details ship.
@@ -219,7 +227,9 @@ for (const c of CATEGORIES) {
 
 // The Helpers tab's "Регионы" column is empty in the live sheet, so the region
 // list is explicit here. Add a row when a new region gains its first card.
-const REGIONS = { 'Чечня': 'chechnya', 'Кабардино-Балкария': 'kabardino-balkaria' };
+// Slugs for regions already published — these must not move. Any region the
+// sheet adds beyond this list gets a transliterated slug.
+const FALLBACK_REGIONS = { 'Чечня': 'chechnya', 'Кабардино-Балкария': 'kabardino-balkaria' };
 
 // Controlled feature vocabulary (brief section 6, column 19). Anything in the
 // sheet's services/features cell that is not on this list becomes a tag.
@@ -283,9 +293,30 @@ export function normalisePhone(raw) {
  */
 const TELEGRAM_HANDLE = /^[A-Za-z0-9_]{5,32}$/;
 
-function routeContact(value, contacts, id) {
-  const v = clean(value);
+export function routeContact(rawValue, contacts, id) {
+  let v = clean(rawValue);
   if (!v) return;
+
+  /*
+   * The v3 sheet encodes the contact kind as a prefix: mailto:, tel:,
+   * instagram:. These must be stripped before the patterns below run —
+   * "mailto:x@mail.ru" matches the e-mail regex *with the prefix attached*,
+   * which produced href="mailto:mailto:x@mail.ru" on 7 cards.
+   */
+  const instagram = /^instagram:/i.exec(v);
+  if (instagram) {
+    const handle = v.slice(instagram[0].length).replace(/^@/, '');
+    if (DROP_INSTAGRAM) warn(id, `instagram handle withheld pending legal check: @${handle}`);
+    else contacts.instagram ??= `https://instagram.com/${handle}`;
+    return;
+  }
+  if (/^mailto:/i.test(v)) v = v.replace(/^mailto:/i, '').trim();
+  if (/^tel:/i.test(v)) {
+    const phone = normalisePhone(v.replace(/^tel:/i, ''));
+    if (phone) { if (!contacts.phone.includes(phone)) contacts.phone.push(phone); }
+    else warn(id, `unparseable tel: value dropped: ${v}`);
+    return;
+  }
 
   if (v.startsWith('@')) {
     const handle = v.slice(1);
@@ -345,14 +376,16 @@ async function fetchCsv(tab, options) {
 
 async function loadTab(which, fixtureDir) {
   if (fixtureDir) {
-    const name = which === 'cards' ? 'list.csv' : 'helpers.csv';
+    const name = `${which}.csv`;
     const file = isAbsolute(fixtureDir) ? join(fixtureDir, name) : join(ROOT, fixtureDir, name);
     console.log(`  reading fixture ${file}`);
     return readFileSync(file, 'utf8');
   }
   // The taxonomy tab holds only text, so gviz coercion cannot damage it; the
   // cards tab must never go through gviz.
-  return fetchCsv(TABS[which], { allowGvizFallback: which === 'taxonomy' });
+  // The cards tab must never go through gviz (it coerces types and blanks
+  // cells). The reference tabs hold only text, so addressing them by name is safe.
+  return fetchCsv(TABS[which], { allowGvizFallback: which !== 'cards' });
 }
 
 /* ------------------------------------------------------- header mapping */
@@ -394,20 +427,50 @@ function cellReader(headerMap) {
 
 /* ----------------------------------------------------------- taxonomy read */
 
-function readTaxonomy(csvText) {
+/**
+ * v3 `categories` tab: category | category_slug | subcategory.
+ * Only the Russian labels are read — category and subcategory SLUGS stay in the
+ * CATEGORIES table above, because brief section 7 fixes them and changing one
+ * breaks every card URL.
+ */
+function readCategories(csvText) {
   const rows = parseCsv(csvText);
-  const known = { categories: new Set(), subcategories: new Set(), cities: new Set() };
-  // Layout: Категории | Подкатегории | Регионы | Города поселоки, with the
-  // category name present only on its first subcategory row.
+  const categories = new Set();
+  const subcategories = new Set();
   for (const row of rows.slice(1)) {
     const cat = clean(row[0]);
-    const sub = clean(row[1]);
-    const city = clean(row[3]);
-    if (cat && !cat.startsWith('Основная')) known.categories.add(cat);
-    if (sub && sub !== '-' && !sub.startsWith('Подкатегория..')) known.subcategories.add(sub);
-    if (city) known.cities.add(city);
+    const sub = clean(row[2]);
+    if (cat) categories.add(cat);
+    if (sub && sub !== '-') subcategories.add(sub);
   }
-  return known;
+  return { categories, subcategories };
+}
+
+/**
+ * v3 `regions` tab: region | city. This replaces the hardcoded whitelist, so
+ * adding a region is a sheet edit rather than a deploy. Region slugs are
+ * transliterated; the built-in list stays as a fallback so an empty or broken
+ * tab cannot reject every row.
+ */
+function readRegions(csvText) {
+  const rows = parseCsv(csvText);
+  const regions = {};
+  const cities = new Set();
+  for (const row of rows.slice(1)) {
+    const region = clean(row[0]);
+    const city = clean(row[1]);
+    if (region && !regions[region]) regions[region] = slugify(region);
+    if (city) cities.add(city);
+  }
+  if (Object.keys(regions).length === 0) {
+    warn('-', 'regions tab yielded no regions — falling back to the built-in list');
+    return { regions: { ...FALLBACK_REGIONS }, cities };
+  }
+  // Keep the built-in slugs where they exist, so established URLs never move.
+  for (const [ru, slug] of Object.entries(FALLBACK_REGIONS)) {
+    if (regions[ru]) regions[ru] = slug;
+  }
+  return { regions, cities };
 }
 
 /* --------------------------------------------------------------- row parse */
@@ -442,6 +505,15 @@ function buildCard(row, cell, ctx) {
   if (vk) contacts.vk = /^https?:\/\//i.test(vk) ? vk : `https://${vk.replace(/^\/+/, '')}`;
   for (const value of splitLines(cell(row, 'website'))) routeContact(value, contacts, id);
 
+  // The v3 import parked Instagram handles in `tags` as "instagram:handle".
+  // Route anything contact-shaped out of the tags before the check below, so a
+  // contact hiding there still counts and never surfaces as a search tag.
+  const tags = [];
+  for (const tag of splitList(cell(row, 'tags'))) {
+    if (/^(instagram|mailto|tel):/i.test(tag)) routeContact(tag, contacts, id);
+    else tags.push(tag);
+  }
+
   const hasContact = contacts.phone.length > 0 || contacts.whatsapp || contacts.telegram
     || contacts.website || contacts.email;
   if (!hasContact) { reject(id, 'no contact method (phone/whatsapp/telegram/website/email all empty)'); return null; }
@@ -473,8 +545,8 @@ function buildCard(row, cell, ctx) {
   }
 
   const regionRu = nullIfEmpty(cell(row, 'region'));
-  const regionSlug = regionRu ? REGIONS[regionRu] : null;
-  if (regionRu && !regionSlug) { reject(id, `unknown region: ${regionRu} (add it to REGIONS in build.mjs)`); return null; }
+  const regionSlug = regionRu ? ctx.regions[regionRu] : null;
+  if (regionRu && !regionSlug) { reject(id, `unknown region: ${regionRu} (add it to the sheet's regions tab)`); return null; }
   if (!regionRu) { reject(id, 'missing required field: region'); return null; }
 
   let cityRu = nullIfEmpty(cell(row, 'city'));
@@ -488,7 +560,6 @@ function buildCard(row, cell, ctx) {
 
   // --- features and tags --------------------------------------------------
   const features = [];
-  const tags = splitList(cell(row, 'tags'));
   for (const raw of splitList(cell(row, 'features'))) {
     const slug = FEATURE_LOOKUP.get(raw.toLowerCase());
     if (slug) { if (!features.includes(slug)) features.push(slug); }
@@ -509,6 +580,8 @@ function buildCard(row, cell, ctx) {
       warn(id, `rating ${value} has no rating_source — dropped (brief section 6.3)`);
     } else if (!RATING_SOURCES[source]) {
       warn(id, `unknown rating_source "${source}" — rating dropped`);
+    } else if (!RATING_SOURCE_CONFIRMED) {
+      warn(id, `rating ${value} claims source "${source}" but sources are not yet verified — withheld (set RATING_SOURCE_CONFIRMED once checked)`);
     } else {
       const countRaw = nullIfEmpty(cell(row, 'reviews_count'));
       const count = countRaw ? Number.parseInt(countRaw, 10) : null;
@@ -830,13 +903,17 @@ async function main() {
 
   console.log(fixtureDir ? `Vizitto build (fixture: ${fixtureDir})` : 'Vizitto build (live sheet)');
 
-  const [cardsCsv, helpersCsv] = await Promise.all([
+  const [cardsCsv, categoriesCsv, regionsCsv] = await Promise.all([
     loadTab('cards', fixtureDir),
-    loadTab('taxonomy', fixtureDir),
+    loadTab('categories', fixtureDir),
+    loadTab('regions', fixtureDir),
   ]);
 
-  const known = readTaxonomy(helpersCsv);
-  console.log(`  taxonomy: ${known.categories.size} categories, ${known.subcategories.size} subcategories, ${known.cities.size} cities`);
+  const taxonomy = readCategories(categoriesCsv);
+  const { regions: regionMap, cities } = readRegions(regionsCsv);
+  const known = { ...taxonomy, cities };
+  console.log(`  taxonomy: ${known.categories.size} categories, ${known.subcategories.size} subcategories`);
+  console.log(`  regions:  ${Object.keys(regionMap).join(', ')} (${cities.size} cities)`);
 
   const rows = parseCsv(cardsCsv);
   if (rows.length < 2) throw new Error('cards tab has no data rows');
@@ -845,7 +922,7 @@ async function main() {
   console.log(`  columns: ${[...headerMap.keys()].join(', ')}`);
   console.log(`  parsing ${rows.length - 1} data rows`);
 
-  const ctx = { known, slugs: new Set() };
+  const ctx = { known, regions: regionMap, slugs: new Set() };
   const cards = sortCards(rows.slice(1).map((r) => buildCard(r, cell, ctx)).filter(Boolean));
 
   // Throws before any file is touched, so a bad fetch leaves the site intact.
@@ -862,7 +939,7 @@ async function main() {
     })),
   }));
 
-  const regions = Object.entries(REGIONS).map(([ru, slug]) => {
+  const regions = Object.entries(regionMap).map(([ru, slug]) => {
     const inRegion = cards.filter((c) => c.region.slug === slug);
     const cities = new Map();
     for (const c of inRegion) {
@@ -874,7 +951,9 @@ async function main() {
       slug, ru, count: inRegion.length,
       cities: [...cities.values()].sort((a, b) => b.count - a.count || collator.compare(a.ru, b.ru)),
     };
-  }).filter((r) => r.count > 0);
+  }).filter((r) => r.count > 0)
+    // Biggest region first, matching how cities are ordered within one.
+    .sort((a, b) => b.count - a.count || collator.compare(a.ru, b.ru));
 
   // --- card pages ---------------------------------------------------------
   const templateFile = join(ROOT, 'templates/card.html');

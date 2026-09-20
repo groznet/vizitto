@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-20T15:25:43.386Z",
-  "source": "sheet:1oUc3bWqXlEx1LvUggUHxZHdvexqt0P_JcdxNa8rjwFA",
+  "generated_at": "2026-09-20T17:40:39.380Z",
+  "source": "fixture:scripts/fixtures",
   "counts": {
     "rows_read": 45,
     "published": 44,
     "rejected": 1,
-    "warnings": 29,
+    "warnings": 36,
     "card_pages": 44,
     "pruned_pages": 0,
     "without_image": 44
@@ -13,21 +13,25 @@
   "rejected": [
     {
       "id": "38",
-      "reason": "missing required field: title"
+      "reason": "status is \"draft\", not published"
     }
   ],
   "warnings": [
     {
       "id": "1",
-      "reason": "rating 4.8 has no rating_source — dropped (brief section 6.3)"
+      "reason": "rating 4.8 claims source \"yandex\" but sources are not yet verified — withheld (set RATING_SOURCE_CONFIRMED once checked)"
     },
     {
       "id": "2",
-      "reason": "instagram link withheld pending legal check: instagram.com/chaypey95"
+      "reason": "instagram handle withheld pending legal check: @chaypey95"
     },
     {
       "id": "2",
-      "reason": "rating 4.7 has no rating_source — dropped (brief section 6.3)"
+      "reason": "rating 4.7 claims source \"yandex\" but sources are not yet verified — withheld (set RATING_SOURCE_CONFIRMED once checked)"
+    },
+    {
+      "id": "3",
+      "reason": "instagram handle withheld pending legal check: @auto_style_95"
     },
     {
       "id": "3",
@@ -35,7 +39,19 @@
     },
     {
       "id": "6",
+      "reason": "instagram handle withheld pending legal check: @rassrochka_95"
+    },
+    {
+      "id": "6",
       "reason": "subcategory \"Микрофинансы и кредитные организации\" sits under \"Финансы и страхование\" in the taxonomy, not \"Товары и розница\" — kept, please align the sheet"
+    },
+    {
+      "id": "7",
+      "reason": "instagram handle withheld pending legal check: @artmedia95"
+    },
+    {
+      "id": "8",
+      "reason": "instagram handle withheld pending legal check: @kraski_dali95"
     },
     {
       "id": "8",
@@ -46,16 +62,36 @@
       "reason": "subcategory \"Строительство и ремонт\" sits under \"Жильё и недвижимость\" in the taxonomy, not \"Дом и хозяйство\" — kept, please align the sheet"
     },
     {
+      "id": "10",
+      "reason": "instagram handle withheld pending legal check: @halimi_hingalsh"
+    },
+    {
+      "id": "12",
+      "reason": "instagram handle withheld pending legal check: @miss_blesk_"
+    },
+    {
       "id": "12",
       "reason": "subcategory \"Строительство и ремонт\" sits under \"Жильё и недвижимость\" in the taxonomy, not \"Дом и хозяйство\" — kept, please align the sheet"
     },
     {
+      "id": "14",
+      "reason": "instagram handle withheld pending legal check: @nohchiyn_kinischka"
+    },
+    {
       "id": "15",
-      "reason": "\"@oko.land\" is not a valid Telegram handle — dropped rather than linked"
+      "reason": "instagram handle withheld pending legal check: @oko.land"
     },
     {
       "id": "16",
       "reason": "subcategory \"Ветеринарные клиники\" sits under \"Здоровье и красота\" in the taxonomy, not \"Другое и местные сервисы\" — kept, please align the sheet"
+    },
+    {
+      "id": "17",
+      "reason": "instagram handle withheld pending legal check: @marsho_wear"
+    },
+    {
+      "id": "18",
+      "reason": "instagram handle withheld pending legal check: @waycars_shop"
     },
     {
       "id": "18",
@@ -64,6 +100,10 @@
     {
       "id": "19",
       "reason": "subcategory \"Автосервис и СТО\" sits under \"Услуги\" in the taxonomy, not \"Транспорт и логистика\" — kept, please align the sheet"
+    },
+    {
+      "id": "22",
+      "reason": "instagram handle withheld pending legal check: @vashotdih"
     },
     {
       "id": "22",
@@ -86,6 +126,10 @@
       "reason": "subcategory \"Строительство и ремонт\" sits under \"Жильё и недвижимость\" in the taxonomy, not \"Дом и хозяйство\" — kept, please align the sheet"
     },
     {
+      "id": "28",
+      "reason": "instagram handle withheld pending legal check: @bakar093"
+    },
+    {
       "id": "29",
       "reason": "subcategory \"Ремонт домов и квартир\" sits under \"Дом и хозяйство\" in the taxonomy, not \"Услуги\" — kept, please align the sheet"
     },
@@ -95,19 +139,15 @@
     },
     {
       "id": "36",
-      "reason": "subcategory \"Строительство и ремонт\" sits under \"Жильё и недвижимость\" in the taxonomy, not \"Дом и хозяйство\" — kept, please align the sheet"
+      "reason": "instagram handle withheld pending legal check: @potolki311"
     },
     {
-      "id": "37",
-      "reason": "subcategory is the placeholder text \"Подкатегория\" — dropped"
+      "id": "36",
+      "reason": "subcategory \"Строительство и ремонт\" sits under \"Жильё и недвижимость\" in the taxonomy, not \"Дом и хозяйство\" — kept, please align the sheet"
     },
     {
       "id": "40",
       "reason": "subcategory \"Мебель и интерьер\" sits under \"Товары и розница\" in the taxonomy, not \"Жильё и недвижимость\" — kept, please align the sheet"
-    },
-    {
-      "id": "41",
-      "reason": "subcategory is the placeholder text \"Подкатегория\" — dropped"
     },
     {
       "id": "42",
@@ -118,20 +158,8 @@
       "reason": "subcategory \"Мебель и интерьер\" sits under \"Товары и розница\" in the taxonomy, not \"Дом и хозяйство\" — kept, please align the sheet"
     },
     {
-      "id": "43",
-      "reason": "slug \"natyazhnye-potolki\" already taken — using \"natyazhnye-potolki-2\""
-    },
-    {
       "id": "44",
       "reason": "subcategory \"Обучение и курсы\" sits under \"Услуги\" in the taxonomy, not \"Образование и наука\" — kept, please align the sheet"
-    },
-    {
-      "id": "44",
-      "reason": "city case normalised: \"грозный\" -> \"Грозный\""
-    },
-    {
-      "id": "45",
-      "reason": "city \"Нальчик\" is not in the Helpers tab city list"
     }
   ]
 }

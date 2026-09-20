@@ -1,7 +1,7 @@
 [
   {
     "id": 27,
-    "slug": "iscelyayuschie-ruki",
+    "slug": "istselyayuschie-ruki",
     "title": "«Исцеляющие руки»",
     "category": {
       "slug": "health-beauty",
@@ -44,7 +44,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 19,
@@ -92,7 +92,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 39,
@@ -139,11 +139,11 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 34,
-    "slug": "bers-medicinsky-centr",
+    "slug": "bers-meditsinskiy-tsentr",
     "title": "Берс. Медицинский центр",
     "category": {
       "slug": "health-beauty",
@@ -186,7 +186,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 22,
@@ -215,7 +215,7 @@
         "+79288822666"
       ],
       "whatsapp": null,
-      "telegram": "vashotdih",
+      "telegram": null,
       "vk": null,
       "email": null,
       "website": null
@@ -233,11 +233,11 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 45,
-    "slug": "gostinica-korona",
+    "slug": "gostinitsa-korona",
     "title": "Гостиница «Корона»",
     "category": {
       "slug": "travel",
@@ -280,7 +280,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 24,
@@ -328,7 +328,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 23,
@@ -375,7 +375,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 26,
@@ -422,7 +422,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 16,
@@ -469,7 +469,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 29,
@@ -516,11 +516,11 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 28,
-    "slug": "instrumenty-po-samym-nizkim-cenam",
+    "slug": "instrumenty-po-samym-nizkim-tsenam",
     "title": "Инструменты по самым низким ценам",
     "category": {
       "slug": "home-household",
@@ -545,7 +545,7 @@
         "+79288884013"
       ],
       "whatsapp": null,
-      "telegram": "bakar093",
+      "telegram": null,
       "vk": null,
       "email": null,
       "website": null
@@ -563,7 +563,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 1,
@@ -605,13 +605,9 @@
       "cakes",
       "desserts",
       "wifi",
-      "birthday cakes",
-      "custom orders"
+      "birthday cakes"
     ],
-    "features": [
-      "delivery",
-      "wifi"
-    ],
+    "features": [],
     "hours": {
       "mon_fri": "09:00-21:00",
       "sat_sun": "10:00-20:00",
@@ -621,7 +617,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": "2025-10-15"
+    "updated_at": "2026-09-20"
   },
   {
     "id": 8,
@@ -650,7 +646,7 @@
         "+79287804987"
       ],
       "whatsapp": null,
-      "telegram": "kraski_dali95",
+      "telegram": null,
       "vk": null,
       "email": null,
       "website": null
@@ -668,7 +664,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 32,
@@ -715,7 +711,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 37,
@@ -759,7 +755,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 33,
@@ -807,7 +803,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 35,
@@ -854,7 +850,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 36,
@@ -883,7 +879,7 @@
         "+79288888111"
       ],
       "whatsapp": null,
-      "telegram": "potolki311",
+      "telegram": null,
       "vk": null,
       "email": null,
       "website": null
@@ -901,7 +897,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 43,
@@ -948,7 +944,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 15,
@@ -995,7 +991,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 6,
@@ -1025,7 +1021,7 @@
         "+79280899484"
       ],
       "whatsapp": null,
-      "telegram": "rassrochka_95",
+      "telegram": null,
       "vk": null,
       "email": null,
       "website": null
@@ -1043,7 +1039,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 20,
@@ -1090,7 +1086,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 40,
@@ -1137,7 +1133,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 41,
@@ -1181,7 +1177,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 25,
@@ -1230,7 +1226,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 9,
@@ -1278,7 +1274,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 31,
@@ -1325,7 +1321,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 10,
@@ -1354,7 +1350,7 @@
         "+79287863355"
       ],
       "whatsapp": null,
-      "telegram": "halimi_hingalsh",
+      "telegram": null,
       "vk": null,
       "email": null,
       "website": null
@@ -1372,12 +1368,12 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 2,
     "slug": "chaypey-set-magazinov-chaya-i-kofe",
-    "title": "ЧайПей \r\nСеть магазинов чая и кофе",
+    "title": "ЧайПей Сеть магазинов чая и кофе",
     "category": {
       "slug": "food-drink",
       "ru": "Еда и напитки"
@@ -1422,7 +1418,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 42,
@@ -1469,7 +1465,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 44,
@@ -1516,7 +1512,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 7,
@@ -1545,7 +1541,7 @@
         "+79288882007"
       ],
       "whatsapp": null,
-      "telegram": "artmedia95",
+      "telegram": null,
       "vk": null,
       "email": null,
       "website": null
@@ -1563,7 +1559,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 3,
@@ -1592,7 +1588,7 @@
         "+79298992999"
       ],
       "whatsapp": null,
-      "telegram": "auto_style_95",
+      "telegram": null,
       "vk": null,
       "email": null,
       "website": null
@@ -1610,7 +1606,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 5,
@@ -1657,7 +1653,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 21,
@@ -1704,7 +1700,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 11,
@@ -1752,7 +1748,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 30,
@@ -1799,7 +1795,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 17,
@@ -1821,14 +1817,14 @@
       "slug": "grozny",
       "ru": "Грозный"
     },
-    "address": "РТЦ«Беркат»,34 блок\r\n2 этаж",
+    "address": "РТЦ«Беркат»,34 блок 2 этаж",
     "map_url": null,
     "contacts": {
       "phone": [
         "+79284789696"
       ],
       "whatsapp": null,
-      "telegram": "marsho_wear",
+      "telegram": null,
       "vk": null,
       "email": null,
       "website": null
@@ -1846,7 +1842,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 12,
@@ -1875,7 +1871,7 @@
         "+79637010275"
       ],
       "whatsapp": null,
-      "telegram": "miss_blesk_",
+      "telegram": null,
       "vk": null,
       "email": "abbazova_91@mail.ru",
       "website": null
@@ -1893,7 +1889,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 13,
@@ -1941,7 +1937,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 14,
@@ -1970,7 +1966,7 @@
         "+79062225522"
       ],
       "whatsapp": null,
-      "telegram": "nohchiyn_kinischka",
+      "telegram": null,
       "vk": null,
       "email": null,
       "website": null
@@ -1988,7 +1984,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 4,
@@ -2035,7 +2031,7 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   },
   {
     "id": 18,
@@ -2065,7 +2061,7 @@
         "+79286465666"
       ],
       "whatsapp": null,
-      "telegram": "waycars_shop",
+      "telegram": null,
       "vk": null,
       "email": "ramzaev7490@mail.ru",
       "website": null
@@ -2083,6 +2079,6 @@
     "rating": null,
     "verified": false,
     "featured": false,
-    "updated_at": null
+    "updated_at": "2026-09-20"
   }
 ]
