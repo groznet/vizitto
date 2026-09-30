@@ -132,7 +132,7 @@
     "slug": "services",
     "ru": "Услуги",
     "icon": "screwdriver-wrench",
-    "count": 6,
+    "count": 7,
     "subcategories": [
       {
         "slug": "repair",

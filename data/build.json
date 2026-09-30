@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-30T15:36:56.299Z",
+  "generated_at": "2026-09-30T20:31:35.829Z",
   "source": "sheet:1ALkQay0yMQqZt5mZnUDB2qrSwfkYXQ4RmjbHNYrmpTo",
   "counts": {
-    "rows_read": 45,
-    "published": 44,
+    "rows_read": 46,
+    "published": 45,
     "rejected": 1,
-    "warnings": 36,
-    "card_pages": 44,
+    "warnings": 39,
+    "card_pages": 45,
     "pruned_pages": 0,
     "without_image": 44
   },
@@ -160,6 +160,18 @@
     {
       "id": "44",
       "reason": "subcategory \"Обучение и курсы\" sits under \"Услуги\" in the taxonomy, not \"Образование и наука\" — kept, please align the sheet"
+    },
+    {
+      "id": "2",
+      "reason": "telegram \"[https://t.me/groznetcom](https://t.me/groznetcom)\" is not a valid handle — dropped"
+    },
+    {
+      "id": "2",
+      "reason": "unroutable contact value dropped: [https://groznet.com](https://groznet.com)"
+    },
+    {
+      "id": "2",
+      "reason": "unknown subcategory \"Услуги\" — dropped"
     }
   ]
 }

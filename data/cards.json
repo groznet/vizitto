@@ -236,6 +236,56 @@
     "updated_at": "2026-09-20"
   },
   {
+    "id": 2,
+    "slug": "groznet",
+    "title": "Веб-студия GrozNet",
+    "category": {
+      "slug": "services",
+      "ru": "Услуги"
+    },
+    "subcategory": null,
+    "region": {
+      "slug": "chechnya",
+      "ru": "Чечня"
+    },
+    "city": {
+      "slug": "grozny",
+      "ru": "Грозный"
+    },
+    "address": null,
+    "map_url": "7",
+    "contacts": {
+      "phone": [
+        "+79298883327"
+      ],
+      "whatsapp": null,
+      "telegram": null,
+      "vk": null,
+      "email": null,
+      "website": null
+    },
+    "image": "/[https://files.groznet.com/vizitto/cards/groznet.webp](https://files.groznet.com/vizitto/cards/groznet.webp)",
+    "description": "Веб-студия GrozNet — разработка и поддержка сайтов, SEO, онлайн-маркетинг, хостинг, реклама и другие цифровые услуги для бизнеса.",
+    "tags": [
+      "web-development",
+      "seo",
+      "marketing",
+      "hosting",
+      "website-support"
+    ],
+    "features": [],
+    "hours": {
+      "mon_fri": "09:00-18:00",
+      "sat_sun": "10:00-15:00",
+      "note": null
+    },
+    "price_level": null,
+    "rating": null,
+    "verified": false,
+    "featured": false,
+    "updated_at": "2026-09-30"
+  },
+  {
     "id": 45,
     "slug": "gostinitsa-korona",
     "title": "Гостиница «Корона»",
