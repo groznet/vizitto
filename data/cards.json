@@ -243,7 +243,10 @@
       "slug": "services",
       "ru": "Услуги"
     },
-    "subcategory": null,
+    "subcategory": {
+      "slug": "marketing",
+      "ru": "Маркетинг и реклама"
+    },
     "region": {
       "slug": "chechnya",
       "ru": "Чечня"
