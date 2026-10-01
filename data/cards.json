@@ -236,9 +236,9 @@
     "updated_at": "2026-09-20"
   },
   {
-    "id": 2,
+    "id": 46,
     "slug": "groznet",
-    "title": "Веб-студия GrozNet",
+    "title": "Веб студия GrozNet",
     "category": {
       "slug": "services",
       "ru": "Услуги"
@@ -255,8 +255,8 @@
       "slug": "grozny",
       "ru": "Грозный"
     },
-    "address": null,
-    "map_url": "7",
+    "address": "ул. Али Митева 3",
+    "map_url": null,
     "contacts": {
       "phone": [
         "+79298883327"
